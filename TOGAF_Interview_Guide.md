@@ -533,7 +533,19 @@ Purpose: Define the technology infrastructure needed to support applications and
 │ WP7      │        │        │        │   ✓    │        │        │   -    │
 └──────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
   ✓ = Depends on (must be done first)
-  
+  ┌─────────────────────────────────────────────────────────────────────────┐
+│              PHASE E: BUILD vs BUY vs REUSE DECISIONS                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   FOR EACH GAP, EVALUATE SOLUTIONS:                                    │
+│                                                                         │
+│   ┌─────────────┐     ┌─────────────┐     ┌─────────────┐              │
+│   │    BUILD    │     │     BUY     │     │    REUSE    │              │
+│   │   Custom    │     │   Product   │     │  Existing   │              │
+│   │ Development │     │   / SaaS    │     │   Assets    │              │
+│   └─────────────┘     └─────────────┘     └─────────────┘              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
   Reading: WP2 (Payment) depends on WP1, WP4, WP5, WP7
 #### **Phase F: Migration Planning**
 - **Purpose**: Finalize detailed implementation and migration plan
@@ -542,7 +554,53 @@ Purpose: Define the technology infrastructure needed to support applications and
   - Finalize Implementation Plan
   - Ensure business value is realized
 - **Key Deliverables**: Implementation and Migration Plan, Architecture Roadmap
-
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE F: MIGRATION PLANNING                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. FINALIZE ARCHITECTURE ROADMAP                                      │
+│     └── Timeline: Baseline → Transition 1 → Transition 2 → Target      │
+│                                                                         │
+│  2. FINALIZE IMPLEMENTATION PLAN                                       │
+│     └── Detailed: Schedule + Budget + Resources + Milestones           │
+│                                                                         │
+│  3. ENSURE BUSINESS VALUE IS REALIZED                                  │
+│     └── Define KPIs, measure before/after, track benefits              │
+│                                                                         │
+│  DELIVERABLES:                                                         │
+│  • Implementation & Migration Plan (detailed project plans)            │
+│  • Architecture Roadmap (visual timeline)                              │
+│  • Architecture Contracts (agreements with implementation teams)       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    WHAT "MIGRATION" MEANS IN PHASE F                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PHASE B, C, D                          PHASE F                       │
+│   (DESIGN the Target)                    (PLAN the Migration)          │
+│                                                                         │
+│   ┌─────────────────┐                   ┌─────────────────┐            │
+│   │ Phase B:        │                   │                 │            │
+│   │ Target Business │───┐               │  HOW do we      │            │
+│   │ Architecture    │   │               │  actually GET   │            │
+│   └─────────────────┘   │               │  from Current   │            │
+│                         │               │  to Target?     │            │
+│   ┌─────────────────┐   │    ────►      │                 │            │
+│   │ Phase C:        │───┤               │  • Timeline     │            │
+│   │ Target Data &   │   │               │  • Budget       │            │
+│   │ App Architecture│   │               │  • Resources    │            │
+│   └─────────────────┘   │               │  • Milestones   │            │
+│                         │               │                 │            │
+│   ┌─────────────────┐   │               │  = MIGRATION    │            │
+│   │ Phase D:        │───┘               │    PLAN         │            │
+│   │ Target Tech     │                   │                 │            │
+│   │ Architecture    │                   └─────────────────┘            │
+│   └─────────────────┘                                                  │
+│                                                                         │
+│   WHAT we want                          HOW we get there               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
 #### **Phase G: Implementation Governance**
 - **Purpose**: Provide architectural oversight during implementation
 - **Key Activities**:
@@ -550,7 +608,57 @@ Purpose: Define the technology infrastructure needed to support applications and
   - Govern implementation projects
   - Perform Architecture Compliance reviews
 - **Key Deliverables**: Compliance assessments, Architecture Contracts
+┌─────────────────────────────────────────────────────────────────────────┐
+│                 PHASE G: IMPLEMENTATION GOVERNANCE                      │
+│                                                                         │
+│   "Are the development teams building what we designed?"               │
+│   "Is the implementation following the architecture?"                  │
+└─────────────────────────────────────────────────────────────────────────┘
 
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                 COMPLIANCE REVIEW PROCESS                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  STEP 1: SCHEDULE REVIEW                                               │
+│          └── At key milestones (design complete, before go-live)       │
+│                                                                         │
+│  STEP 2: PREPARE CHECKLIST                                             │
+│          ├── Architecture principles followed?                         │
+│          ├── Technology standards used?                                │
+│          ├── Security requirements met?                                │
+│          ├── Integration patterns correct?                             │
+│          └── Data standards followed?                                  │
+│                                                                         │
+│  STEP 3: CONDUCT REVIEW                                                │
+│          └── Review with development team, document findings           │
+│                                                                         │
+│  STEP 4: DOCUMENT RESULTS                                              │
+│          ├── Conformant items                                          │
+│          ├── Deviations found                                          │
+│          └── Recommendations                                           │
+│                                                                         │
+│  STEP 5: DECISION                                                      │
+│          ├── ✅ Approved                                               │
+│          ├── ✅ Approved with conditions (fix minor issues)            │
+│          └── ❌ Not approved (rework required)                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                 ARCHITECTURE COMPLIANCE CHECKLIST                            │
+├───────────────────────────────────┬──────────┬──────────┬────────────────────┤
+│ CHECK ITEM                        │ EXPECTED │ ACTUAL   │ STATUS             │
+├───────────────────────────────────┼──────────┼──────────┼────────────────────┤
+│ API Design follows REST standards │ REST     │ REST     │ ✅ Compliant       │
+│ Database is PostgreSQL            │ PostgreSQL│PostgreSQL│ ✅ Compliant       │
+│ Runs on Kubernetes (EKS)          │ EKS      │ EKS      │ ✅ Compliant       │
+│ Uses approved auth (OAuth 2.0)    │ OAuth 2.0│ JWT only │ ⚠️ Deviation       │
+│ Logging to centralized system     │ DataDog  │ DataDog  │ ✅ Compliant       │
+│ Secrets in Vault                  │ Vault    │ Env vars │ ❌ Non-compliant   │
+│ CI/CD via GitHub Actions          │ GH Actions│GH Actions│ ✅ Compliant       │
+├───────────────────────────────────┴──────────┴──────────┴────────────────────┤
+│ RESULT: Approved with conditions - Fix secrets management before go-live     │
+└──────────────────────────────────────────────────────────────────────────────┘
 #### **Phase H: Architecture Change Management**
 - **Purpose**: Keep architecture aligned with changing requirements
 - **Key Activities**:
@@ -558,6 +666,30 @@ Purpose: Define the technology infrastructure needed to support applications and
   - Monitor business changes
   - Manage Architecture Change Requests
 - **Key Deliverables**: Architecture updates, Change Requests
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│  1. MONITOR TECHNOLOGY CHANGES                                         │
+│     ├── New technologies (AWS new services, new frameworks)            │
+│     ├── End-of-Life (Java 11 EOL, deprecated libraries)                │
+│     ├── Security vulnerabilities (CVEs, patches)                       │
+│     └── Vendor changes (pricing, acquisitions)                         │
+│                                                                         │
+│  2. MONITOR BUSINESS CHANGES                                           │
+│     ├── Strategy changes (new products, new markets)                   │
+│     ├── Regulatory changes (DPDPA, GDPR, gaming compliance)            │
+│     ├── Organizational changes (new teams, M&A)                        │
+│     └── Market changes (competitors, customer needs)                   │
+│                                                                         │
+│  3. MANAGE ARCHITECTURE CHANGE REQUESTS                                │
+│     ├── Receive change requests from teams                             │
+│     ├── Classify (Minor / Incremental / Major / Emergency)             │
+│     ├── Assess impact (systems, cost, risk)                            │
+│     ├── Approve / Reject / Defer                                       │
+│     └── Update architecture documents                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
 
 #### **Requirements Management (Central)**
 - Operates throughout all phases
@@ -699,6 +831,86 @@ Components:
 > - Organization-Specific Architectures (most specific)
 >
 > It helps organizations leverage existing assets and accelerate architecture development.
+┌─────────────────────────────────────────────────────────────────────────┐
+│                 ENTERPRISE CONTINUUM FLOW                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   GENERIC                                              SPECIFIC         │
+│   (Reusable everywhere)                    (Only for your org)         │
+│                                                                         │
+│   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌──────────┐│
+│   │  Foundation  │ → │   Common     │ → │   Industry   │ → │   Org    ││
+│   │ Architecture │   │   Systems    │   │ Architecture │   │ Specific ││
+│   └──────────────┘   └──────────────┘   └──────────────┘   └──────────┘│
+│                                                                         │
+│   Most Generic                                        Most Specific    │
+│   (TRM, standards)                                    (Your systems)   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    ENTERPRISE CONTINUUM LEVELS                               │
+├────────────────────┬─────────────────────────────────────────────────────────┤
+│ LEVEL              │ DESCRIPTION & EXAMPLES                                  │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│                    │                                                         │
+│ FOUNDATION         │ Universal standards, applicable to ANY organization    │
+│ ARCHITECTURES      │                                                         │
+│ (Most Generic)     │ Examples:                                               │
+│                    │ • TOGAF Technical Reference Model (TRM)                 │
+│                    │ • Operating systems, networking, databases              │
+│                    │ • TCP/IP, HTTP, SQL standards                           │
+│                    │ • Basic security models                                 │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│                    │                                                         │
+│ COMMON SYSTEMS     │ Architectures for common business functions            │
+│ ARCHITECTURES      │                                                         │
+│                    │ Examples:                                               │
+│                    │ • ERP architecture patterns                             │
+│                    │ • CRM system patterns                                   │
+│                    │ • E-commerce patterns                                   │
+│                    │ • Data warehouse patterns                               │
+│                    │ • Identity & access management                          │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│                    │                                                         │
+│ INDUSTRY           │ Specific to an industry vertical                       │
+│ ARCHITECTURES      │                                                         │
+│                    │ Examples:                                               │
+│                    │ • Banking: Core banking, payment systems                │
+│                    │ • Gaming: Player management, RNG, bonus engines         │
+│                    │ • Healthcare: HL7, FHIR standards                       │
+│                    │ • Retail: POS systems, inventory management             │
+│                    │ • Telecom: Billing, network management                  │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│                    │                                                         │
+│ ORGANIZATION-      │ Your company's specific implementations                │
+│ SPECIFIC           │                                                         │
+│ (Most Specific)    │ Examples:                                               │
+│                    │ • Your custom player platform                           │
+│                    │ • Your specific payment gateway integration             │
+│                    │ • Your data lake architecture                           │
+│                    │ • Your microservices for your business                  │
+│                    │                                                         │
+└────────────────────┴─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    BENEFITS                                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. REUSE                                                              │
+│     └── Don't reinvent the wheel - use existing patterns               │
+│                                                                         │
+│  2. ACCELERATE                                                         │
+│     └── Start from industry patterns, customize for your org           │
+│                                                                         │
+│  3. CONSISTENCY                                                        │
+│     └── Common vocabulary across organization                          │
+│                                                                         │
+│  4. LEVERAGE                                                           │
+│     └── Learn from industry best practices                             │
+│                                                                         │
+│  5. CLASSIFY                                                           │
+│     └── Organize architecture assets systematically                    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
 
 **Q7: What is the purpose of Phase E (Opportunities and Solutions)?**
 > Phase E identifies work packages and projects to transform from baseline to target architecture. It:
