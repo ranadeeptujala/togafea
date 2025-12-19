@@ -723,7 +723,9 @@ Purpose: Define the technology infrastructure needed to support applications and
 
 ### Enterprise Continuum
 
-A view of the Architecture Repository showing the evolution of architecture from generic to organization-specific:
+                                                │
+│   ENTERPRISE CONTINUUM = A LIBRARY of reusable architecture patterns   │
+│                          organized from GENERIC to SPECIFIC on-specific:
 
 ```
 Foundation    ──►    Common Systems    ──►    Industry    ──►    Organization
