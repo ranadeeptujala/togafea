@@ -135,7 +135,27 @@ The **ADM** is the core of TOGAF - an iterative, step-by-step approach to develo
 #### **Phase A: Architecture Vision**
 - **Purpose**: Develop high-level vision of capabilities and business value
 - **Key Activities**:
-  - Identify stakeholders
+
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE A - 6 KEY ACTIVITIES                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. IDENTIFY STAKEHOLDERS & CONCERNS                                   │
+│                                                                         │
+│  2. CONFIRM BUSINESS GOALS & DRIVERS                                   │
+│                                                                         │
+│  3. DEFINE SCOPE                                                       │
+│                                                                         │
+│  4. CREATE ARCHITECTURE VISION                                         │
+│                                                                         │
+│  5. ASSESS READINESS FOR TRANSFORMATION                                │
+│                                                                         │
+│  6. OBTAIN APPROVAL (Statement of Architecture Work)                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+  -Stake holerds parrt
 
   ┌─────────────────────────────────────────────────────────────────┐
 │                    STAKEHOLDER DOMAINS                          │
@@ -211,8 +231,112 @@ STEP 6: Validate with stakeholders
         └── "Did I capture your concerns correctly?"
   - Create Architecture Vision
   - Obtain approval for Statement of Architecture Work
-- **Key Deliverables**: Statement of Architecture Work, Architecture Vision document
-statement of architecture 
+
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  ACTIVITY 2: CONFIRM BUSINESS GOALS & DRIVERS                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  WHAT TO DO:                                                           │
+│  • Understand WHY this project exists                                  │
+│  • Identify business problems to solve                                 │
+│  • Confirm strategic goals being supported                             │
+│                                                                         │
+│  EXAMPLE BUSINESS DRIVERS:                                             │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ • "We need to enter new markets faster"                         │   │
+│  │ • "Our costs are too high"                                      │   │
+│  │ • "Competitors are ahead of us"                                 │   │
+│  │ • "Regulations require us to change"                            │   │
+│  │ • "Customer experience is poor"                                 │   │
+│  │ • "Legacy systems are holding us back"                          │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  OUTPUT: Business Goals document, Key Drivers list                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    STEP 3: DEFINE SCOPE                                 │
+│                                                                         │
+│   "WHAT is included and WHAT is NOT included in this architecture?"    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    WHY SCOPE MATTERS                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ❌ WITHOUT CLEAR SCOPE:                                               │
+│     • Scope creep (project keeps growing)                              │
+│     • Unclear expectations                                             │
+│     • Wasted effort on wrong things                                    │
+│     • Never-ending project                                             │
+│     • Stakeholder conflicts                                            │
+│                                                                         │
+│  ✅ WITH CLEAR SCOPE:                                                  │
+│     • Everyone knows what's included                                   │
+│     • Clear boundaries = focused effort                                │
+│     • Easier to estimate time & cost                                   │
+│     • Can say "NO" to out-of-scope requests                            │
+│     • Stakeholders aligned                                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    SCOPE DIMENSIONS                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. BREADTH (Organizational Scope)                                     │
+│     └── WHICH parts of the organization?                               │
+│         • Entire enterprise?                                           │
+│         • One business unit?                                           │
+│         • One department?                                              │
+│         • One system/application?                                      │
+│                                                                         │
+│  2. DEPTH (Level of Detail)                                            │
+│     └── HOW detailed will the architecture be?                         │
+│         • Strategic (high-level overview)                              │
+│         • Segment (business unit level)                                │
+│         • Capability (detailed)                                        │
+│                                                                         │
+│  3. ARCHITECTURE DOMAINS                                               │
+│     └── WHICH domains are included?                                    │
+│         • Business Architecture? (B)                                   │
+│         • Data Architecture? (C)                                       │
+│         • Application Architecture? (C)                                │
+│         • Technology Architecture? (D)                                 │
+│         • All of them?                                                 │
+│                                                                         │
+│  4. TIME HORIZON                                                       │
+│     └── WHEN is the target state?                                      │
+│         • 1 year?                                                      │
+│         • 3 years?                                                     │
+│         • 5 years?                                                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+
+
+on
+┌─────────────────────────────────────────────────────────────────┐
+│              ARCHITECTURE VISION DOCUMENT                       │
+├─────────────────────────────────────────────────────────────────┤
+│  1. Problem Description                                         │
+│  2. Objectives & Scope                                          │
+│  3. Stakeholder Map & Concerns                                  │
+│  4. Business Scenario (if used)                                 │
+│  5. High-Level Baseline Architecture                            │
+│  6. High-Level Target Architecture                              │
+│  7. Gap Analysis (High-Level)                                   │
+│  8. Key Architecture Requirements                               │
+│  9. Risks & Constraints                                         │
+│  10. Business Value & Benefits                                  │
+│  11. Architecture Principles (Applicable)                       │
+│  12. Approval & Sign-off                                        │
+└─────────────────────────────────────────────────────────────────┘
+
 STATEMENT OF ARCHITECTURE WORK
 ==============================
 
@@ -246,23 +370,7 @@ SECTION                    | DESCRIPTION
 11. Risks & Mitigation     | Potential issues and plans
 12. Constraints            | Limitations (time, budget, etc.)
 13. Stakeholders           | Key people involved
-14. Approvals              | Sign-off section
-┌─────────────────────────────────────────────────────────────────┐
-│              ARCHITECTURE VISION DOCUMENT                       │
-├─────────────────────────────────────────────────────────────────┤
-│  1. Problem Description                                         │
-│  2. Objectives & Scope                                          │
-│  3. Stakeholder Map & Concerns                                  │
-│  4. Business Scenario (if used)                                 │
-│  5. High-Level Baseline Architecture                            │
-│  6. High-Level Target Architecture                              │
-│  7. Gap Analysis (High-Level)                                   │
-│  8. Key Architecture Requirements                               │
-│  9. Risks & Constraints                                         │
-│  10. Business Value & Benefits                                  │
-│  11. Architecture Principles (Applicable)                       │
-│  12. Approval & Sign-off                                        │
-└─────────────────────────────────────────────────────────────────┘
+14. Approvals              | Sign-off secti
 ┌─────────────────────────────────────────────────────────────────────────┐
 │  STATEMENT OF ARCHITECTURE WORK    │  ARCHITECTURE VISION DOCUMENT      │
 │  (SOW)                             │                                    │
@@ -284,7 +392,7 @@ SECTION                    | DESCRIPTION
 │  "Here's how we'll run the         │  "Here's where we are, where       │
 │   architecture project"            │   we're going, and why"            │
 └────────────────────────────────────┴────────────────────────────────────┘
-
+**Key Deliverables**: Statement of Architecture Work, Architecture Vision documynet
 #### **Phase B: Business Architecture**
 - **Purpose**: Develop the Target Business Architecture
 - **Key Activities**:
