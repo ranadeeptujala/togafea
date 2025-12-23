@@ -93,32 +93,70 @@ The **ADM** is the core of TOGAF - an iterative, step-by-step approach to develo
 - **Purpose**: Prepare the organization for TOGAF projects
 - **Key Activities**:
   - Define Architecture Capability(people,process ,tools,governance,standrds)
-  ── People
-│   ├── You (Senior EA / Head)
-│   ├── Domain Architects (if any)
-│   └── Supporting staff
-│
-├── Processes
-│   ├── TOGAF ADM (tailored)
-│   ├── Architecture Review process
-│   └── Change management process
-│
-├── Tools
-│   ├── Modeling tool (Sparx EA, Archi, etc.)
-│   ├── Repository (SharePoint, Confluence, etc.,git hub )
-│   └── Documentation templates
-│
-├── Governance
-│   ├── Architecture Board / Review meetings(Review boards)
-│   ├── Architecture Principles
-│   └── Compliance checklist- Gaming certficatons tatndrs like rng ,DPDPA
-│
-└── Standards
-    ├── Reference Architectures
-    ├── Technology Standards
-    └── Design Patterns
-  - Establish Architecture Principles
+ 
 
+
+    ┌─────────────────────────────────────────────────────────────────────────┐
+│                    EA DOES:                                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   1. CREATE TEAM                                                       │
+│      └── Enterprise Architects, Domain Architects, support staff       │
+│                                                                         │
+│   2. SETUP TOOLS                                                       │
+│      └── Sparx EA, Archi, Confluence, Draw.io                          │
+│                                                                         │
+│   3. DEFINE PRINCIPLES                                                 │
+│      └── Cloud-First, Security by Design, Buy over Build               │
+│                                                                         │
+│   4. ESTABLISH GOVERNANCE                                              │
+│      └── Architecture Board, Review process, Compliance                │
+│                                                                         │
+│   5. DEFINE STANDARDS                                                  │
+│      └── Technology standards, Patterns, Reference architectures       │
+│                                                                         │
+│   All this happens in PRELIMINARY PHASE (once)                         │
+│   Then EA GUIDES all projects using these!                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+  - Establish Architecture Principles
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    PRINCIPLES GUIDE EVERY PROJECT                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PRELIMINARY: Define Principles (ONCE)                                │
+│   ─────────────────────────────────────                                │
+│   • Cloud-First                                                        │
+│   • Security by Design                                                 │
+│   • Buy over Build                                                     │
+│   • API-First                                                          │
+│   • Data is an Asset                                                   │
+│                                                                         │
+│         │                                                               │
+│         │ These GUIDE every project                                     │
+│         ▼                                                               │
+│   ┌─────────────────────────────────────────────────────────────────┐  │
+│   │                                                                  │  │
+│   │  PROJECT 1: Payment System                                      │  │
+│   │  Driver: "Reduce latency"                                       │  │
+│   │  Decision: "Should we use on-prem or cloud?"                    │  │
+│   │  → Check Principle: "Cloud-First" → Use Cloud ✅                │  │
+│   │                                                                  │  │
+│   │  PROJECT 2: CRM Selection                                       │  │
+│   │  Driver: "Need better customer management"                      │  │
+│   │  Decision: "Should we build custom CRM or buy?"                 │  │
+│   │  → Check Principle: "Buy over Build" → Buy Salesforce ✅        │  │
+│   │                                                                  │  │
+│   │  PROJECT 3: Mobile App                                          │  │
+│   │  Driver: "Launch mobile experience"                             │  │
+│   │  Decision: "How to handle authentication?"                      │  │
+│   │  → Check Principle: "Security by Design" → OAuth from start ✅  │  │
+│   │                                                                  │  │
+│   └─────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│   PRINCIPLES = Consistent decision-making across ALL projects          │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
 
 | Architecture Principles          | Architecture Requirements (NFRs)   |
 |----------------------------------|------------------------------------|
@@ -129,8 +167,16 @@ The **ADM** is the core of TOGAF - an iterative, step-by-step approach to develo
 | "Systems should be loosely coupled" | "Use microservices with REST APIs" |
 | WHY we design a certain way      | WHAT we must achieve               |
   - Select and tailor frameworks/tools
-  - Define Architecture Repository
+
+
+
+
+  
 - **Key Deliverable**: Organizational Model for EA, Architecture Principles
+
+
+
+
 
 #### **Phase A: Architecture Vision**
 - **Purpose**: Develop high-level vision of capabilities and business value
@@ -307,7 +353,19 @@ STEP 6: Validate with stakeholders
 │         • Data Architecture? (C)                                       │
 │         • Application Architecture? (C)                                │
 │         • Technology Architecture? (D)                                 │
-│         • All of them?                                                 │
+│         • All of them?
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   DEPTH LEVELS = ZOOM LEVELS ON A MAP 🗺️                               │
+│                                                                         │
+│   STRATEGIC   = Country view     ("India wants digital economy")       │
+│   SEGMENT     = City view        ("Mumbai needs better transit")       │
+│   CAPABILITY  = Street view      ("Build Metro Line 3, Station X")     │
+│                                                                         │
+│   Same project, different zoom levels for different audiences!         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘│
 │                                                                         │
 │  4. TIME HORIZON                                                       │
 │     └── WHEN is the target state?                                      │
@@ -319,7 +377,7 @@ STEP 6: Validate with stakeholders
 
 
 
-on
+
 ┌─────────────────────────────────────────────────────────────────┐
 │              ARCHITECTURE VISION DOCUMENT                       │
 ├─────────────────────────────────────────────────────────────────┤
