@@ -1,0 +1,803 @@
+# ArchiMate Modeling Guide
+
+> **Purpose**: Comprehensive guide to ArchiMate modeling across Business, Application, and Technology layers
+
+---
+
+## What is ArchiMate?
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE OVERVIEW                                       │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ArchiMate is an OPEN STANDARD enterprise architecture modeling language       │
+│   maintained by The Open Group (same as TOGAF)                                  │
+│                                                                                  │
+│   PURPOSE:                                                                      │
+│   • Describe, analyze, and visualize enterprise architecture                    │
+│   • Common language for architects, stakeholders                                │
+│   • Works alongside TOGAF ADM                                                   │
+│                                                                                  │
+│   KEY FEATURES:                                                                 │
+│   • Three main layers (Business, Application, Technology)                       │
+│   • Standard notation and symbols                                               │
+│   • Relationships between elements                                              │
+│   • Viewpoints for different stakeholders                                       │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ArchiMate Core Framework
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE CORE FRAMEWORK                                 │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│                    ASPECTS                                                       │
+│          ┌─────────────┬─────────────┬─────────────┐                            │
+│          │  PASSIVE    │  BEHAVIOR   │   ACTIVE    │                            │
+│          │  STRUCTURE  │             │  STRUCTURE  │                            │
+│   ┌──────┼─────────────┼─────────────┼─────────────┤                            │
+│   │      │             │             │             │                            │
+│ L │ BIZ  │ Business    │ Business    │ Business    │                            │
+│ A │      │ Object      │ Process     │ Actor/Role  │                            │
+│ Y │      │             │ Function    │             │                            │
+│ E ├──────┼─────────────┼─────────────┼─────────────┤                            │
+│ R │      │             │             │             │                            │
+│ S │ APP  │ Data        │ Application │ Application │                            │
+│   │      │ Object      │ Service     │ Component   │                            │
+│   │      │             │ Function    │             │                            │
+│   ├──────┼─────────────┼─────────────┼─────────────┤                            │
+│   │      │             │             │             │                            │
+│   │ TECH │ Artifact    │ Technology  │ Node        │                            │
+│   │      │             │ Service     │ Device      │                            │
+│   │      │             │ Function    │ System SW   │                            │
+│   └──────┴─────────────┴─────────────┴─────────────┘                            │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Layer Colors (Standard)
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE COLOR CODING                                   │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   🟨 YELLOW   = Business Layer      (Strategy, Motivation)                      │
+│   🟦 BLUE     = Application Layer   (Applications, Data)                        │
+│   🟩 GREEN    = Technology Layer    (Infrastructure)                            │
+│   🟪 PURPLE   = Implementation Layer (Projects, Work Packages)                  │
+│   ⬜ WHITE    = Physical Layer      (Physical elements)                         │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# BUSINESS LAYER (Yellow)
+
+## Business Layer Elements
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         BUSINESS LAYER ELEMENTS                                  │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ACTIVE STRUCTURE (Who/What performs)                                          │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Actor                                      │   │
+│   │   │  👤         │   A person or organizational unit                     │   │
+│   │   │  Actor      │   Example: Customer, Employee, Partner                │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Role                                       │   │
+│   │   │  🎭         │   Responsibility for specific behavior                │   │
+│   │   │  Role       │   Example: Account Manager, Approver                  │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Collaboration                              │   │
+│   │   │  👥         │   Aggregate of roles working together                 │   │
+│   │   │ Collaboration│   Example: Project Team, Review Board                │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   BEHAVIOR (What is performed)                                                  │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Process                                    │   │
+│   │   │  ⚙️         │   Sequence of behaviors achieving result              │   │
+│   │   │  Process    │   Example: Order Processing, KYC Verification         │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Function                                   │   │
+│   │   │  🔧         │   Collection of behavior based on skill/resource      │   │
+│   │   │  Function   │   Example: Payment Processing, Customer Management    │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Service                                    │   │
+│   │   │  📋         │   Service exposed to environment                      │   │
+│   │   │  Service    │   Example: Account Opening, Loan Application          │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Event                                      │   │
+│   │   │  ⚡         │   Something that triggers behavior                    │   │
+│   │   │  Event      │   Example: Order Received, Payment Completed          │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   PASSIVE STRUCTURE (What is acted upon)                                        │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Business Object                                     │   │
+│   │   │  📦         │   Concept relevant from business perspective          │   │
+│   │   │  Object     │   Example: Order, Invoice, Customer, Product          │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Contract                                            │   │
+│   │   │  📜         │   Formal agreement between parties                    │   │
+│   │   │  Contract   │   Example: SLA, NDA, Service Agreement                │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Product                                             │   │
+│   │   │  🎁         │   Coherent collection of services                     │   │
+│   │   │  Product    │   Example: Premium Account, Gaming Package            │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Business Layer Example - Gaming Platform
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    BUSINESS LAYER - GAMING PLATFORM                              │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ACTORS & ROLES                                                                │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐         │   │
+│   │   │  Player  │    │ Customer │    │Operations│    │Compliance│         │   │
+│   │   │ (Actor)  │    │ Support  │    │  Team    │    │ Officer  │         │   │
+│   │   │          │    │ (Role)   │    │ (Role)   │    │ (Role)   │         │   │
+│   │   └────┬─────┘    └────┬─────┘    └────┬─────┘    └────┬─────┘         │   │
+│   │        │               │               │               │                │   │
+│   └────────┼───────────────┼───────────────┼───────────────┼────────────────┘   │
+│            │               │               │               │                    │
+│            ▼               ▼               ▼               ▼                    │
+│   BUSINESS SERVICES                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────┐ │   │
+│   │   │   Player     │  │    Game      │  │   Payment    │  │  Bonus     │ │   │
+│   │   │ Registration │  │   Access     │  │  Processing  │  │ Management │ │   │
+│   │   │  (Service)   │  │  (Service)   │  │  (Service)   │  │ (Service)  │ │   │
+│   │   └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └─────┬──────┘ │   │
+│   │          │                 │                 │                │        │   │
+│   └──────────┼─────────────────┼─────────────────┼────────────────┼────────┘   │
+│              │                 │                 │                │            │
+│              ▼                 ▼                 ▼                ▼            │
+│   BUSINESS PROCESSES                                                            │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────┐ │   │
+│   │   │    KYC       │  │    Game      │  │   Deposit/   │  │  Bonus     │ │   │
+│   │   │ Verification │  │   Session    │  │  Withdrawal  │  │Calculation │ │   │
+│   │   │  (Process)   │  │  (Process)   │  │  (Process)   │  │ (Process)  │ │   │
+│   │   └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └─────┬──────┘ │   │
+│   │          │                 │                 │                │        │   │
+│   └──────────┼─────────────────┼─────────────────┼────────────────┼────────┘   │
+│              │                 │                 │                │            │
+│              ▼                 ▼                 ▼                ▼            │
+│   BUSINESS OBJECTS                                                              │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐│   │
+│   │   │  Player  │  │  Game    │  │Transaction│ │  Bonus   │  │  Wallet  ││   │
+│   │   │ (Object) │  │ (Object) │  │ (Object) │  │ (Object) │  │ (Object) ││   │
+│   │   └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘│   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# APPLICATION LAYER (Blue)
+
+## Application Layer Elements
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         APPLICATION LAYER ELEMENTS                               │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ACTIVE STRUCTURE (What performs)                                              │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Component                               │   │
+│   │   │  📦         │   Modular, deployable, replaceable part               │   │
+│   │   │  Component  │   Example: PlayerService, PaymentGateway              │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Collaboration                           │   │
+│   │   │  🔗         │   Aggregate of components working together            │   │
+│   │   │ Collaboration│  Example: Checkout System, Reporting Suite           │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Interface                               │   │
+│   │   │  🔌         │   Point of access for application service             │   │
+│   │   │  Interface  │   Example: REST API, GraphQL Endpoint                 │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   BEHAVIOR (What is performed)                                                  │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Function                                │   │
+│   │   │  ⚙️         │   Internal behavior of component                      │   │
+│   │   │  Function   │   Example: ValidatePayment(), CreatePlayer()          │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Service                                 │   │
+│   │   │  📋         │   Exposed behavior (externally visible)               │   │
+│   │   │  Service    │   Example: Authentication Service, Search Service     │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Process                                 │   │
+│   │   │  🔄         │   Sequence of application behaviors                   │   │
+│   │   │  Process    │   Example: Order Processing Flow                      │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Application Event                                   │   │
+│   │   │  ⚡         │   Application state change notification               │   │
+│   │   │  Event      │   Example: PaymentReceived, PlayerCreated             │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   PASSIVE STRUCTURE (What is processed)                                         │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Data Object                                         │   │
+│   │   │  📊         │   Data structured for processing                      │   │
+│   │   │  Data       │   Example: PlayerDTO, TransactionRecord               │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Application Layer Example - Gaming Platform
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    APPLICATION LAYER - GAMING PLATFORM                           │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   APPLICATION COMPONENTS (Microservices)                                        │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────────────────────────────────────────────────────────────┐ │   │
+│   │   │                        API GATEWAY                                │ │   │
+│   │   │                    (Kong / AWS API Gateway)                       │ │   │
+│   │   └─────────────────────────────┬────────────────────────────────────┘ │   │
+│   │                                 │                                      │   │
+│   │         ┌───────────────────────┼───────────────────────┐              │   │
+│   │         │                       │                       │              │   │
+│   │         ▼                       ▼                       ▼              │   │
+│   │   ┌───────────┐          ┌───────────┐          ┌───────────┐         │   │
+│   │   │  Player   │          │   Game    │          │  Payment  │         │   │
+│   │   │  Service  │          │  Service  │          │  Service  │         │   │
+│   │   │           │          │           │          │           │         │   │
+│   │   │ Component │          │ Component │          │ Component │         │   │
+│   │   └─────┬─────┘          └─────┬─────┘          └─────┬─────┘         │   │
+│   │         │                      │                      │               │   │
+│   │         ▼                      ▼                      ▼               │   │
+│   │   ┌───────────┐          ┌───────────┐          ┌───────────┐         │   │
+│   │   │  Bonus    │          │  Session  │          │   KYC     │         │   │
+│   │   │  Service  │          │  Service  │          │  Service  │         │   │
+│   │   │           │          │           │          │  (Jumio)  │         │   │
+│   │   │ Component │          │ Component │          │ Component │         │   │
+│   │   └───────────┘          └───────────┘          └───────────┘         │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   APPLICATION SERVICES (APIs)                                                   │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   Player Service APIs:         Game Service APIs:                       │   │
+│   │   ┌────────────────────┐       ┌────────────────────┐                  │   │
+│   │   │ POST /players      │       │ GET /games         │                  │   │
+│   │   │ GET /players/{id}  │       │ POST /sessions     │                  │   │
+│   │   │ PUT /players/{id}  │       │ GET /leaderboard   │                  │   │
+│   │   │ POST /players/kyc  │       │ POST /bets         │                  │   │
+│   │   └────────────────────┘       └────────────────────┘                  │   │
+│   │                                                                         │   │
+│   │   Payment Service APIs:        Bonus Service APIs:                      │   │
+│   │   ┌────────────────────┐       ┌────────────────────┐                  │   │
+│   │   │ POST /deposits     │       │ GET /bonuses       │                  │   │
+│   │   │ POST /withdrawals  │       │ POST /bonuses/claim│                  │   │
+│   │   │ GET /transactions  │       │ GET /wagering      │                  │   │
+│   │   │ GET /wallet/{id}   │       │ POST /promotions   │                  │   │
+│   │   └────────────────────┘       └────────────────────┘                  │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   DATA OBJECTS                                                                  │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐│   │
+│   │   │ Player   │  │ Game     │  │Transaction│ │  Bonus   │  │  Wallet  ││   │
+│   │   │ Entity   │  │ Session  │  │  Record  │  │  Record  │  │  Balance ││   │
+│   │   │          │  │  Entity  │  │          │  │          │  │          ││   │
+│   │   └──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘│   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   APPLICATION EVENTS (Kafka Topics)                                             │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   player.created ──► player.kyc.verified ──► player.activated           │   │
+│   │                                                                         │   │
+│   │   payment.initiated ──► payment.processed ──► payment.completed         │   │
+│   │                                                                         │   │
+│   │   game.session.started ──► game.bet.placed ──► game.session.ended       │   │
+│   │                                                                         │   │
+│   │   bonus.awarded ──► bonus.wagering.updated ──► bonus.completed          │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# TECHNOLOGY LAYER (Green)
+
+## Technology Layer Elements
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         TECHNOLOGY LAYER ELEMENTS                                │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ACTIVE STRUCTURE (What performs)                                              │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Node                                                │   │
+│   │   │  🖥️         │   Computational/physical resource                     │   │
+│   │   │  Node       │   Example: Server, VM, Container                      │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Device                                              │   │
+│   │   │  💻         │   Physical hardware resource                          │   │
+│   │   │  Device     │   Example: Physical Server, Laptop, Mobile            │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   System Software                                     │   │
+│   │   │  ⚙️         │   Software that provides environment                  │   │
+│   │   │  System SW  │   Example: Linux, PostgreSQL, Kubernetes              │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Collaboration                            │   │
+│   │   │  🔗         │   Aggregate of nodes working together                 │   │
+│   │   │ Collaboration│  Example: Kubernetes Cluster, Database Cluster       │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Interface                                │   │
+│   │   │  🔌         │   Point of access to technology service               │   │
+│   │   │  Interface  │   Example: JDBC, HTTP, TCP/IP Port                    │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   BEHAVIOR (What is performed)                                                  │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Function                                 │   │
+│   │   │  🔧         │   Internal behavior performed by node                 │   │
+│   │   │  Function   │   Example: Data Storage, Message Routing              │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Service                                  │   │
+│   │   │  📋         │   Externally visible technology behavior              │   │
+│   │   │  Service    │   Example: Database Service, Caching Service          │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Process                                  │   │
+│   │   │  🔄         │   Sequence of technology behaviors                    │   │
+│   │   │  Process    │   Example: Backup Process, Deployment Pipeline        │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Technology Event                                    │   │
+│   │   │  ⚡         │   Technology state change                             │   │
+│   │   │  Event      │   Example: Server Started, Failover Triggered         │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   PASSIVE STRUCTURE (What is used)                                              │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Artifact                                            │   │
+│   │   │  📄         │   Physical piece of data                              │   │
+│   │   │  Artifact   │   Example: JAR file, Docker Image, Config file        │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Communication Network                               │   │
+│   │   │  🌐         │   Network for communication between nodes             │   │
+│   │   │  Network    │   Example: VPC, LAN, WAN, Internet                    │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   │   ┌─────────────┐   Path                                                │   │
+│   │   │  ➡️         │   Link between nodes through network                  │   │
+│   │   │  Path       │   Example: API Route, Network Path                    │   │
+│   │   └─────────────┘                                                       │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+## Technology Layer Example - Gaming Platform
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    TECHNOLOGY LAYER - GAMING PLATFORM                            │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   CLOUD INFRASTRUCTURE (AWS)                                                    │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌─────────────────────────────────────────────────────────────────┐   │   │
+│   │   │                           VPC                                   │   │   │
+│   │   │                    (Communication Network)                      │   │   │
+│   │   │                                                                 │   │   │
+│   │   │   ┌───────────────────────────────────────────────────────┐    │   │   │
+│   │   │   │              KUBERNETES CLUSTER (EKS)                 │    │   │   │
+│   │   │   │           (Technology Collaboration)                  │    │   │   │
+│   │   │   │                                                       │    │   │   │
+│   │   │   │   ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐│    │   │   │
+│   │   │   │   │  Node   │  │  Node   │  │  Node   │  │  Node   ││    │   │   │
+│   │   │   │   │ (Pod 1) │  │ (Pod 2) │  │ (Pod 3) │  │ (Pod 4) ││    │   │   │
+│   │   │   │   │ Player  │  │  Game   │  │ Payment │  │  Bonus  ││    │   │   │
+│   │   │   │   │ Service │  │ Service │  │ Service │  │ Service ││    │   │   │
+│   │   │   │   └─────────┘  └─────────┘  └─────────┘  └─────────┘│    │   │   │
+│   │   │   │                                                       │    │   │   │
+│   │   │   └───────────────────────────────────────────────────────┘    │   │   │
+│   │   │                                                                 │   │   │
+│   │   │   ┌─────────────────────────────────────────────────────────┐  │   │   │
+│   │   │   │                  DATA LAYER                             │  │   │   │
+│   │   │   │                                                         │  │   │   │
+│   │   │   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │  │   │   │
+│   │   │   │   │  PostgreSQL  │  │    Redis     │  │    Kafka     │ │  │   │   │
+│   │   │   │   │   (RDS)      │  │ (ElastiCache)│  │    (MSK)     │ │  │   │   │
+│   │   │   │   │              │  │              │  │              │ │  │   │   │
+│   │   │   │   │ System SW    │  │ System SW    │  │ System SW    │ │  │   │   │
+│   │   │   │   └──────────────┘  └──────────────┘  └──────────────┘ │  │   │   │
+│   │   │   │                                                         │  │   │   │
+│   │   │   └─────────────────────────────────────────────────────────┘  │   │   │
+│   │   │                                                                 │   │   │
+│   │   └─────────────────────────────────────────────────────────────────┘   │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   TECHNOLOGY SERVICES                                                           │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌────────────────┐  ┌────────────────┐  ┌────────────────┐            │   │
+│   │   │ Database       │  │ Caching        │  │ Message        │            │   │
+│   │   │ Service        │  │ Service        │  │ Streaming      │            │   │
+│   │   │ (PostgreSQL)   │  │ (Redis)        │  │ Service (Kafka)│            │   │
+│   │   │                │  │                │  │                │            │   │
+│   │   │ Port: 5432     │  │ Port: 6379     │  │ Port: 9092     │            │   │
+│   │   └────────────────┘  └────────────────┘  └────────────────┘            │   │
+│   │                                                                         │   │
+│   │   ┌────────────────┐  ┌────────────────┐  ┌────────────────┐            │   │
+│   │   │ Object Storage │  │ Secret         │  │ Monitoring     │            │   │
+│   │   │ Service (S3)   │  │ Management     │  │ Service        │            │   │
+│   │   │                │  │ (Vault)        │  │ (DataDog)      │            │   │
+│   │   └────────────────┘  └────────────────┘  └────────────────┘            │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   ARTIFACTS (Deployables)                                                       │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │                                                                         │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌────────────┐ │   │
+│   │   │ player-svc   │  │ game-svc     │  │ payment-svc  │  │ bonus-svc  │ │   │
+│   │   │ :latest      │  │ :latest      │  │ :latest      │  │ :latest    │ │   │
+│   │   │ (Docker      │  │ (Docker      │  │ (Docker      │  │ (Docker    │ │   │
+│   │   │  Image)      │  │  Image)      │  │  Image)      │  │  Image)    │ │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘  └────────────┘ │   │
+│   │                                                                         │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                 │   │
+│   │   │ k8s-manifests│  │ terraform    │  │ helm-charts  │                 │   │
+│   │   │ (YAML files) │  │ (IaC files)  │  │ (Packages)   │                 │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘                 │   │
+│   │                                                                         │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# CROSS-LAYER VIEW
+
+## Complete Stack View
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    ARCHIMATE - COMPLETE STACK VIEW                               │
+│                    Gaming Platform Example                                       │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   🟨 BUSINESS LAYER                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │  Actor: Player    Role: Customer Support    Role: Operations            │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  Service: Player      Service: Game         Service: Payment            │   │
+│   │  Registration         Access                Processing                  │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  Process: KYC         Process: Session      Process: Deposit            │   │
+│   │  Verification         Management            Processing                  │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  Object: Player       Object: Game          Object: Transaction         │   │
+│   └─────────┼────────────────────┼──────────────────────┼───────────────────┘   │
+│             │                    │                      │                       │
+│             │ realizes           │ realizes             │ realizes              │
+│             ▼                    ▼                      ▼                       │
+│   🟦 APPLICATION LAYER                                                          │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │  Component:           Component:            Component:                  │   │
+│   │  Player Service       Game Service          Payment Service             │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  Service:             Service:              Service:                    │   │
+│   │  /api/v1/players      /api/v1/games         /api/v1/payments            │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  Data Object:         Data Object:          Data Object:                │   │
+│   │  PlayerEntity         GameSession           TransactionRecord           │   │
+│   └─────────┼────────────────────┼──────────────────────┼───────────────────┘   │
+│             │                    │                      │                       │
+│             │ served by          │ served by            │ served by             │
+│             ▼                    ▼                      ▼                       │
+│   🟩 TECHNOLOGY LAYER                                                           │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │  Node: EKS Pod        Node: EKS Pod         Node: EKS Pod               │   │
+│   │  (player-svc)         (game-svc)            (payment-svc)               │   │
+│   │         │                    │                      │                   │   │
+│   │         ▼                    ▼                      ▼                   │   │
+│   │  System SW:           System SW:            System SW:                  │   │
+│   │  Java 17, Spring      Java 17, Spring       Java 17, Spring             │   │
+│   │         │                    │                      │                   │   │
+│   │         └────────────────────┼──────────────────────┘                   │   │
+│   │                              ▼                                          │   │
+│   │                    ┌─────────────────┐                                  │   │
+│   │                    │   PostgreSQL    │                                  │   │
+│   │                    │   (RDS Node)    │                                  │   │
+│   │                    └─────────────────┘                                  │   │
+│   │                              │                                          │   │
+│   │                              ▼                                          │   │
+│   │                    ┌─────────────────┐                                  │   │
+│   │                    │      VPC        │                                  │   │
+│   │                    │    (Network)    │                                  │   │
+│   │                    └─────────────────┘                                  │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# RELATIONSHIPS
+
+## ArchiMate Relationships
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE RELATIONSHIPS                                  │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   STRUCTURAL RELATIONSHIPS                                                      │
+│   ─────────────────────────                                                     │
+│                                                                                  │
+│   ──────────────►   Composition      (A is composed of B)                       │
+│                     Example: Service composed of Functions                      │
+│                                                                                  │
+│   ─ ─ ─ ─ ─ ─ ─►   Aggregation      (A groups B)                               │
+│                     Example: Component aggregates Functions                     │
+│                                                                                  │
+│   ═══════════════►  Assignment       (A performs B, A is assigned to B)         │
+│                     Example: Actor assigned to Role                             │
+│                                                                                  │
+│   ────────────○►   Realization      (A realizes B)                             │
+│                     Example: Application realizes Business Service              │
+│                                                                                  │
+│   DEPENDENCY RELATIONSHIPS                                                      │
+│   ─────────────────────────                                                     │
+│                                                                                  │
+│   - - - - - - - ►  Serving/Used By  (A serves B, B uses A)                      │
+│                     Example: Application Service serves Business Process        │
+│                                                                                  │
+│   ─ ─ ─ ─ ─ ─ ─►   Access           (A accesses B)                             │
+│                     Example: Process accesses Data Object                       │
+│                                                                                  │
+│   DYNAMIC RELATIONSHIPS                                                         │
+│   ─────────────────────────                                                     │
+│                                                                                  │
+│   ═ ═ ═ ═ ═ ═ ═►   Flow             (A flows to B)                             │
+│                     Example: Data flows from A to B                             │
+│                                                                                  │
+│   ──────────────►  Triggering       (A triggers B)                             │
+│                     Example: Event triggers Process                             │
+│                                                                                  │
+│   OTHER RELATIONSHIPS                                                           │
+│   ─────────────────────────                                                     │
+│                                                                                  │
+│   ─ ─ ─ ─ ─ ─ ─►   Association      (General relationship)                      │
+│                                                                                  │
+│   ──────►◄──────   Specialization   (A is specialization of B)                 │
+│                     Example: VIP Player specializes Player                      │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# VIEWPOINTS
+
+## Common ArchiMate Viewpoints
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE VIEWPOINTS                                     │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ┌─────────────────────────┬────────────────────────────────────────────────┐  │
+│   │ Viewpoint               │ Purpose / Audience                             │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Organization            │ Shows structure of enterprise                  │  │
+│   │                         │ Audience: Management                           │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Business Process        │ Shows business processes and flow              │  │
+│   │                         │ Audience: Business analysts, Process owners    │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Application Structure   │ Shows application components                   │  │
+│   │                         │ Audience: Application architects               │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Application Usage       │ Shows how applications support business        │  │
+│   │                         │ Audience: Business & IT stakeholders           │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Infrastructure          │ Shows technology infrastructure                │  │
+│   │                         │ Audience: Infrastructure architects            │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Layered                 │ Shows all layers together                      │  │
+│   │                         │ Audience: Enterprise architects                │  │
+│   ├─────────────────────────┼────────────────────────────────────────────────┤  │
+│   │ Service Realization     │ Shows how services are realized               │  │
+│   │                         │ Audience: Service owners, Architects           │  │
+│   └─────────────────────────┴────────────────────────────────────────────────┘  │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# MAPPING: TOGAF to ArchiMate
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         TOGAF ADM → ARCHIMATE MAPPING                            │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   ┌─────────────────────┬────────────────────────────────────────────────────┐  │
+│   │ TOGAF Phase         │ ArchiMate Layer / Elements                         │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase A: Vision     │ Motivation elements (Goals, Drivers)               │  │
+│   │                     │ Strategy elements (Capabilities)                   │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase B: Business   │ 🟨 BUSINESS LAYER                                  │  │
+│   │ Architecture        │ Actors, Roles, Processes, Services, Objects        │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase C: Data       │ 🟦 APPLICATION LAYER (Data Objects)               │  │
+│   │ Architecture        │ Data Objects, Data Services                        │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase C: Application│ 🟦 APPLICATION LAYER                              │  │
+│   │ Architecture        │ Components, Services, Interfaces                   │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase D: Technology │ 🟩 TECHNOLOGY LAYER                               │  │
+│   │ Architecture        │ Nodes, Devices, System Software, Networks          │  │
+│   ├─────────────────────┼────────────────────────────────────────────────────┤  │
+│   │ Phase E & F         │ 🟪 IMPLEMENTATION LAYER                           │  │
+│   │ Opportunities &     │ Work Packages, Deliverables, Plateaus              │  │
+│   │ Migration           │                                                    │  │
+│   └─────────────────────┴────────────────────────────────────────────────────┘  │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+# TOOLS
+
+## ArchiMate Modeling Tools
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE TOOLS                                          │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   FREE / OPEN SOURCE:                                                           │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │ • Archi (archimatetool.com) - Most popular free tool                    │   │
+│   │ • Draw.io - With ArchiMate stencils                                     │   │
+│   │ • Modelio - Open source modeling                                        │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+│   COMMERCIAL:                                                                   │
+│   ┌─────────────────────────────────────────────────────────────────────────┐   │
+│   │ • Sparx Enterprise Architect                                            │   │
+│   │ • BiZZdesign Enterprise Studio                                          │   │
+│   │ • LeanIX                                                                │   │
+│   │ • MEGA HOPEX                                                            │   │
+│   │ • Orbus iServer                                                         │   │
+│   │ • Avolution ABACUS                                                      │   │
+│   └─────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Summary
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                         ARCHIMATE SUMMARY                                        │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   THREE MAIN LAYERS:                                                            │
+│   • 🟨 Business Layer   - WHO does WHAT (Actors, Processes, Services)           │
+│   • 🟦 Application Layer - WHAT applications support business                   │
+│   • 🟩 Technology Layer  - HOW applications are deployed                        │
+│                                                                                  │
+│   KEY CONCEPTS:                                                                 │
+│   • Active Structure  = WHO/WHAT performs (Actors, Components, Nodes)           │
+│   • Behavior          = WHAT is done (Processes, Services, Functions)           │
+│   • Passive Structure = WHAT is acted upon (Objects, Data, Artifacts)           │
+│                                                                                  │
+│   RELATIONSHIPS:                                                                │
+│   • Realization  = A implements/realizes B                                      │
+│   • Serving      = A serves/supports B                                          │
+│   • Assignment   = A is assigned to B                                           │
+│   • Flow         = Data/information flows from A to B                           │
+│                                                                                  │
+│   USE WITH TOGAF:                                                               │
+│   • ArchiMate is the MODELING LANGUAGE                                          │
+│   • TOGAF ADM is the PROCESS                                                    │
+│   • Together they provide complete EA approach                                  │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```

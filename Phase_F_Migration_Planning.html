@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_F_Migration_Planning</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_F_Migration_Planning</h1>
+</header>
+<h1 id="togaf-adm---phase-f-migration-planning">TOGAF ADM - Phase F:
+Migration Planning</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Finalize detailed implementation and
+migration plan</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE F: MIGRATION PLANNING                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Create DETAILED plan to move from Baseline to Target        │
+│                                                                         │
+│   Phase E = WHAT to do (identify opportunities)                        │
+│   Phase F = HOW &amp; WHEN to do it (detailed plan)                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE F: KEY ACTIVITIES                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. FINALIZE ARCHITECTURE ROADMAP                                      │
+│     └── Timeline: Baseline → Transition 1 → Transition 2 → Target      │
+│                                                                         │
+│  2. FINALIZE IMPLEMENTATION PLAN                                       │
+│     └── Detailed: Schedule + Budget + Resources + Milestones           │
+│                                                                         │
+│  3. ENSURE BUSINESS VALUE IS REALIZED                                  │
+│     └── Define KPIs, measure before/after, track benefits              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="what-migration-means">What “Migration” Means</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    WHAT &quot;MIGRATION&quot; MEANS IN PHASE F                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PHASE B, C, D                          PHASE F                       │
+│   (DESIGN the Target)                    (PLAN the Migration)          │
+│                                                                         │
+│   ┌─────────────────┐                   ┌─────────────────┐            │
+│   │ Phase B:        │                   │                 │            │
+│   │ Target Business │───┐               │  HOW do we      │            │
+│   │ Architecture    │   │               │  actually GET   │            │
+│   └─────────────────┘   │               │  from Current   │            │
+│                         │               │  to Target?     │            │
+│   ┌─────────────────┐   │    ────►      │                 │            │
+│   │ Phase C:        │───┤               │  • Timeline     │            │
+│   │ Target Data &amp;   │   │               │  • Budget       │            │
+│   │ App Architecture│   │               │  • Resources    │            │
+│   └─────────────────┘   │               │  • Milestones   │            │
+│                         │               │                 │            │
+│   ┌─────────────────┐   │               │  = MIGRATION    │            │
+│   │ Phase D:        │───┘               │    PLAN         │            │
+│   │ Target Tech     │                   │                 │            │
+│   │ Architecture    │                   └─────────────────┘            │
+│   └─────────────────┘                                                  │
+│                                                                         │
+│   WHAT we want                          HOW we get there               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-roadmap">Architecture Roadmap</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE ROADMAP                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   BASELINE          TRANSITION 1      TRANSITION 2         TARGET      │
+│   (Today)           (6 months)        (12 months)          (18 months) │
+│                                                                         │
+│   ┌─────────┐      ┌─────────┐       ┌─────────┐         ┌─────────┐  │
+│   │ Legacy  │ ───► │ Hybrid  │ ───►  │ Mostly  │ ───►    │ Full    │  │
+│   │ On-Prem │      │ Cloud   │       │ Cloud   │         │ Cloud   │  │
+│   │ Monolith│      │ +Legacy │       │ Micro-  │         │ Micro-  │  │
+│   │         │      │         │       │ services│         │ services│  │
+│   └─────────┘      └─────────┘       └─────────┘         └─────────┘  │
+│                                                                         │
+│   ◄────────────────────── TIME ──────────────────────────────────────► │
+│                                                                         │
+│   TRANSITION ARCHITECTURES provide incremental value                   │
+│   and reduce risk of big-bang transformation                           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="transition-architecture">Transition Architecture</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    TRANSITION ARCHITECTURE                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   • Intermediate state between Baseline and Target                     │
+│   • Delivers partial business value                                    │
+│   • Reduces implementation risk                                        │
+│   • Allows gradual transformation                                      │
+│                                                                         │
+│   WHY NEEDED:                                                          │
+│   • Big-bang is risky                                                  │
+│   • Business can&#39;t wait years for value                                │
+│   • Allows course correction                                           │
+│   • Easier to manage and govern                                        │
+│                                                                         │
+│   EXAMPLE:                                                             │
+│   • Transition 1: Core platform on cloud, legacy still running         │
+│   • Transition 2: 80% migrated, critical legacy remaining              │
+│   • Target: Full cloud, legacy decommissioned                          │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="implementation-plan-components">Implementation Plan
+Components</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    IMPLEMENTATION PLAN                                  │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   1. SCHEDULE                                                          │
+│      └── Timeline with milestones                                      │
+│          • Project start/end dates                                     │
+│          • Phase gates                                                 │
+│          • Go-live dates                                               │
+│                                                                         │
+│   2. BUDGET                                                            │
+│      └── Cost breakdown                                                │
+│          • Infrastructure costs                                        │
+│          • License costs                                               │
+│          • Development costs                                           │
+│          • Training costs                                              │
+│                                                                         │
+│   3. RESOURCES                                                         │
+│      └── People needed                                                 │
+│          • Team composition                                            │
+│          • Skills required                                             │
+│          • External consultants                                        │
+│                                                                         │
+│   4. MILESTONES                                                        │
+│      └── Key checkpoints                                               │
+│          • Design Complete                                             │
+│          • Development Complete                                        │
+│          • UAT Complete                                                │
+│          • Go-Live                                                     │
+│                                                                         │
+│   5. RISKS &amp; MITIGATION                                                │
+│      └── What could go wrong and how to handle                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-contracts">Architecture Contracts</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE CONTRACTS                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   Agreement between EA team and Implementation team                    │
+│                                                                         │
+│   CONTAINS:                                                            │
+│   • What architecture deliverables will be produced                    │
+│   • What standards/principles must be followed                         │
+│   • Roles and responsibilities                                         │
+│   • Quality criteria                                                   │
+│   • Review checkpoints                                                 │
+│   • Compliance requirements                                            │
+│                                                                         │
+│   PURPOSE:                                                             │
+│   • Ensures implementation follows architecture                        │
+│   • Sets expectations clearly                                          │
+│   • Provides basis for compliance reviews (Phase G)                    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Implementation and Migration Plan</strong></td>
+<td>Detailed project plans</td>
+</tr>
+<tr>
+<td><strong>Architecture Roadmap</strong></td>
+<td>Visual timeline of transitions</td>
+</tr>
+<tr>
+<td><strong>Transition Architectures</strong></td>
+<td>Intermediate state definitions</td>
+</tr>
+<tr>
+<td><strong>Architecture Contracts</strong></td>
+<td>Agreements with implementation teams</td>
+</tr>
+<tr>
+<td><strong>Business Value Assessment</strong></td>
+<td>KPIs and benefit tracking plan</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-e-vs-phase-f-summary">Phase E vs Phase F Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Phase E</th>
+<th>Phase F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identify work packages</td>
+<td>Create detailed project plans</td>
+</tr>
+<tr>
+<td>Group into projects</td>
+<td>Define schedules &amp; budgets</td>
+</tr>
+<tr>
+<td>Build/Buy/Reuse decisions</td>
+<td>Assign resources</td>
+</tr>
+<tr>
+<td>Initial roadmap</td>
+<td>Finalize roadmap with transitions</td>
+</tr>
+<tr>
+<td>Dependencies identified</td>
+<td>Architecture contracts created</td>
+</tr>
+<tr>
+<td><strong>WHAT</strong> to do</td>
+<td><strong>HOW &amp; WHEN</strong> to do it</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE F = &quot;PLAN THE JOURNEY&quot;                                         │
+│                                                                         │
+│   • Finalize Architecture Roadmap (with transition states)             │
+│   • Create detailed Implementation Plan                                │
+│   • Define schedule, budget, resources                                 │
+│   • Create Architecture Contracts                                      │
+│   • Ensure business value tracking                                     │
+│                                                                         │
+│   OUTPUT: Implementation Plan + Roadmap + Architecture Contracts       │
+│                                                                         │
+│   Now ready to hand off to implementation teams (Phase G)!             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_Preliminary</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_Preliminary</h1>
+</header>
+<h1 id="togaf-adm---preliminary-phase">TOGAF ADM - Preliminary
+Phase</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Prepare the organization for TOGAF projects
+(ONE-TIME setup)</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PRELIMINARY PHASE                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Set up the Enterprise Architecture CAPABILITY                │
+│                                                                         │
+│   DONE: ONCE for the organization (not for every project)              │
+│                                                                         │
+│   OUTCOME: EA team, tools, principles, governance ready to guide       │
+│            ALL future architecture projects                            │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<h3 id="define-architecture-capability-5-pillars">Define Architecture
+Capability (5 Pillars)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    EA CAPABILITY (5 PILLARS)                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   1. CREATE TEAM (People)                                              │
+│      └── Enterprise Architects, Domain Architects, support staff       │
+│                                                                         │
+│   2. SETUP TOOLS                                                       │
+│      └── Sparx EA, Archi, Confluence, Draw.io, GitHub                  │
+│                                                                         │
+│   3. DEFINE PRINCIPLES                                                 │
+│      └── Cloud-First, Security by Design, Buy over Build               │
+│                                                                         │
+│   4. ESTABLISH GOVERNANCE                                              │
+│      └── Architecture Board, Review process, Compliance                │
+│                                                                         │
+│   5. DEFINE STANDARDS                                                  │
+│      └── Technology standards, Patterns, Reference architectures       │
+│                                                                         │
+│   All this happens in PRELIMINARY PHASE (once)                         │
+│   Then EA GUIDES all projects using these!                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-principles">Architecture Principles</h2>
+<p>Principles are <strong>guiding rules</strong> that help make
+consistent decisions across ALL projects.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PRINCIPLES GUIDE EVERY PROJECT                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PRELIMINARY: Define Principles (ONCE)                                │
+│   ─────────────────────────────────────                                │
+│   • Cloud-First                                                        │
+│   • Security by Design                                                 │
+│   • Buy over Build                                                     │
+│   • API-First                                                          │
+│   • Data is an Asset                                                   │
+│                                                                         │
+│         │                                                               │
+│         │ These GUIDE every project                                     │
+│         ▼                                                               │
+│   ┌─────────────────────────────────────────────────────────────────┐  │
+│   │                                                                  │  │
+│   │  PROJECT 1: Payment System                                      │  │
+│   │  Driver: &quot;Reduce latency&quot;                                       │  │
+│   │  Decision: &quot;Should we use on-prem or cloud?&quot;                    │  │
+│   │  → Check Principle: &quot;Cloud-First&quot; → Use Cloud ✅                │  │
+│   │                                                                  │  │
+│   │  PROJECT 2: CRM Selection                                       │  │
+│   │  Driver: &quot;Need better customer management&quot;                      │  │
+│   │  Decision: &quot;Should we build custom CRM or buy?&quot;                 │  │
+│   │  → Check Principle: &quot;Buy over Build&quot; → Buy Salesforce ✅        │  │
+│   │                                                                  │  │
+│   │  PROJECT 3: Mobile App                                          │  │
+│   │  Driver: &quot;Launch mobile experience&quot;                             │  │
+│   │  Decision: &quot;How to handle authentication?&quot;                      │  │
+│   │  → Check Principle: &quot;Security by Design&quot; → OAuth from start ✅  │  │
+│   │                                                                  │  │
+│   └─────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+│   PRINCIPLES = Consistent decision-making across ALL projects          │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="principle-structure">Principle Structure</h3>
+<p>Each principle has 4 parts:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 39%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Short identifier</td>
+<td>“Cloud-First”</td>
+</tr>
+<tr>
+<td><strong>Statement</strong></td>
+<td>What it means</td>
+<td>“All new applications should be deployed on cloud unless there’s a
+valid reason not to”</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Why this principle</td>
+<td>“Cloud provides scalability, cost efficiency, and modern
+capabilities”</td>
+</tr>
+<tr>
+<td><strong>Implications</strong></td>
+<td>What it means for decisions</td>
+<td>“Teams must evaluate cloud options first; on-prem needs Architecture
+Board approval”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2
+id="architecture-principles-vs-architecture-requirements-nfrs">Architecture
+Principles vs Architecture Requirements (NFRs)</h2>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr>
+<th>Architecture Principles</th>
+<th>Architecture Requirements (NFRs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guiding philosophy</td>
+<td>Specific metrics</td>
+</tr>
+<tr>
+<td>“Systems should be resilient”</td>
+<td>“99.99% uptime”</td>
+</tr>
+<tr>
+<td>“Prefer cloud-first approach”</td>
+<td>“Must use AWS/Azure”</td>
+</tr>
+<tr>
+<td>“Design for performance”</td>
+<td>“100ms latency”</td>
+</tr>
+<tr>
+<td>“Systems should be loosely coupled”</td>
+<td>“Use microservices with REST APIs”</td>
+</tr>
+<tr>
+<td>WHY we design a certain way</td>
+<td>WHAT we must achieve</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="reference-architectures">Reference Architectures</h2>
+<p>Reference Architectures are <strong>proven, reusable
+templates</strong> for solving common architecture problems.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REFERENCE ARCHITECTURE                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   ───────────                                                          │
+│   • A TEMPLATE / BLUEPRINT for a common solution                       │
+│   • Pre-approved, proven pattern                                       │
+│   • Ready-to-use starting point                                        │
+│   • Standardized across organization                                   │
+│                                                                         │
+│   EXAMPLES:                                                            │
+│   ─────────                                                            │
+│   • Microservices Reference Architecture                               │
+│   • Data Lake Reference Architecture                                   │
+│   • E-commerce Reference Architecture                                  │
+│   • Cloud-Native Web App Reference Architecture                        │
+│                                                                         │
+│   BENEFITS:                                                            │
+│   ─────────                                                            │
+│   ✅ SPEED        → Don&#39;t design from scratch                          │
+│   ✅ CONSISTENCY  → All teams follow same patterns                     │
+│   ✅ QUALITY      → Proven, tested designs                             │
+│   ✅ COMPLIANCE   → Pre-approved by Architecture Board                 │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organizational Model for EA</strong></td>
+<td>Team structure, roles, processes</td>
+</tr>
+<tr>
+<td><strong>Architecture Principles</strong></td>
+<td>Guiding rules for all decisions</td>
+</tr>
+<tr>
+<td><strong>Architecture Repository</strong></td>
+<td>Storage for all architecture assets</td>
+</tr>
+<tr>
+<td><strong>Architecture Governance Framework</strong></td>
+<td>How decisions are made and enforced</td>
+</tr>
+<tr>
+<td><strong>Tailored Architecture Framework</strong></td>
+<td>TOGAF customized for your organization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-misconception">Common Misconception</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│           ❌ WRONG vs ✅ CORRECT UNDERSTANDING                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   ❌ WRONG:                                                            │
+│   &quot;Preliminary Phase is done for EVERY project&quot;                        │
+│                                                                         │
+│   ✅ CORRECT:                                                          │
+│   &quot;Preliminary Phase is done ONCE to set up the EA capability&quot;         │
+│   &quot;Projects start from Phase A (Architecture Vision)&quot;                  │
+│                                                                         │
+│   ─────────────────────────────────────────────────────────────────    │
+│                                                                         │
+│   PRELIMINARY (Year 1):                                                │
+│   ┌─────────────────────────────────────────────────────────────────┐  │
+│   │ Setup: Team + Tools + Principles + Governance + Standards       │  │
+│   └─────────────────────────────────────────────────────────────────┘  │
+│                              │                                          │
+│                              │ (Done ONCE)                              │
+│                              ▼                                          │
+│   ─────────────────────────────────────────────────────────────────    │
+│                                                                         │
+│   PROJECT 1 (uses EA):       PROJECT 2 (uses EA):                      │
+│   ┌─────────────────┐        ┌─────────────────┐                       │
+│   │ Phase A → H     │        │ Phase A → H     │                       │
+│   │ (Starts at A)   │        │ (Starts at A)   │                       │
+│   └─────────────────┘        └─────────────────┘                       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PRELIMINARY PHASE = SETUP THE &quot;ARCHITECTURE KITCHEN&quot;                 │
+│                                                                         │
+│   • Create the EA team (chefs)                                         │
+│   • Setup tools (equipment)                                            │
+│   • Define principles (recipes &amp; standards)                            │
+│   • Establish governance (quality control)                             │
+│   • Define standards (ingredients list)                                │
+│                                                                         │
+│   Once the kitchen is ready, it serves ALL projects!                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Requirements_Management</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Requirements_Management</h1>
+</header>
+<h1 id="togaf-adm---requirements-management">TOGAF ADM - Requirements
+Management</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Manage requirements throughout all ADM
+phases</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS MANAGEMENT                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   NOT A PHASE - It&#39;s a CONTINUOUS PROCESS at the CENTER of ADM        │
+│                                                                         │
+│   Operates THROUGHOUT all phases (Preliminary through H)               │
+│                                                                         │
+│   &quot;The hub that connects all phases&quot;                                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="position-in-adm">Position in ADM</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS MANAGEMENT IN ADM                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│                    ┌─────────────────┐                                 │
+│                    │   Preliminary   │                                 │
+│                    └────────┬────────┘                                 │
+│                             │                                          │
+│                    ┌────────▼────────┐                                 │
+│                    │    Phase A      │                                 │
+│                    └────────┬────────┘                                 │
+│                             │                                          │
+│      ┌──────────────────────┼──────────────────────┐                  │
+│      │                      │                      │                   │
+│      ▼                      ▼                      ▼                   │
+│   Phase B              Phase C              Phase D                    │
+│      │                      │                      │                   │
+│      └──────────────────────┼──────────────────────┘                  │
+│                             │                                          │
+│                    ┌────────▼────────┐                                 │
+│                    │                 │                                 │
+│                    │  REQUIREMENTS   │  ◄── AT THE CENTER!            │
+│                    │   MANAGEMENT    │                                 │
+│                    │                 │                                 │
+│                    └────────┬────────┘                                 │
+│                             │                                          │
+│                    ┌────────▼────────┐                                 │
+│                    │   Phase E-H     │                                 │
+│                    └─────────────────┘                                 │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS MANAGEMENT ACTIVITIES                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   1. IDENTIFY REQUIREMENTS                                             │
+│      └── Capture requirements from stakeholders in each phase          │
+│                                                                         │
+│   2. STORE REQUIREMENTS                                                │
+│      └── Maintain Requirements Repository                              │
+│                                                                         │
+│   3. MANAGE CHANGES                                                    │
+│      └── Handle requirement changes and additions                      │
+│                                                                         │
+│   4. ENSURE ADDRESSED                                                  │
+│      └── Verify requirements are addressed in appropriate phases       │
+│                                                                         │
+│   5. MAINTAIN TRACEABILITY                                             │
+│      └── Track which requirements map to which architecture elements   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="requirements-repository">Requirements Repository</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS REPOSITORY                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   Central storage for all architecture requirements                    │
+│                                                                         │
+│   CONTAINS:                                                            │
+│   • Business requirements                                              │
+│   • Functional requirements                                            │
+│   • Non-functional requirements (NFRs)                                 │
+│   • Constraints                                                        │
+│   • Assumptions                                                        │
+│                                                                         │
+│   ATTRIBUTES FOR EACH REQUIREMENT:                                     │
+│   • ID (unique identifier)                                             │
+│   • Description                                                        │
+│   • Source (who requested)                                             │
+│   • Priority (High/Medium/Low)                                         │
+│   • Status (New/Approved/Implemented/Rejected)                         │
+│   • Phase(s) addressed                                                 │
+│   • Traceability (which architecture elements address it)              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="requirements-by-phase">Requirements by Phase</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS BY PHASE                                │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PHASE A (Vision):                                                    │
+│   • High-level business requirements                                   │
+│   • Stakeholder concerns                                               │
+│   • Business drivers                                                   │
+│                                                                         │
+│   PHASE B (Business):                                                  │
+│   • Business process requirements                                      │
+│   • Organizational requirements                                        │
+│   • Business capability requirements                                   │
+│                                                                         │
+│   PHASE C (Data &amp; Application):                                        │
+│   • Data requirements                                                  │
+│   • Application functionality requirements                             │
+│   • Integration requirements                                           │
+│                                                                         │
+│   PHASE D (Technology):                                                │
+│   • Infrastructure requirements                                        │
+│   • Platform requirements                                              │
+│   • Security requirements                                              │
+│   • Performance requirements (NFRs)                                    │
+│                                                                         │
+│   PHASE E-F (Implementation):                                          │
+│   • Implementation constraints                                         │
+│   • Migration requirements                                             │
+│   • Transition requirements                                            │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="traceability-matrix">Traceability Matrix</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│                    REQUIREMENTS TRACEABILITY MATRIX                          │
+├────────────┬────────────────────────┬────────┬────────────────────────────────┤
+│ REQ ID     │ REQUIREMENT            │ PHASE  │ ARCHITECTURE ELEMENT           │
+├────────────┼────────────────────────┼────────┼────────────────────────────────┤
+│ REQ-001    │ 100ms response time    │ D      │ Redis caching, CDN             │
+│ REQ-002    │ 99.99% availability    │ D      │ Multi-AZ, Auto-scaling         │
+│ REQ-003    │ Real-time analytics    │ C      │ Kafka, Streaming pipeline      │
+│ REQ-004    │ Unified player view    │ C      │ Player 360 Platform            │
+│ REQ-005    │ PCI-DSS compliance     │ D      │ Payment service isolation      │
+│ REQ-006    │ Automated onboarding   │ B      │ Onboarding process redesign    │
+│ REQ-007    │ Cloud-native           │ D      │ EKS, Kubernetes deployment     │
+└────────────┴────────────────────────┴────────┴────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="handling-requirement-changes">Handling Requirement Changes</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    HANDLING REQUIREMENT CHANGES                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   STEP 1: RECEIVE CHANGE REQUEST                                       │
+│           └── New requirement or change to existing                    │
+│                                                                         │
+│   STEP 2: ASSESS IMPACT                                                │
+│           └── Which phases are affected?                               │
+│           └── What architecture elements need to change?               │
+│                                                                         │
+│   STEP 3: EVALUATE                                                     │
+│           └── Is this change justified?                                │
+│           └── What&#39;s the cost/benefit?                                 │
+│                                                                         │
+│   STEP 4: DECIDE                                                       │
+│           ├── Accept: Update requirements &amp; architecture               │
+│           ├── Reject: Document reason                                  │
+│           └── Defer: Schedule for future phase/cycle                   │
+│                                                                         │
+│   STEP 5: UPDATE                                                       │
+│           └── Update Requirements Repository                           │
+│           └── Update affected architecture documents                   │
+│           └── Communicate to stakeholders                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="requirements-vs-constraints-vs-assumptions">Requirements vs
+Constraints vs Assumptions</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│         REQUIREMENTS vs CONSTRAINTS vs ASSUMPTIONS                      │
+├────────────────────┬────────────────────────────────────────────────────┤
+│ REQUIREMENTS       │ What the system MUST do or achieve                 │
+│                    │ Example: &quot;System must support 10,000 concurrent    │
+│                    │ users&quot;                                             │
+├────────────────────┼────────────────────────────────────────────────────┤
+│ CONSTRAINTS        │ Limitations that RESTRICT design choices           │
+│                    │ Example: &quot;Must use existing Oracle database&quot;       │
+│                    │ Example: &quot;Budget limited to $500K&quot;                 │
+├────────────────────┼────────────────────────────────────────────────────┤
+│ ASSUMPTIONS        │ Things we BELIEVE to be true but haven&#39;t verified  │
+│                    │ Example: &quot;IT team has Kubernetes expertise&quot;        │
+│                    │ Example: &quot;Vendor API will remain stable&quot;           │
+└────────────────────┴────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Requirements Repository</strong></td>
+<td>Central storage of all requirements</td>
+</tr>
+<tr>
+<td><strong>Traceability Matrix</strong></td>
+<td>Mapping requirements to architecture</td>
+</tr>
+<tr>
+<td><strong>Impact Assessments</strong></td>
+<td>Analysis of requirement changes</td>
+</tr>
+<tr>
+<td><strong>Requirements Sign-off</strong></td>
+<td>Stakeholder approval of requirements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   REQUIREMENTS MANAGEMENT = &quot;THE HUB OF ADM&quot;                           │
+│                                                                         │
+│   • NOT a phase - operates THROUGHOUT all phases                       │
+│   • Captures requirements from stakeholders                            │
+│   • Stores in central repository                                       │
+│   • Manages changes                                                    │
+│   • Ensures requirements are addressed                                 │
+│   • Maintains traceability                                             │
+│                                                                         │
+│   OUTPUT: Requirements Repository + Traceability Matrix                │
+│                                                                         │
+│   Without Requirements Management, architecture loses connection       │
+│   to what stakeholders actually need!                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_B_Business_Architecture</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_B_Business_Architecture</h1>
+</header>
+<h1 id="togaf-adm---phase-b-business-architecture">TOGAF ADM - Phase B:
+Business Architecture</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Develop the Target Business
+Architecture</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE B: BUSINESS ARCHITECTURE                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Define HOW THE BUSINESS WORKS (today and future)            │
+│                                                                         │
+│   FOCUS: Business processes, capabilities, organization                │
+│          (NOT technical implementation!)                               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="what-business-architecture-is-and-is-not">What Business
+Architecture IS and IS NOT</h2>
+<pre><code>BUSINESS ARCHITECTURE IS ABOUT:
+===============================
+
+NOT about:
+- Technical implementation details
+- Specific software/hardware
+- Coding/development
+
+IS about:
+- Business processes (how work flows)
+- Business capabilities (what business can do)
+- Business services (what business offers)
+- Organization (who does what)
+- Information flows (what data moves where)
+- Gap between current and future state</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<h3 id="develop-baseline-business-architecture">1. Develop Baseline
+Business Architecture</h3>
+<pre><code>BASELINE BUSINESS ARCHITECTURE = &quot;As-Is&quot; State
+
+Documents HOW THE BUSINESS WORKS TODAY:
+- Current business processes
+- Current organization structure
+- Current business capabilities
+- Current business services
+- Current information flows
+- Current pain points &amp; gaps</code></pre>
+<h3 id="why-baseline-matters">Why Baseline Matters</h3>
+<table>
+<thead>
+<tr>
+<th>REASON</th>
+<th>EXPLANATION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Understand current state</td>
+<td>Can’t improve what you don’t understand</td>
+</tr>
+<tr>
+<td>Identify gaps</td>
+<td>Compare with target to find gaps</td>
+</tr>
+<tr>
+<td>Stakeholder alignment</td>
+<td>Everyone agrees on “where we are”</td>
+</tr>
+<tr>
+<td>Realistic planning</td>
+<td>Know what needs to change</td>
+</tr>
+<tr>
+<td>Risk assessment</td>
+<td>Understand dependencies &amp; impacts</td>
+</tr>
+<tr>
+<td>Measure progress</td>
+<td>Baseline for measuring improvement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="develop-target-business-architecture">2. Develop Target Business
+Architecture</h3>
+<pre><code>TARGET BUSINESS ARCHITECTURE = &quot;To-Be&quot; State
+
+Documents HOW THE BUSINESS WILL WORK IN FUTURE:
+- Improved business processes
+- New organization structure (if needed)
+- Enhanced business capabilities
+- New business services
+- Optimized information flows
+- Problems solved</code></pre>
+<h3 id="baseline-vs-target">Baseline vs Target</h3>
+<table>
+<thead>
+<tr>
+<th>BASELINE (As-Is)</th>
+<th>TARGET (To-Be)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How business works TODAY</td>
+<td>How business will work FUTURE</td>
+</tr>
+<tr>
+<td>Current processes</td>
+<td>Improved/new processes</td>
+</tr>
+<tr>
+<td>Current capabilities</td>
+<td>Enhanced capabilities</td>
+</tr>
+<tr>
+<td>Current problems</td>
+<td>Problems solved</td>
+</tr>
+<tr>
+<td>Documented FIRST</td>
+<td>Designed AFTER baseline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="perform-gap-analysis">3. Perform Gap Analysis</h3>
+<pre><code>1. BASELINE BUSINESS FLOW  --&gt;  Current state (As-Is)
+          +
+2. TARGET BUSINESS FLOW    --&gt;  Future state (To-Be)
+          +
+3. GAP ANALYSIS            --&gt;  What needs to change</code></pre>
+<hr />
+<h2 id="business-architecture-components">Business Architecture
+Components</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    BUSINESS ARCHITECTURE COMPONENTS                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. BUSINESS PROCESSES                                                 │
+│     └── How work flows through the organization                        │
+│         Example: Order-to-Cash, Procure-to-Pay                         │
+│                                                                         │
+│  2. BUSINESS CAPABILITIES                                              │
+│     └── What the business can DO                                       │
+│         Example: Customer Management, Payment Processing               │
+│                                                                         │
+│  3. BUSINESS SERVICES                                                  │
+│     └── What the business OFFERS                                       │
+│         Example: Account Opening, Loan Processing                      │
+│                                                                         │
+│  4. ORGANIZATION STRUCTURE                                             │
+│     └── Who does what, reporting lines                                 │
+│         Example: Sales → Marketing → Operations                        │
+│                                                                         │
+│  5. INFORMATION FLOWS                                                  │
+│     └── What data moves where                                          │
+│         Example: Customer data flows from CRM to Billing               │
+│                                                                         │
+│  6. BUSINESS ACTORS                                                    │
+│     └── People and systems that interact                               │
+│         Example: Customers, Partners, Internal Staff                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business Architecture Document</strong></td>
+<td>Complete documentation of baseline and target</td>
+</tr>
+<tr>
+<td><strong>Gap Analysis Results</strong></td>
+<td>What needs to change to reach target</td>
+</tr>
+<tr>
+<td><strong>Business Process Models</strong></td>
+<td>BPMN diagrams of processes</td>
+</tr>
+<tr>
+<td><strong>Capability Map</strong></td>
+<td>Visual of business capabilities</td>
+</tr>
+<tr>
+<td><strong>Organization Chart</strong></td>
+<td>Structure and roles</td>
+</tr>
+<tr>
+<td><strong>Value Stream Maps</strong></td>
+<td>How value flows to customers</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="example-gaming-platform">Example: Gaming Platform</h2>
+<pre><code>BUSINESS ARCHITECTURE EXAMPLE (Gaming):
+
+BASELINE (Current):
+- Manual player onboarding (3 days)
+- Separate systems for each game
+- No unified player view
+- Manual bonus calculations
+
+TARGET (Future):
+- Automated player onboarding (minutes)
+- Unified gaming platform
+- 360° player view
+- Automated bonus engine
+
+GAPS:
+- Need unified player management
+- Need automated onboarding
+- Need integrated bonus system
+- Need single platform architecture</code></pre>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE B = &quot;UNDERSTAND THE BUSINESS&quot;                                  │
+│                                                                         │
+│   • Document current business (Baseline)                               │
+│   • Design future business (Target)                                    │
+│   • Identify what needs to change (Gap Analysis)                       │
+│                                                                         │
+│   FOCUS: Business, NOT technology!                                     │
+│                                                                         │
+│   OUTPUT: Business Architecture Document + Gap Analysis                │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

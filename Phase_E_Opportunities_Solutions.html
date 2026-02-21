@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_E_Opportunities_Solutions</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_E_Opportunities_Solutions</h1>
+</header>
+<h1 id="togaf-adm---phase-e-opportunities-and-solutions">TOGAF ADM -
+Phase E: Opportunities and Solutions</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Generate initial implementation and
+migration strategy</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                   PHASE E: OPPORTUNITIES &amp; SOLUTIONS                    │
+│                                                                         │
+│   &quot;How do we actually BUILD what we designed in Phases B, C, D?&quot;        │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<ol type="1">
+<li><strong>Identify major work packages</strong> - Bundle gaps into
+actionable work</li>
+<li><strong>Group work packages into projects</strong> - Organize
+related work</li>
+<li><strong>Assess dependencies and priorities</strong> - What comes
+first?</li>
+<li><strong>Build vs Buy vs Reuse decisions</strong> - How to implement
+each solution</li>
+</ol>
+<hr />
+<h2 id="gap-to-work-package-mapping">Gap to Work Package Mapping</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    GAP → WORK PACKAGE MAPPING                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   GAP (From B, C, D)              WORK PACKAGE                         │
+│   ─────────────────────           ──────────────────────               │
+│   No unified player view    →     WP1: Build Player 360 Platform       │
+│   Manual payment process    →     WP2: Payment Gateway Integration     │
+│   Legacy monolith app       →     WP3: Migrate to Microservices        │
+│   No cloud infrastructure   →     WP4: AWS Cloud Setup                 │
+│   No CI/CD pipeline         →     WP5: DevOps Implementation           │
+│   No real-time analytics    →     WP6: Data Platform Setup             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="work-package-definition">Work Package Definition</h2>
+<p>A <strong>Work Package</strong> is a bundle of related tasks needed
+to close a specific gap.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│  WORK PACKAGE TEMPLATE                                          │
+├─────────────────────────────────────────────────────────────────┤
+│  Name:        Payment Gateway Integration                       │
+│  Gap Addressed: Manual payment processing                       │
+│  Scope:       Integrate with 3 payment providers               │
+│  Effort:      3 months, 5 engineers                            │
+│  Dependencies: WP4 (Cloud Setup) must complete first           │
+│  Business Value: Reduce transaction time by 80%                │
+│  Risk:        PCI-DSS compliance requirements                  │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="grouping-work-packages-into-projects">Grouping Work Packages
+into Projects</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              WORK PACKAGES → PROJECTS GROUPING                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  PROJECT 1: INFRASTRUCTURE MODERNIZATION                               │
+│  ├── WP4: AWS Cloud Setup                                              │
+│  ├── WP5: DevOps Implementation                                        │
+│  └── WP7: Security &amp; Compliance Setup                                  │
+│                                                                         │
+│  PROJECT 2: CORE PLATFORM                                              │
+│  ├── WP1: Player 360 Platform                                          │
+│  ├── WP2: Payment Gateway Integration                                  │
+│  └── WP8: Bonus Engine Development                                     │
+│                                                                         │
+│  PROJECT 3: DATA &amp; ANALYTICS                                           │
+│  ├── WP6: Data Platform Setup                                          │
+│  └── WP9: Reporting Dashboard                                          │
+│                                                                         │
+│  PROJECT 4: LEGACY MIGRATION                                           │
+│  └── WP3: Migrate to Microservices                                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="dependency-matrix">Dependency Matrix</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────┐
+│                      DEPENDENCY MATRIX                                   │
+├──────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┤
+│          │  WP1   │  WP2   │  WP3   │  WP4   │  WP5   │  WP6   │  WP7   │
+├──────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ WP1      │   -    │        │        │   ✓    │   ✓    │        │   ✓    │
+│ WP2      │   ✓    │   -    │        │   ✓    │   ✓    │        │   ✓    │
+│ WP3      │        │        │   -    │   ✓    │   ✓    │        │        │
+│ WP4      │        │        │        │   -    │        │        │        │
+│ WP5      │        │        │        │   ✓    │   -    │        │        │
+│ WP6      │   ✓    │        │        │   ✓    │   ✓    │   -    │        │
+│ WP7      │        │        │        │   ✓    │        │        │   -    │
+└──────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+  ✓ = Depends on (must be done first)
+  
+  Reading: WP2 (Payment) depends on WP1, WP4, WP5, WP7</code></pre>
+<hr />
+<h2 id="build-vs-buy-vs-reuse-decisions">Build vs Buy vs Reuse
+Decisions</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              PHASE E: BUILD vs BUY vs REUSE DECISIONS                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   FOR EACH GAP, EVALUATE SOLUTIONS:                                    │
+│                                                                         │
+│   ┌─────────────┐     ┌─────────────┐     ┌─────────────┐              │
+│   │    BUILD    │     │     BUY     │     │    REUSE    │              │
+│   │   Custom    │     │   Product   │     │  Existing   │              │
+│   │ Development │     │   / SaaS    │     │   Assets    │              │
+│   └─────────────┘     └─────────────┘     └─────────────┘              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="decision-framework">Decision Framework</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              BUILD vs BUY vs REUSE DECISION FRAMEWORK                   │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   CHOOSE BUILD WHEN:                                                   │
+│   • Unique competitive advantage                                       │
+│   • No suitable product exists                                         │
+│   • Full control needed                                                │
+│   • Sensitive/proprietary logic                                        │
+│                                                                         │
+│   CHOOSE BUY WHEN:                                                     │
+│   • Standard functionality                                             │
+│   • Mature products available                                          │
+│   • Time-to-market critical                                            │
+│   • Cost-effective vs build                                            │
+│                                                                         │
+│   CHOOSE REUSE WHEN:                                                   │
+│   • Similar solution exists in org                                     │
+│   • Enterprise Continuum has assets                                    │
+│   • Can leverage existing investment                                   │
+│   • Minor customization needed                                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="example-decisions">Example Decisions</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              EXAMPLE BUILD vs BUY vs REUSE                              │
+├────────────────────────┬────────────┬───────────────────────────────────┤
+│ CAPABILITY             │ DECISION   │ REASON                            │
+├────────────────────────┼────────────┼───────────────────────────────────┤
+│ Payment Gateway        │ BUY        │ Stripe/Adyen mature, PCI-ready    │
+│ Player Management      │ BUILD      │ Unique business logic             │
+│ CRM                    │ BUY        │ Salesforce standard solution      │
+│ Analytics Dashboard    │ REUSE      │ Existing BI platform available    │
+│ Bonus Engine           │ BUILD      │ Competitive differentiator        │
+│ Identity (SSO)         │ BUY        │ Okta/Auth0 standard solution      │
+│ Data Lake              │ REUSE      │ Enterprise data platform exists   │
+└────────────────────────┴────────────┴───────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="phase-e-vs-phase-f">Phase E vs Phase F</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              PHASE E vs PHASE F                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PHASE E: IDENTIFY &amp; DECIDE                                           │
+│   • What work packages?                                                │
+│   • What projects?                                                     │
+│   • Build or Buy?                                                      │
+│   • What dependencies?                                                 │
+│   • Initial roadmap                                                    │
+│                                                                         │
+│   PHASE F: PLAN IN DETAIL                                              │
+│   • Detailed timeline                                                  │
+│   • Budget &amp; resources                                                 │
+│   • Transition states                                                  │
+│   • Migration sequence                                                 │
+│   • Architecture contracts                                             │
+│                                                                         │
+│   E = &quot;WHAT to do&quot;                                                     │
+│   F = &quot;HOW &amp; WHEN to do it&quot;                                            │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Implementation and Migration Strategy</strong></td>
+<td>High-level approach</td>
+</tr>
+<tr>
+<td><strong>Work Package List</strong></td>
+<td>All identified work packages</td>
+</tr>
+<tr>
+<td><strong>Project Groupings</strong></td>
+<td>How work packages form projects</td>
+</tr>
+<tr>
+<td><strong>Dependency Analysis</strong></td>
+<td>What depends on what</td>
+</tr>
+<tr>
+<td><strong>Build/Buy/Reuse Decisions</strong></td>
+<td>Solution approach for each gap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE E = &quot;IDENTIFY OPPORTUNITIES TO CLOSE GAPS&quot;                     │
+│                                                                         │
+│   • Take gaps from B, C, D                                             │
+│   • Create work packages                                               │
+│   • Group into projects                                                │
+│   • Analyze dependencies                                               │
+│   • Decide: Build vs Buy vs Reuse                                      │
+│                                                                         │
+│   OUTPUT: Implementation Strategy + Work Packages + Projects           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

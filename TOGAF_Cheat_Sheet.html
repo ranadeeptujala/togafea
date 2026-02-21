@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>TOGAF_Cheat_Sheet</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">TOGAF_Cheat_Sheet</h1>
+</header>
+<h1 id="togaf-9.2-quick-reference-cheat-sheet">TOGAF 9.2 Quick Reference
+Cheat Sheet</h1>
+<blockquote>
+<p>Based on TOGAF 9.2 (April 2018)</p>
+</blockquote>
+<h2 id="adm-phases-at-a-glance">ADM Phases at a Glance</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│                         PRELIMINARY                                  │
+│  → Prepare org for EA, define principles, establish capability      │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    PHASE A: VISION                                   │
+│  → High-level vision, stakeholders, Statement of Architecture Work  │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                 PHASE B: BUSINESS ARCHITECTURE                       │
+│  → Business processes, organization, functions, services            │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              PHASE C: INFORMATION SYSTEMS ARCHITECTURE               │
+│  → Data Architecture + Application Architecture                     │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│               PHASE D: TECHNOLOGY ARCHITECTURE                       │
+│  → Hardware, software, networks, infrastructure                     │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              PHASE E: OPPORTUNITIES &amp; SOLUTIONS                      │
+│  → Work packages, transition architectures, initial roadmap         │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                PHASE F: MIGRATION PLANNING                           │
+│  → Detailed implementation plan, finalize roadmap                   │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│             PHASE G: IMPLEMENTATION GOVERNANCE                       │
+│  → Architecture oversight, compliance reviews, contracts            │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│            PHASE H: ARCHITECTURE CHANGE MANAGEMENT                   │
+│  → Monitor changes, update architecture, manage change requests     │
+└─────────────────────────────────────────────────────────────────────┘
+
+          ★ REQUIREMENTS MANAGEMENT - Continuous across ALL phases ★</code></pre>
+<hr />
+<h2 id="four-architecture-domains-bdat">Four Architecture Domains
+(BDAT)</h2>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Focus</th>
+<th>Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B</strong>usiness</td>
+<td>Strategy, processes, governance</td>
+<td>What does the business do?</td>
+</tr>
+<tr>
+<td><strong>D</strong>ata</td>
+<td>Data entities, data management</td>
+<td>What information is needed?</td>
+</tr>
+<tr>
+<td><strong>A</strong>pplication</td>
+<td>Applications, interactions</td>
+<td>What applications support the business?</td>
+</tr>
+<tr>
+<td><strong>T</strong>echnology</td>
+<td>Infrastructure, platforms</td>
+<td>What technology enables applications?</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="building-blocks-comparison">Building Blocks Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>ABB (Architecture)</th>
+<th>SBB (Solution)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Defines</strong></td>
+<td>WHAT is needed</td>
+<td>HOW it’s implemented</td>
+</tr>
+<tr>
+<td><strong>Abstraction</strong></td>
+<td>High level</td>
+<td>Detailed</td>
+</tr>
+<tr>
+<td><strong>Technology</strong></td>
+<td>Agnostic</td>
+<td>Specific</td>
+</tr>
+<tr>
+<td><strong>Example</strong></td>
+<td>“Payment Processing”</td>
+<td>“Stripe API Integration”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="enterprise-continuum-spectrum">Enterprise Continuum
+Spectrum</h2>
+<pre><code>Generic ◄─────────────────────────────────────────────────► Specific
+
+Foundation    →    Common Systems    →    Industry    →    Organization
+(TRM, III-RM)      (COTS patterns)     (Banking, etc.)    (Your company)</code></pre>
+<hr />
+<h2 id="key-deliverables-by-phase">Key Deliverables by Phase</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preliminary</strong></td>
+<td>Architecture Principles, Organizational Model</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Statement of Architecture Work, Architecture Vision</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Business Architecture Document</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Data Architecture, Application Architecture</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Technology Architecture Document</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Implementation Strategy, Transition Architectures</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Implementation &amp; Migration Plan</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Architecture Contract, Compliance Assessments</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Architecture Updates, Change Requests</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="architecture-principle-template">Architecture Principle
+Template</h2>
+<pre><code>┌────────────────────────────────────────────┐
+│  NAME: [Principle Name]                    │
+├────────────────────────────────────────────┤
+│  STATEMENT: [What the principle is]        │
+├────────────────────────────────────────────┤
+│  RATIONALE: [Why it matters]               │
+├────────────────────────────────────────────┤
+│  IMPLICATIONS: [What it means in practice] │
+└────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="stakeholder-powerinterest-grid">Stakeholder Power/Interest
+Grid</h2>
+<pre><code>                 INTEREST
+                 Low     High
+         ┌───────┬───────┐
+    High │ Keep  │ Manage │  ← Key Players
+POWER    │Satisfied│Closely│
+         ├───────┼───────┤
+    Low  │Monitor│  Keep  │
+         │       │Informed│
+         └───────┴───────┘</code></pre>
+<hr />
+<h2 id="architecture-repository-components">Architecture Repository
+Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture Metamodel</strong></td>
+<td>Structure for organizing architecture</td>
+</tr>
+<tr>
+<td><strong>Architecture Capability</strong></td>
+<td>People, processes, tools for EA</td>
+</tr>
+<tr>
+<td><strong>Architecture Landscape</strong></td>
+<td>Current and future state views</td>
+</tr>
+<tr>
+<td><strong>Standards Information Base</strong></td>
+<td>Approved standards</td>
+</tr>
+<tr>
+<td><strong>Reference Library</strong></td>
+<td>Templates, patterns, guidelines</td>
+</tr>
+<tr>
+<td><strong>Governance Log</strong></td>
+<td>Decisions, compliance records</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-togaf-concepts---one-liners">Key TOGAF Concepts - One
+Liners</h2>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>View</strong></td>
+<td>Representation of system from stakeholder perspective</td>
+</tr>
+<tr>
+<td><strong>Viewpoint</strong></td>
+<td>Template for creating views</td>
+</tr>
+<tr>
+<td><strong>Concern</strong></td>
+<td>Stakeholder interest in the system</td>
+</tr>
+<tr>
+<td><strong>Artifact</strong></td>
+<td>Work product describing aspect of architecture</td>
+</tr>
+<tr>
+<td><strong>Deliverable</strong></td>
+<td>Contractually specified output</td>
+</tr>
+<tr>
+<td><strong>Gap Analysis</strong></td>
+<td>Difference between baseline and target</td>
+</tr>
+<tr>
+<td><strong>Architecture Contract</strong></td>
+<td>Agreement on deliverables and conformance</td>
+</tr>
+<tr>
+<td><strong>Dispensation</strong></td>
+<td>Approved deviation from standards</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-phase-activities">Common Phase Activities</h2>
+<h3 id="all-phases-include">All Phases Include:</h3>
+<ol type="1">
+<li>Select reference models and tools</li>
+<li>Develop architecture descriptions</li>
+<li>Perform gap analysis</li>
+<li>Define candidate roadmap components</li>
+<li>Resolve impacts across landscape</li>
+<li>Conduct stakeholder review</li>
+<li>Create Architecture Definition Document</li>
+</ol>
+<hr />
+<h2 id="iteration-types-in-adm">Iteration Types in ADM</h2>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture Capability</strong></td>
+<td>Iterate to establish initial capability</td>
+</tr>
+<tr>
+<td><strong>Architecture Development</strong></td>
+<td>Iterate across phases to develop content</td>
+</tr>
+<tr>
+<td><strong>Transition Planning</strong></td>
+<td>Iterate to create transition architectures</td>
+</tr>
+<tr>
+<td><strong>Architecture Governance</strong></td>
+<td>Iterate to govern implementations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-tips-for-interviews">Quick Tips for Interviews</h2>
+<ol type="1">
+<li><strong>ADM is iterative</strong> - Not strictly linear</li>
+<li><strong>Requirements Management is continuous</strong> - Always at
+center</li>
+<li><strong>Phase C has two parts</strong> - Data AND Application</li>
+<li><strong>Phase E creates strategy</strong> - Phase F creates detailed
+plan</li>
+<li><strong>Phase G is oversight</strong> - Not implementation
+itself</li>
+<li><strong>Business architecture FIRST</strong> - Then technical
+(B→C→D)</li>
+<li><strong>Stakeholders are key</strong> - Address in every phase</li>
+<li><strong>Principles guide decisions</strong> - Established in
+Preliminary</li>
+</ol>
+<hr />
+<h2 id="acronyms-to-know">Acronyms to Know</h2>
+<table>
+<thead>
+<tr>
+<th>Acronym</th>
+<th>Full Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADM</td>
+<td>Architecture Development Method</td>
+</tr>
+<tr>
+<td>ABB</td>
+<td>Architecture Building Block</td>
+</tr>
+<tr>
+<td>SBB</td>
+<td>Solution Building Block</td>
+</tr>
+<tr>
+<td>TRM</td>
+<td>Technical Reference Model</td>
+</tr>
+<tr>
+<td>III-RM</td>
+<td>Integrated Information Infrastructure Reference Model</td>
+</tr>
+<tr>
+<td>SOW</td>
+<td>Statement of Architecture Work</td>
+</tr>
+<tr>
+<td>SIB</td>
+<td>Standards Information Base</td>
+</tr>
+<tr>
+<td>EA</td>
+<td>Enterprise Architecture</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-mnemonics">Phase Mnemonics</h2>
+<p><strong>“Please Allow Business Changes During Every Full Governance
+Hour”</strong></p>
+<ul>
+<li><strong>P</strong>reliminary</li>
+<li><strong>A</strong>rchitecture Vision</li>
+<li><strong>B</strong>usiness Architecture</li>
+<li><strong>C</strong>hanges (Information Systems - Data/App)</li>
+<li><strong>D</strong>uring (Technology)</li>
+<li><strong>E</strong>very (Opportunities &amp; Solutions)</li>
+<li><strong>F</strong>ull (Migration Planning)</li>
+<li><strong>G</strong>overnance (Implementation Governance)</li>
+<li><strong>H</strong>our (Change Management)</li>
+</ul>
+<hr />
+<p><em>Print this out for quick review before your interview!</em></p>
+</body>
+</html>

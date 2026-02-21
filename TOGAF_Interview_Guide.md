@@ -114,7 +114,7 @@ The **ADM** is the core of TOGAF - an iterative, step-by-step approach to develo
 │                                                                         │
 │   5. DEFINE STANDARDS                                                  │
 │      └── Technology standards, Patterns, Reference architectures       │
-│                                                                         │
+│                                                                  │
 │   All this happens in PRELIMINARY PHASE (once)                         │
 │   Then EA GUIDES all projects using these!                             │
 │                                                                         │
@@ -345,15 +345,8 @@ STEP 6: Validate with stakeholders
 │     └── HOW detailed will the architecture be?                         │
 │         • Strategic (high-level overview)                              │
 │         • Segment (business unit level)                                │
-│         • Capability (detailed)                                        │
-│                                                                         │
-│  3. ARCHITECTURE DOMAINS                                               │
-│     └── WHICH domains are included?                                    │
-│         • Business Architecture? (B)                                   │
-│         • Data Architecture? (C)                                       │
-│         • Application Architecture? (C)                                │
-│         • Technology Architecture? (D)                                 │
-│         • All of them?
+│         • Capability (detailed)    
+
 
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                                                                         │
@@ -365,7 +358,17 @@ STEP 6: Validate with stakeholders
 │                                                                         │
 │   Same project, different zoom levels for different audiences!         │
 │                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────────────┘                                    │
+│                                                                         │
+│  3. ARCHITECTURE DOMAINS                                               │
+│     └── WHICH domains are included?                                    │
+│         • Business Architecture? (B)                                   │
+│         • Data Architecture? (C)                                       │
+│         • Application Architecture? (C)                                │
+│         • Technology Architecture? (D)                                 │
+│         • All of them?
+
+│
 │                                                                         │
 │  4. TIME HORIZON                                                       │
 │     └── WHEN is the target state?                                      │

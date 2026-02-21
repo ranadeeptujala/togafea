@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>TOGAF_Interview_Guide</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">TOGAF_Interview_Guide</h1>
+</header>
+<h1 id="togaf-9.2-interview-preparation-guide">TOGAF 9.2 Interview
+Preparation Guide</h1>
+<blockquote>
+<p>Based on TOGAF 9.2 (April 2018)</p>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#what-is-togaf">What is TOGAF?</a></li>
+<li><a href="#togaf-adm">TOGAF Architecture Development Method
+(ADM)</a></li>
+<li><a href="#key-concepts">Key Concepts &amp; Terminology</a></li>
+<li><a href="#interview-questions">Common Interview Questions</a></li>
+<li><a href="#study-tips">Study Tips</a></li>
+</ol>
+<hr />
+<h2 id="what-is-togaf">What is TOGAF? <a name="what-is-togaf"></a></h2>
+<p><strong>TOGAF</strong> (The Open Group Architecture Framework) is an
+enterprise architecture framework that provides a comprehensive approach
+to designing, planning, implementing, and governing enterprise
+information technology architecture.</p>
+<h3 id="key-facts">Key Facts:</h3>
+<ul>
+<li>Developed by <strong>The Open Group</strong></li>
+<li>First introduced in <strong>1995</strong> (based on TAFIM from US
+DoD)</li>
+<li>Current version: <strong>TOGAF 9.2</strong> (released April
+2018)</li>
+<li>Used by <strong>80%+ of Global 50 companies</strong></li>
+<li>Provides a common vocabulary and methodology</li>
+</ul>
+<h3 id="four-architecture-domains">Four Architecture Domains:</h3>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business Architecture</strong></td>
+<td>Business strategy, governance, organization, and key business
+processes</td>
+</tr>
+<tr>
+<td><strong>Data Architecture</strong></td>
+<td>Structure of logical and physical data assets and data management
+resources</td>
+</tr>
+<tr>
+<td><strong>Application Architecture</strong></td>
+<td>Blueprint for individual applications, their interactions, and
+relationships</td>
+</tr>
+<tr>
+<td><strong>Technology Architecture</strong></td>
+<td>Software and hardware capabilities required to support business,
+data, and application services</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="togaf-architecture-development-method-adm">TOGAF Architecture
+Development Method (ADM) <a name="togaf-adm"></a></h2>
+<p>The <strong>ADM</strong> is the core of TOGAF - an iterative,
+step-by-step approach to developing enterprise architecture.</p>
+<pre><code>                    ┌─────────────────┐
+                    │   Preliminary   │
+                    │     Phase       │
+                    └────────┬────────┘
+                             │
+                    ┌────────▼────────┐
+                    │    Phase A:     │
+                    │ Architecture    │
+                    │    Vision       │
+                    └────────┬────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        │                    │                    │
+┌───────▼───────┐   ┌───────▼───────┐   ┌───────▼───────┐
+│   Phase B:    │   │   Phase C:    │   │   Phase D:    │
+│   Business    │   │  Information  │   │  Technology   │
+│ Architecture  │   │   Systems     │   │ Architecture  │
+└───────┬───────┘   │ Architecture  │   └───────┬───────┘
+        │           └───────┬───────┘           │
+        └────────────────────┼──────────────────┘
+                             │
+                    ┌────────▼────────┐
+                    │    Phase E:     │
+                    │ Opportunities   │
+                    │  &amp; Solutions    │
+                    └────────┬────────┘
+                             │
+                    ┌────────▼────────┐
+                    │    Phase F:     │
+                    │   Migration     │
+                    │   Planning      │
+                    └────────┬────────┘
+                             │
+                    ┌────────▼────────┐
+                    │    Phase G:     │
+                    │ Implementation  │
+                    │   Governance    │
+                    └────────┬────────┘
+                             │
+                    ┌────────▼────────┐
+                    │    Phase H:     │
+                    │ Architecture    │
+                    │    Change       │
+                    │   Management    │
+                    └─────────────────┘
+
+         Requirements Management (Center - All Phases)</code></pre>
+<h3 id="adm-phases-explained">ADM Phases Explained:</h3>
+<h4 id="preliminary-phase"><strong>Preliminary Phase</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Prepare the organization for TOGAF
+projects</li>
+<li><strong>Key Activities</strong>:
+<ul>
+<li><p>Define Architecture Capability(people,process
+,tools,governance,standrds)</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ EA DOES: │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ 1. CREATE TEAM │ │ └── Enterprise Architects, Domain Architects,
+support staff │ │ │ │ 2. SETUP TOOLS │ │ └── Sparx EA, Archi,
+Confluence, Draw.io │ │ │ │ 3. DEFINE PRINCIPLES │ │ └── Cloud-First,
+Security by Design, Buy over Build │ │ │ │ 4. ESTABLISH GOVERNANCE │ │
+└── Architecture Board, Review process, Compliance │ │ │ │ 5. DEFINE
+STANDARDS │ │ └── Technology standards, Patterns, Reference
+architectures │ │ │ │ All this happens in PRELIMINARY PHASE (once) │ │
+Then EA GUIDES all projects using these! │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p></li>
+<li><p>Establish Architecture Principles
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PRINCIPLES GUIDE EVERY PROJECT │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ PRELIMINARY: Define Principles (ONCE) │ │
+───────────────────────────────────── │ │ • Cloud-First │ │ • Security
+by Design │ │ • Buy over Build │ │ • API-First │ │ • Data is an Asset │
+│ │ │ │ │ │ │ These GUIDE every project │ │ ▼ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ │ │ │ │ PROJECT 1: Payment System │ │ │ │ Driver: “Reduce latency” │ │
+│ │ Decision: “Should we use on-prem or cloud?” │ │ │ │ → Check
+Principle: “Cloud-First” → Use Cloud ✅ │ │ │ │ │ │ │ │ PROJECT 2: CRM
+Selection │ │ │ │ Driver: “Need better customer management” │ │ │ │
+Decision: “Should we build custom CRM or buy?” │ │ │ │ → Check
+Principle: “Buy over Build” → Buy Salesforce ✅ │ │ │ │ │ │ │ │ PROJECT
+3: Mobile App │ │ │ │ Driver: “Launch mobile experience” │ │ │ │
+Decision: “How to handle authentication?” │ │ │ │ → Check Principle:
+“Security by Design” → OAuth from start ✅ │ │ │ │ │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+│ │ PRINCIPLES = Consistent decision-making across ALL projects │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p></li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr>
+<th>Architecture Principles</th>
+<th>Architecture Requirements (NFRs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guiding philosophy</td>
+<td>Specific metrics</td>
+</tr>
+<tr>
+<td>“Systems should be resilient”</td>
+<td>“99.99% uptime”</td>
+</tr>
+<tr>
+<td>“Prefer cloud-first approach”</td>
+<td>“Must use AWS/Azure”</td>
+</tr>
+<tr>
+<td>“Design for performance”</td>
+<td>“100ms latency”</td>
+</tr>
+<tr>
+<td>“Systems should be loosely coupled”</td>
+<td>“Use microservices with REST APIs”</td>
+</tr>
+<tr>
+<td>WHY we design a certain way</td>
+<td>WHAT we must achieve</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Select and tailor frameworks/tools</p></li>
+<li><p><strong>Key Deliverable</strong>: Organizational Model for EA,
+Architecture Principles</p></li>
+</ul>
+<h4 id="phase-a-architecture-vision"><strong>Phase A: Architecture
+Vision</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Develop high-level vision of capabilities
+and business value</li>
+<li><strong>Key Activities</strong>:</li>
+</ul>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE A - 6 KEY ACTIVITIES │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ 1. IDENTIFY STAKEHOLDERS &amp; CONCERNS │ │ │ │ 2. CONFIRM
+BUSINESS GOALS &amp; DRIVERS │ │ │ │ 3. DEFINE SCOPE │ │ │ │ 4. CREATE
+ARCHITECTURE VISION │ │ │ │ 5. ASSESS READINESS FOR TRANSFORMATION │ │ │
+│ 6. OBTAIN APPROVAL (Statement of Architecture Work) │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+-Stake holerds parrt</p>
+<p>┌─────────────────────────────────────────────────────────────────┐ │
+STAKEHOLDER DOMAINS │
+├─────────────────┬─────────────────┬─────────────────────────────┤ │
+BUSINESS │ IT │ EXTERNAL │
+├─────────────────┼─────────────────┼─────────────────────────────┤ │ •
+CEO/COO │ • CIO/CTO │ • Customers │ │ • Business Unit │ • IT Operations
+│ • Vendors/Partners │ │ Heads │ • Developers │ • Regulators │ │ •
+Process Owners│ • Infrastructure│ • Auditors │ │ • End Users │ •
+Security │ • Industry Bodies │ │ • Finance/CFO │ • Data Teams │ •
+Shareholders │ │ • HR │ • PMO │ • Suppliers │
+└─────────────────┴─────────────────┴─────────────────────────────┘
+PHASE A: ARCHITECTURE VISION │ ├── 1. IDENTIFY Stakeholders │ └── From
+Business, IT, External domains │ ├── 2. ANALYZE Stakeholders │ ├──
+Power/Interest mapping │ ├── Concerns identification │ └── Communication
+needs │ ├── 3. DOCUMENT in Architecture Vision │ ├── Stakeholder Map │
+├── Concerns Matrix │ └── Communication Plan │ └── 4. GET APPROVAL └──
+Statement of Architecture Work signed by key stakeholders RACI Matrix
+(R=Responsible, A=Accountable, C=Consulted, I=Informed)
+┌──────────────────┬─────┬────────┬──────────┬──────────┐ │ ACTIVITY │
+CIO │ Sr. EA │ Bus.Owner│ Dev Team │
+├──────────────────┼─────┼────────┼──────────┼──────────┤ │ Define
+Vision │ A │ R │ C │ I │ │ Gather Reqmts │ I │ A │ R │ C │ │ Approve
+Vision │ A │ R │ C │ I │ │ Implementation │ I │ C │ I │ R │
+└──────────────────┴─────┴────────┴──────────┴──────────┘
+┌─────────────────────────────────────────────────────────────────┐ │
+CONCERNS MATRIX │
+├──────────────────┬──────────────────────────────────────────────┤ │
+STAKEHOLDER │ CONCERNS │
+├──────────────────┼──────────────────────────────────────────────┤ │
+CEO │ ROI, Business value, Risk │
+├──────────────────┼──────────────────────────────────────────────┤ │
+CIO │ Cost, Timeline, Integration │
+├──────────────────┼──────────────────────────────────────────────┤ │
+End Users │ Easy to use, Fast, Reliable │
+├──────────────────┼──────────────────────────────────────────────┤ │ IT
+Operations │ Maintainability, Availability, Support │
+├──────────────────┼──────────────────────────────────────────────┤ │
+Security Officer │ Data protection, Compliance, Access control │
+└──────────────────┴──────────────────────────────────────────────┘</p>
+<p>STEP 1: List all stakeholders └── From Stakeholder Map</p>
+<p>STEP 2: Interview/Survey each stakeholder └── “What matters most to
+you?”</p>
+<p>STEP 3: Document concerns └── Be specific, not vague</p>
+<p>STEP 4: Prioritize concerns └── High / Medium / Low</p>
+<p>STEP 5: Map to architecture views └── Which view addresses which
+concern?</p>
+<p>STEP 6: Validate with stakeholders └── “Did I capture your concerns
+correctly?” - Create Architecture Vision - Obtain approval for Statement
+of Architecture Work</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ ACTIVITY 2: CONFIRM BUSINESS GOALS &amp; DRIVERS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ WHAT TO DO: │ │ • Understand WHY this project exists │ │ •
+Identify business problems to solve │ │ • Confirm strategic goals being
+supported │ │ │ │ EXAMPLE BUSINESS DRIVERS: │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ • “We need to enter new markets faster” │ │ │ │ • “Our costs are too
+high” │ │ │ │ • “Competitors are ahead of us” │ │ │ │ • “Regulations
+require us to change” │ │ │ │ • “Customer experience is poor” │ │ │ │ •
+“Legacy systems are holding us back” │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+│ │ OUTPUT: Business Goals document, Key Drivers list │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ STEP 3: DEFINE SCOPE │ │ │ │ “WHAT is included and WHAT is NOT
+included in this architecture?” │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ WHY SCOPE MATTERS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ ❌ WITHOUT CLEAR SCOPE: │ │ • Scope creep (project keeps growing)
+│ │ • Unclear expectations │ │ • Wasted effort on wrong things │ │ •
+Never-ending project │ │ • Stakeholder conflicts │ │ │ │ ✅ WITH CLEAR
+SCOPE: │ │ • Everyone knows what’s included │ │ • Clear boundaries =
+focused effort │ │ • Easier to estimate time &amp; cost │ │ • Can say
+“NO” to out-of-scope requests │ │ • Stakeholders aligned │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ SCOPE DIMENSIONS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ 1. BREADTH (Organizational Scope) │ │ └── WHICH parts of the
+organization? │ │ • Entire enterprise? │ │ • One business unit? │ │ •
+One department? │ │ • One system/application? │ │ │ │ 2. DEPTH (Level of
+Detail) │ │ └── HOW detailed will the architecture be? │ │ • Strategic
+(high-level overview) │ │ • Segment (business unit level) │ │ •
+Capability (detailed)</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ │ │ DEPTH LEVELS = ZOOM LEVELS ON A MAP 🗺️ │ │ │ │ STRATEGIC = Country
+view (“India wants digital economy”) │ │ SEGMENT = City view (“Mumbai
+needs better transit”) │ │ CAPABILITY = Street view (“Build Metro Line
+3, Station X”) │ │ │ │ Same project, different zoom levels for different
+audiences! │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+│ │ │ │ 3. ARCHITECTURE DOMAINS │ │ └── WHICH domains are included? │ │
+• Business Architecture? (B) │ │ • Data Architecture? (C) │ │ •
+Application Architecture? (C) │ │ • Technology Architecture? (D) │ │ •
+All of them?</p>
+<p>│ │ │ │ 4. TIME HORIZON │ │ └── WHEN is the target state? │ │ • 1
+year? │ │ • 3 years? │ │ • 5 years? │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────┐ │
+ARCHITECTURE VISION DOCUMENT │
+├─────────────────────────────────────────────────────────────────┤ │ 1.
+Problem Description │ │ 2. Objectives &amp; Scope │ │ 3. Stakeholder Map
+&amp; Concerns │ │ 4. Business Scenario (if used) │ │ 5. High-Level
+Baseline Architecture │ │ 6. High-Level Target Architecture │ │ 7. Gap
+Analysis (High-Level) │ │ 8. Key Architecture Requirements │ │ 9. Risks
+&amp; Constraints │ │ 10. Business Value &amp; Benefits │ │ 11.
+Architecture Principles (Applicable) │ │ 12. Approval &amp; Sign-off │
+└─────────────────────────────────────────────────────────────────┘</p>
+<h1 id="statement-of-architecture-work">STATEMENT OF ARCHITECTURE
+WORK</h1>
+<p>┌─────────────────────────────────────┐ │ 1. TITLE │ 2. REQUEST │
+PROJECT │ 3. DESCRIPTION │ 4. SCOPE │ BASICS
+├─────────────────────────────────────┤ │ 5. VISION │ 6. ROLES │ WORK │
+7. DELIVERABLES │ 8. ACCEPTANCE │ DETAILS
+├─────────────────────────────────────┤ │ 9. SCHEDULE │ 10. RESOURCES │
+HOW │ 11. RISKS │ 12. CONSTRAINTS │ WE DO IT
+├─────────────────────────────────────┤ │ 13. STAKEHOLDERS│ 14.
+APPROVALS │ WHO └─────────────────────────────────────┘</p>
+<p>4 + 4 + 4 + 2 = 14 items<br />
+</p>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>SECTION</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Project Title</td>
+<td>Name of the architecture initiative</td>
+</tr>
+<tr>
+<td>2. Project Request</td>
+<td>Why this project was initiated</td>
+</tr>
+<tr>
+<td>3. Project Description</td>
+<td>Brief overview of what will be done</td>
+</tr>
+<tr>
+<td>4. Scope</td>
+<td>What’s included and excluded</td>
+</tr>
+<tr>
+<td>5. Architecture Vision</td>
+<td>Summary of target state</td>
+</tr>
+<tr>
+<td>6. Roles &amp; Responsibilities</td>
+<td>Who does what (RACI)</td>
+</tr>
+<tr>
+<td>7. Deliverables</td>
+<td>What will be produced</td>
+</tr>
+<tr>
+<td>8. Acceptance Criteria</td>
+<td>How success is measured</td>
+</tr>
+<tr>
+<td>9. Schedule &amp; Milestones</td>
+<td>Timeline with key dates</td>
+</tr>
+<tr>
+<td>10. Resources</td>
+<td>People, budget, tools needed</td>
+</tr>
+<tr>
+<td>11. Risks &amp; Mitigation</td>
+<td>Potential issues and plans</td>
+</tr>
+<tr>
+<td>12. Constraints</td>
+<td>Limitations (time, budget, etc.)</td>
+</tr>
+<tr>
+<td>13. Stakeholders</td>
+<td>Key people involved</td>
+</tr>
+<tr>
+<td>14. Approvals</td>
+<td>Sign-off secti</td>
+</tr>
+</tbody>
+</table>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ STATEMENT OF ARCHITECTURE WORK │ ARCHITECTURE VISION DOCUMENT │ │
+(SOW) │ │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ 📋 PROJECT CONTRACT │ 🎯 ARCHITECTURE CONTENT │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ HOW we will do the work │ WHAT the architecture looks like │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ • Schedule &amp; Timeline │ • Baseline Architecture │ │ • Resources
+&amp; Budget │ • Target Architecture │ │ • Roles &amp; Responsibilities
+│ • Gap Analysis │ │ • Deliverables list │ • Business Value │ │ •
+Acceptance criteria │ • Stakeholder Concerns │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ Like a PROJECT CHARTER │ Like a SOLUTION OVERVIEW │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ Signed by: Sponsors/Management │ Used by: Architecture team │
+├────────────────────────────────────┼────────────────────────────────────┤
+│ “Here’s how we’ll run the │”Here’s where we are, where │ │
+architecture project” │ we’re going, and why” │
+└────────────────────────────────────┴────────────────────────────────────┘
+<strong>Key Deliverables</strong>: Statement of Architecture Work,
+Architecture Vision documynet #### <strong>Phase B: Business
+Architecture</strong> - <strong>Purpose</strong>: Develop the Target
+Business Architecture - <strong>Key Activities</strong>:</p>
+<h1 id="business-architecture-is-about">BUSINESS ARCHITECTURE IS
+ABOUT:</h1>
+<p>NOT about: - Technical implementation details - Specific
+software/hardware - Coding/development</p>
+<p>IS about: - Business processes (how work flows) - Business
+capabilities (what business can do) - Business services (what business
+offers) - Organization (who does what) - Information flows (what data
+moves where) - Gap between current and future state - Develop Baseline
+Business Architecture</p>
+<p>BASELINE BUSINESS ARCHITECTURE = “As-Is” State</p>
+<p>Documents HOW THE BUSINESS WORKS TODAY: - Current business processes
+- Current organization structure - Current business capabilities -
+Current business services - Current information flows - Current pain
+points &amp; gaps REASON | EXPLANATION ——————————–|——————————————
+Understand current state | Can’t improve what you don’t understand
+Identify gaps | Compare with target to find gaps Stakeholder alignment |
+Everyone agrees on “where we are” Realistic planning | Know what needs
+to change Risk assessment | Understand dependencies &amp; impacts
+Measure progress | Baseline for measuring improvement</p>
+<table>
+<thead>
+<tr>
+<th>BASELINE (As-Is)</th>
+<th>TARGET (To-Be)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How business works TODAY</td>
+<td>How business will work FUTURE</td>
+</tr>
+<tr>
+<td>Current processes</td>
+<td>Improved/new processes</td>
+</tr>
+<tr>
+<td>Current capabilities</td>
+<td>Enhanced capabilities</td>
+</tr>
+<tr>
+<td>Current problems</td>
+<td>Problems solved</td>
+</tr>
+<tr>
+<td>Documented FIRST</td>
+<td>Designed AFTER baseline</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Develop Target Business Architecture</li>
+</ul>
+<ol type="1">
+<li>BASELINE BUSINESS FLOW –&gt; Current state (As-Is) +</li>
+<li>TARGET BUSINESS FLOW –&gt; Future state (To-Be) +</li>
+<li>GAP ANALYSIS –&gt; What needs to change</li>
+</ol>
+<ul>
+<li>Perform Gap Analysis</li>
+<li><strong>Key Deliverables</strong>: Business Architecture document,
+Gap Analysis results</li>
+</ul>
+<h4 id="phase-c-information-systems-architecture"><strong>Phase C:
+Information Systems Architecture</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Develop Data and Application
+Architectures</li>
+<li><strong>Key Activities</strong>:
+<ul>
+<li>Develop Data Architecture (logical &amp; physical data models)</li>
+<li>Develop Application Architecture</li>
+<li>Perform Gap Analysis</li>
+</ul></li>
+<li><strong>Key Deliverables</strong>: Data Architecture, Application
+Architecture documents DATA ARCHITECTURE: ├── Player Data (profiles,
+preferences, history) ├── Game Data (scores, achievements,
+leaderboards)<br />
+├── Transaction Data (purchases, wallets, payouts) └── Analytics Data
+(behavior, engagement metrics)</li>
+</ul>
+<p>APPLICATION ARCHITECTURE: ├── Player Management System ├── Game
+Engine Integration ├── Payment Gateway ├── Bonus &amp; Promotion Engine
+├── Responsible Gaming Module ├── Reporting &amp; Analytics Platform └──
+Back Office Admin Portal</p>
+<p>GAP ANALYSIS: • Current: Separate DBs per game → Target: Unified
+Player 360 view • Current: Batch reporting → Target: Real-time analytics
+• Current: Point-to-point integrations → Target: Event-driven
+(Kafka)</p>
+<h4 id="phase-d-technology-architecture"><strong>Phase D: Technology
+Architecture</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Develop the Technology Architecture</li>
+<li><strong>Key Activities</strong>:
+<ul>
+<li>Define technology platforms</li>
+<li>Map applications to technology</li>
+<li>Perform Gap Analysis</li>
+</ul></li>
+</ul>
+<p>Purpose: Define the technology infrastructure needed to support
+applications and data</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE D: TECHNOLOGY ARCHITECTURE │ │ │ │ “What hardware, software, and
+infrastructure do we need?” │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ TECHNOLOGY PLATFORM LAYERS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ EDGE / DELIVERY LAYER (Entry Point for Users) │ │ │ │ • CDN
+(CloudFront, Akamai) - Cache &amp; deliver static content │ │ │ │ • Load
+Balancers (ALB, HAProxy) - Distribute traffic │ │ │ │ • Web servers
+(Nginx, Apache) - Serve requests │ │ │ │ • API Gateway - Route API calls
+│ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+▼ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ APPLICATION LAYER │ │ │ │ • Frontend: React, Angular, Vue, Mobile
+(Flutter, Swift, Kotlin)│ │ │ │ • Backend: Java, .NET, Node.js, Python,
+Go │ │ │ │ • Containers (Docker, Kubernetes) │ │ │ │ • Serverless (AWS
+Lambda, Azure Functions) │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+▼ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ DATA LAYER │ │ │ │ • Databases (PostgreSQL, MongoDB, Redis) │ │ │ │ •
+Data Warehouse (Snowflake, BigQuery) │ │ │ │ • Message Queues (Kafka,
+RabbitMQ) │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+▼ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ INFRASTRUCTURE LAYER │ │ │ │ • Cloud (AWS, Azure, GCP) │ │ │ │ •
+Compute (EC2, VMs, Bare Metal) │ │ │ │ • Storage (S3, EBS, NAS) │ │ │ │
+• Network (VPC, DNS, Firewalls) │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+▼ │ │
+┌─────────────────────────────────────────────────────────────────┐ │ │
+│ SECURITY &amp; OPERATIONS │ │ │ │ • Identity (IAM, SSO, OAuth) │ │ │ │
+• Monitoring (Prometheus, Grafana, DataDog) │ │ │ │ • CI/CD (Jenkins,
+GitHub Actions, ArgoCD) │ │ │
+└─────────────────────────────────────────────────────────────────┘ │ │
+│
+└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ APPLICATION ↔︎ TECHNOLOGY MAPPING MATRIX │
+├─────────────────┬──────────┬──────────┬───────────┬─────────┬──────────┤
+│ APPLICATION │ COMPUTE │ DATABASE │ RUNTIME │ CLOUD │ CONTAINER│
+├─────────────────┼──────────┼──────────┼───────────┼─────────┼──────────┤
+│ Player Portal │ EKS │ PostgreSQL│ Node.js │ AWS │ ✓ │ │ Payment
+Service │ EKS │ PostgreSQL│ Java │ AWS │ ✓ │ │ Game Engine │ EC2 │ Redis
+│ C++ │ AWS │ ✗ │ │ Analytics │ EMR │ Redshift │ Python │ AWS │ ✗ │ │
+Admin Portal │ Lambda │ DynamoDB │ Node.js │ AWS │ ✗ │ │ Legacy ERP │
+On-Prem │ Oracle │ Java │ N/A │ ✗ │
+└─────────────────┴──────────┴──────────┴───────────┴─────────┴──────────┘
+- <strong>Key Deliverables</strong>: Technology Architecture
+document</p>
+<h4 id="phase-e-opportunities-and-solutions"><strong>Phase E:
+Opportunities and Solutions</strong></h4>
+<ul>
+<li><strong>Purpose</strong>: Generate initial implementation and
+migration strategy</li>
+<li><strong>Key Activities</strong>:
+<ul>
+<li>Identify major work packages</li>
+<li>Group work packages into projects</li>
+<li>Assess dependencies and priorities</li>
+</ul></li>
+<li><strong>Key Deliverables</strong>: Implementation and Migration
+Strategy
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE E: OPPORTUNITIES &amp; SOLUTIONS │ │ │ │ “How do we actually
+BUILD what we designed in Phases B, C, D?” │</li>
+</ul>
+<p>└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ GAP → WORK PACKAGE MAPPING │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ GAP (From B, C, D) WORK PACKAGE │ │ ─────────────────────
+────────────────────── │ │ No unified player view → WP1: Build Player
+360 Platform │ │ Manual payment process → WP2: Payment Gateway
+Integration │ │ Legacy monolith app → WP3: Migrate to Microservices │ │
+No cloud infrastructure → WP4: AWS Cloud Setup │ │ No CI/CD pipeline →
+WP5: DevOps Implementation │ │ No real-time analytics → WP6: Data
+Platform Setup │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────┐ │
+WORK PACKAGE TEMPLATE │
+├─────────────────────────────────────────────────────────────────┤ │
+Name: Payment Gateway Integration │ │ Gap Addressed: Manual payment
+processing │ │ Scope: Integrate with 3 payment providers │ │ Effort: 3
+months, 5 engineers │ │ Dependencies: WP4 (Cloud Setup) must complete
+first │ │ Business Value: Reduce transaction time by 80% │ │ Risk:
+PCI-DSS compliance requirements │
+└─────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ WORK PACKAGES → PROJECTS GROUPING │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ PROJECT 1: INFRASTRUCTURE MODERNIZATION │ │ ├── WP4: AWS Cloud
+Setup │ │ ├── WP5: DevOps Implementation │ │ └── WP7: Security &amp;
+Compliance Setup │ │ │ │ PROJECT 2: CORE PLATFORM │ │ ├── WP1: Player
+360 Platform │ │ ├── WP2: Payment Gateway Integration │ │ └── WP8: Bonus
+Engine Development │ │ │ │ PROJECT 3: DATA &amp; ANALYTICS │ │ ├── WP6:
+Data Platform Setup │ │ └── WP9: Reporting Dashboard │ │ │ │ PROJECT 4:
+LEGACY MIGRATION │ │ └── WP3: Migrate to Microservices │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌──────────────────────────────────────────────────────────────────────────┐
+│ DEPENDENCY MATRIX │
+├──────────┬────────┬────────┬────────┬────────┬────────┬────────┬────────┤
+│ │ WP1 │ WP2 │ WP3 │ WP4 │ WP5 │ WP6 │ WP7 │
+├──────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+│ WP1 │ - │ │ │ ✓ │ ✓ │ │ ✓ │ │ WP2 │ ✓ │ - │ │ ✓ │ ✓ │ │ ✓ │ │ WP3 │ │
+│ - │ ✓ │ ✓ │ │ │ │ WP4 │ │ │ │ - │ │ │ │ │ WP5 │ │ │ │ ✓ │ - │ │ │ │
+WP6 │ ✓ │ │ │ ✓ │ ✓ │ - │ │ │ WP7 │ │ │ │ ✓ │ │ │ - │
+└──────────┴────────┴────────┴────────┴────────┴────────┴────────┴────────┘
+✓ = Depends on (must be done first)
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE E: BUILD vs BUY vs REUSE DECISIONS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ FOR EACH GAP, EVALUATE SOLUTIONS: │ │ │ │ ┌─────────────┐
+┌─────────────┐ ┌─────────────┐ │ │ │ BUILD │ │ BUY │ │ REUSE │ │ │ │
+Custom │ │ Product │ │ Existing │ │ │ │ Development │ │ / SaaS │ │
+Assets │ │ │ └─────────────┘ └─────────────┘ └─────────────┘ │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+Reading: WP2 (Payment) depends on WP1, WP4, WP5, WP7 #### <strong>Phase
+F: Migration Planning</strong> - <strong>Purpose</strong>: Finalize
+detailed implementation and migration plan - <strong>Key
+Activities</strong>: - Finalize Architecture Roadmap - Finalize
+Implementation Plan - Ensure business value is realized - <strong>Key
+Deliverables</strong>: Implementation and Migration Plan, Architecture
+Roadmap
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE F: MIGRATION PLANNING │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ 1. FINALIZE ARCHITECTURE ROADMAP │ │ └── Timeline: Baseline →
+Transition 1 → Transition 2 → Target │ │ │ │ 2. FINALIZE IMPLEMENTATION
+PLAN │ │ └── Detailed: Schedule + Budget + Resources + Milestones │ │ │
+│ 3. ENSURE BUSINESS VALUE IS REALIZED │ │ └── Define KPIs, measure
+before/after, track benefits │ │ │ │ DELIVERABLES: │ │ • Implementation
+&amp; Migration Plan (detailed project plans) │ │ • Architecture Roadmap
+(visual timeline) │ │ • Architecture Contracts (agreements with
+implementation teams) │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ WHAT “MIGRATION” MEANS IN PHASE F │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ PHASE B, C, D PHASE F │ │ (DESIGN the Target) (PLAN the Migration)
+│ │ │ │ ┌─────────────────┐ ┌─────────────────┐ │ │ │ Phase B: │ │ │ │ │
+│ Target Business │───┐ │ HOW do we │ │ │ │ Architecture │ │ │ actually
+GET │ │ │ └─────────────────┘ │ │ from Current │ │ │ │ │ to Target? │ │
+│ ┌─────────────────┐ │ ────► │ │ │ │ │ Phase C: │───┤ │ • Timeline │ │
+│ │ Target Data &amp; │ │ │ • Budget │ │ │ │ App Architecture│ │ │ •
+Resources │ │ │ └─────────────────┘ │ │ • Milestones │ │ │ │ │ │ │ │
+┌─────────────────┐ │ │ = MIGRATION │ │ │ │ Phase D: │───┘ │ PLAN │ │ │
+│ Target Tech │ │ │ │ │ │ Architecture │ └─────────────────┘ │ │
+└─────────────────┘ │ │ │ │ WHAT we want HOW we get there │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+#### <strong>Phase G: Implementation Governance</strong> -
+<strong>Purpose</strong>: Provide architectural oversight during
+implementation - <strong>Key Activities</strong>: - Ensure conformance
+with Target Architecture - Govern implementation projects - Perform
+Architecture Compliance reviews - <strong>Key Deliverables</strong>:
+Compliance assessments, Architecture Contracts
+┌─────────────────────────────────────────────────────────────────────────┐
+│ PHASE G: IMPLEMENTATION GOVERNANCE │ │ │ │ “Are the development teams
+building what we designed?” │ │ “Is the implementation following the
+architecture?” │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p>┌─────────────────────────────────────────────────────────────────────────┐
+│ COMPLIANCE REVIEW PROCESS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ STEP 1: SCHEDULE REVIEW │ │ └── At key milestones (design
+complete, before go-live) │ │ │ │ STEP 2: PREPARE CHECKLIST │ │ ├──
+Architecture principles followed? │ │ ├── Technology standards used? │ │
+├── Security requirements met? │ │ ├── Integration patterns correct? │ │
+└── Data standards followed? │ │ │ │ STEP 3: CONDUCT REVIEW │ │ └──
+Review with development team, document findings │ │ │ │ STEP 4: DOCUMENT
+RESULTS │ │ ├── Conformant items │ │ ├── Deviations found │ │ └──
+Recommendations │ │ │ │ STEP 5: DECISION │ │ ├── ✅ Approved │ │ ├── ✅
+Approved with conditions (fix minor issues) │ │ └── ❌ Not approved
+(rework required) │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ARCHITECTURE COMPLIANCE CHECKLIST │
+├───────────────────────────────────┬──────────┬──────────┬────────────────────┤
+│ CHECK ITEM │ EXPECTED │ ACTUAL │ STATUS │
+├───────────────────────────────────┼──────────┼──────────┼────────────────────┤
+│ API Design follows REST standards │ REST │ REST │ ✅ Compliant │ │
+Database is PostgreSQL │ PostgreSQL│PostgreSQL│ ✅ Compliant │ │ Runs on
+Kubernetes (EKS) │ EKS │ EKS │ ✅ Compliant │ │ Uses approved auth
+(OAuth 2.0) │ OAuth 2.0│ JWT only │ ⚠️ Deviation │ │ Logging to
+centralized system │ DataDog │ DataDog │ ✅ Compliant │ │ Secrets in
+Vault │ Vault │ Env vars │ ❌ Non-compliant │ │ CI/CD via GitHub Actions
+│ GH Actions│GH Actions│ ✅ Compliant │
+├───────────────────────────────────┴──────────┴──────────┴────────────────────┤
+│ RESULT: Approved with conditions - Fix secrets management before
+go-live │
+└──────────────────────────────────────────────────────────────────────────────┘
+#### <strong>Phase H: Architecture Change Management</strong> -
+<strong>Purpose</strong>: Keep architecture aligned with changing
+requirements - <strong>Key Activities</strong>: - Monitor technology
+changes - Monitor business changes - Manage Architecture Change Requests
+- <strong>Key Deliverables</strong>: Architecture updates, Change
+Requests
+┌─────────────────────────────────────────────────────────────────────────┐
+│ │ │ 1. MONITOR TECHNOLOGY CHANGES │ │ ├── New technologies (AWS new
+services, new frameworks) │ │ ├── End-of-Life (Java 11 EOL, deprecated
+libraries) │ │ ├── Security vulnerabilities (CVEs, patches) │ │ └──
+Vendor changes (pricing, acquisitions) │ │ │ │ 2. MONITOR BUSINESS
+CHANGES │ │ ├── Strategy changes (new products, new markets) │ │ ├──
+Regulatory changes (DPDPA, GDPR, gaming compliance) │ │ ├──
+Organizational changes (new teams, M&amp;A) │ │ └── Market changes
+(competitors, customer needs) │ │ │ │ 3. MANAGE ARCHITECTURE CHANGE
+REQUESTS │ │ ├── Receive change requests from teams │ │ ├── Classify
+(Minor / Incremental / Major / Emergency) │ │ ├── Assess impact
+(systems, cost, risk) │ │ ├── Approve / Reject / Defer │ │ └── Update
+architecture documents │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<h4 id="requirements-management-central"><strong>Requirements Management
+(Central)</strong></h4>
+<ul>
+<li>Operates throughout all phases</li>
+<li>Handles requirements identification, storage, and change
+management</li>
+<li>Ensures requirements are addressed in appropriate phases</li>
+</ul>
+<hr />
+<h2 id="key-concepts-terminology">Key Concepts &amp; Terminology
+<a name="key-concepts"></a></h2>
+<h3 id="architecture-content-framework">Architecture Content
+Framework</h3>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deliverables</strong></td>
+<td>Contractually specified work products (e.g., Architecture Definition
+Document)</td>
+</tr>
+<tr>
+<td><strong>Artifacts</strong></td>
+<td>Architectural work products (diagrams, catalogs, matrices)</td>
+</tr>
+<tr>
+<td><strong>Building Blocks</strong></td>
+<td>Components that can be combined to deliver architectures</td>
+</tr>
+</tbody>
+</table>
+<h3 id="building-blocks">Building Blocks</h3>
+<ol type="1">
+<li><strong>Architecture Building Blocks (ABBs)</strong>
+<ul>
+<li>Define what functionality is required</li>
+<li>Capture architecture requirements</li>
+<li>Direct and guide development of SBBs</li>
+<li>Example: “A customer management capability”</li>
+</ul></li>
+<li><strong>Solution Building Blocks (SBBs)</strong>
+<ul>
+<li>Define how functionality is implemented</li>
+<li>Product or vendor-aware</li>
+<li>Example: “Salesforce CRM”</li>
+</ul></li>
+</ol>
+<h3 id="enterprise-continuum">Enterprise Continuum</h3>
+<pre><code>                                            │</code></pre>
+<p>│ ENTERPRISE CONTINUUM = A LIBRARY of reusable architecture patterns
+│ │ organized from GENERIC to SPECIFIC on-specific:</p>
+<pre><code>Foundation    ──►    Common Systems    ──►    Industry    ──►    Organization
+Architectures        Architectures          Architectures       Architectures
+(Generic)                                                       (Specific)</code></pre>
+<p>Components: - <strong>Architecture Continuum</strong>: Structural
+elements - <strong>Solutions Continuum</strong>: Implementation
+elements</p>
+<h3 id="architecture-repository">Architecture Repository</h3>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture Metamodel</strong></td>
+<td>Describes how architecture is organized</td>
+</tr>
+<tr>
+<td><strong>Architecture Capability</strong></td>
+<td>Parameters, structures, processes for architecture</td>
+</tr>
+<tr>
+<td><strong>Architecture Landscape</strong></td>
+<td>Architectural representations at different levels</td>
+</tr>
+<tr>
+<td><strong>Standards Information Base (SIB)</strong></td>
+<td>Standards for architecture work</td>
+</tr>
+<tr>
+<td><strong>Reference Library</strong></td>
+<td>Guidelines, templates, patterns</td>
+</tr>
+<tr>
+<td><strong>Governance Log</strong></td>
+<td>Record of governance activity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="architecture-governance">Architecture Governance</h3>
+<p><strong>Purpose</strong>: Ensure architectures are developed
+consistently and compliance is maintained</p>
+<p><strong>Key Elements</strong>: - Architecture Board - Architecture
+Compliance - Architecture Contracts - Dispensations (approved
+deviations)</p>
+<h3 id="stakeholder-management">Stakeholder Management</h3>
+<p><strong>Key Stakeholders in EA</strong>: - Sponsors/Executives -
+Business Users - IT Operations - Project Managers - Developers -
+External Partners</p>
+<p><strong>Stakeholder Analysis Techniques</strong>: - Power/Interest
+Grid - Stakeholder Map - RACI Matrix</p>
+<h3 id="views-and-viewpoints">Views and Viewpoints</h3>
+<ul>
+<li><strong>View</strong>: Representation of a system from the
+perspective of a stakeholder</li>
+<li><strong>Viewpoint</strong>: Definition of the perspective from which
+a view is taken</li>
+<li><strong>Concern</strong>: Interest in a system relevant to
+stakeholders</li>
+</ul>
+<h3 id="architecture-principles">Architecture Principles</h3>
+<p><strong>Structure of a Principle</strong>: 1. Name 2. Statement 3.
+Rationale 4. Implications</p>
+<p><strong>Example Principle</strong>: - <strong>Name</strong>:
+Technology Independence - <strong>Statement</strong>: Applications are
+independent of specific technology choices - <strong>Rationale</strong>:
+Allows technology to change without affecting applications -
+<strong>Implications</strong>: Requires standard interfaces, may
+increase development cost</p>
+<hr />
+<h2 id="common-interview-questions">Common Interview Questions
+<a name="interview-questions"></a></h2>
+<h3 id="basic-level-questions">Basic Level Questions</h3>
+<p><strong>Q1: What is TOGAF?</strong> &gt; TOGAF is an enterprise
+architecture framework that provides a comprehensive approach to
+designing, planning, implementing, and governing enterprise IT
+architecture. It includes the ADM methodology, content framework, and
+various reference models.</p>
+<p><strong>Q2: What are the four architecture domains in TOGAF?</strong>
+&gt; 1. Business Architecture &gt; 2. Data Architecture &gt; 3.
+Application Architecture &gt; 4. Technology Architecture</p>
+<p><strong>Q3: What is ADM?</strong> &gt; The Architecture Development
+Method is TOGAF’s core - a step-by-step, iterative approach to
+developing enterprise architecture. It consists of a Preliminary Phase
+plus phases A through H, with Requirements Management at the center.</p>
+<p><strong>Q4: What happens in the Preliminary Phase?</strong> &gt; The
+organization prepares for TOGAF adoption by: &gt; - Defining the
+enterprise scope &gt; - Establishing architecture principles &gt; -
+Selecting/tailoring the framework &gt; - Setting up the Architecture
+Repository &gt; - Defining governance structures</p>
+<p><strong>Q5: What is the difference between ABB and SBB?</strong> &gt;
+- <strong>ABB (Architecture Building Block)</strong>: Defines WHAT
+functionality is required; technology-agnostic &gt; - <strong>SBB
+(Solution Building Block)</strong>: Defines HOW the functionality is
+implemented; product/vendor-specific</p>
+<h3 id="intermediate-level-questions">Intermediate Level Questions</h3>
+<p><strong>Q6: Explain the Enterprise Continuum.</strong> &gt; The
+Enterprise Continuum is a view of the Architecture Repository showing
+evolution from generic to organization-specific architectures. It
+includes: &gt; - Foundation Architectures (most generic) &gt; - Common
+Systems Architectures &gt; - Industry Architectures &gt; -
+Organization-Specific Architectures (most specific) &gt; &gt; It helps
+organizations leverage existing assets and accelerate architecture
+development.
+┌─────────────────────────────────────────────────────────────────────────┐
+│ ENTERPRISE CONTINUUM FLOW │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ GENERIC SPECIFIC │ │ (Reusable everywhere) (Only for your org) │ │
+│ │ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────┐│ │ │
+Foundation │ → │ Common │ → │ Industry │ → │ Org ││ │ │ Architecture │ │
+Systems │ │ Architecture │ │ Specific ││ │ └──────────────┘
+└──────────────┘ └──────────────┘ └──────────┘│ │ │ │ Most Generic Most
+Specific │ │ (TRM, standards) (Your systems) │ │ │
+└─────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ ENTERPRISE CONTINUUM LEVELS │
+├────────────────────┬─────────────────────────────────────────────────────────┤
+│ LEVEL │ DESCRIPTION &amp; EXAMPLES │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│ │ │ │ FOUNDATION │ Universal standards, applicable to ANY organization
+│ │ ARCHITECTURES │ │ │ (Most Generic) │ Examples: │ │ │ • TOGAF
+Technical Reference Model (TRM) │ │ │ • Operating systems, networking,
+databases │ │ │ • TCP/IP, HTTP, SQL standards │ │ │ • Basic security
+models │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│ │ │ │ COMMON SYSTEMS │ Architectures for common business functions │ │
+ARCHITECTURES │ │ │ │ Examples: │ │ │ • ERP architecture patterns │ │ │
+• CRM system patterns │ │ │ • E-commerce patterns │ │ │ • Data warehouse
+patterns │ │ │ • Identity &amp; access management │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│ │ │ │ INDUSTRY │ Specific to an industry vertical │ │ ARCHITECTURES │
+│ │ │ Examples: │ │ │ • Banking: Core banking, payment systems │ │ │ •
+Gaming: Player management, RNG, bonus engines │ │ │ • Healthcare: HL7,
+FHIR standards │ │ │ • Retail: POS systems, inventory management │ │ │ •
+Telecom: Billing, network management │
+├────────────────────┼─────────────────────────────────────────────────────────┤
+│ │ │ │ ORGANIZATION- │ Your company’s specific implementations │ │
+SPECIFIC │ │ │ (Most Specific) │ Examples: │ │ │ • Your custom player
+platform │ │ │ • Your specific payment gateway integration │ │ │ • Your
+data lake architecture │ │ │ • Your microservices for your business │ │
+│ │
+└────────────────────┴─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ BENEFITS │
+├─────────────────────────────────────────────────────────────────────────┤
+│ │ │ 1. REUSE │ │ └── Don’t reinvent the wheel - use existing patterns
+│ │ │ │ 2. ACCELERATE │ │ └── Start from industry patterns, customize
+for your org │ │ │ │ 3. CONSISTENCY │ │ └── Common vocabulary across
+organization │ │ │ │ 4. LEVERAGE │ │ └── Learn from industry best
+practices │ │ │ │ 5. CLASSIFY │ │ └── Organize architecture assets
+systematically │ │ │
+└─────────────────────────────────────────────────────────────────────────┘</p>
+<p><strong>Q7: What is the purpose of Phase E (Opportunities and
+Solutions)?</strong> &gt; Phase E identifies work packages and projects
+to transform from baseline to target architecture. It: &gt; -
+Consolidates gaps across architecture domains &gt; - Groups changes into
+work packages &gt; - Identifies transition architectures &gt; - Assesses
+dependencies and priorities &gt; - Creates initial implementation
+strategy</p>
+<p><strong>Q8: How does Requirements Management work in TOGAF?</strong>
+&gt; Requirements Management is a continuous process operating at the
+center of the ADM. It: &gt; - Captures requirements throughout all
+phases &gt; - Manages the Requirements Repository &gt; - Handles
+requirement changes &gt; - Ensures requirements are addressed in
+appropriate phases &gt; - Maintains traceability</p>
+<p><strong>Q9: What is Architecture Governance?</strong> &gt;
+Architecture Governance is a framework for managing and controlling
+enterprise architecture at all levels. Key components include: &gt; -
+Architecture Board (governing body) &gt; - Architecture Compliance
+reviews &gt; - Architecture Contracts (agreements between teams) &gt; -
+Dispensations (approved deviations from standards)</p>
+<p><strong>Q10: Explain the concept of Transition
+Architectures.</strong> &gt; Transition Architectures are intermediate
+states between the Baseline and Target Architecture. They: &gt; -
+Provide incremental business value &gt; - Reduce implementation risk
+&gt; - Allow gradual transformation &gt; - Are defined in Phase E and
+refined in Phase F</p>
+<h3 id="advanced-level-questions">Advanced Level Questions</h3>
+<p><strong>Q11: How do you handle a situation where business
+requirements conflict with technical constraints?</strong> &gt; 1.
+Document both perspectives clearly &gt; 2. Engage stakeholders from both
+sides &gt; 3. Analyze trade-offs using impact assessment &gt; 4.
+Consider transition architectures as compromise &gt; 5. Escalate to
+Architecture Board if needed &gt; 6. Document decisions and rationale
+&gt; 7. Update Architecture Principles if necessary</p>
+<p><strong>Q12: How would you adapt ADM for Agile environments?</strong>
+&gt; - Use iterative cycles aligned with sprints &gt; - Focus on “just
+enough” architecture &gt; - Prioritize Architecture Runway &gt; -
+Integrate with frameworks like SAFe &gt; - Use lightweight documentation
+&gt; - Continuous stakeholder engagement &gt; - Adapt Phase G for
+continuous delivery &gt; - Implement architecture as code where
+possible</p>
+<p><strong>Q13: How do you measure architecture effectiveness?</strong>
+&gt; - Time-to-market for new capabilities &gt; - Reuse of architecture
+assets &gt; - Compliance rates with standards &gt; - Technical debt
+reduction &gt; - Business agility improvements &gt; - Cost savings from
+standardization &gt; - Stakeholder satisfaction scores &gt; -
+Architecture maturity assessments</p>
+<p><strong>Q14: Describe how you would handle a merger/acquisition from
+an EA perspective.</strong> &gt; 1. <strong>Phase A</strong>: Reassess
+Architecture Vision for combined entity &gt; 2. <strong>Phase
+B</strong>: Analyze and merge business processes &gt; 3. <strong>Phase
+C</strong>: Assess data integration and application rationalization &gt;
+4. <strong>Phase D</strong>: Consolidate infrastructure and platforms
+&gt; 5. <strong>Phase E/F</strong>: Plan integration roadmap with quick
+wins &gt; 6. Key considerations: &gt; - Cultural alignment &gt; - Data
+migration and quality &gt; - Regulatory compliance &gt; - Customer
+impact minimization</p>
+<p><strong>Q15: What’s the relationship between TOGAF and other
+frameworks?</strong> &gt; - <strong>COBIT</strong>: Complements TOGAF
+for IT governance &gt; - <strong>ITIL</strong>: Aligned for service
+management &gt; - <strong>Zachman</strong>: Can use as taxonomy within
+TOGAF &gt; - <strong>SAFe</strong>: Integrates for Agile at scale &gt; -
+<strong>ArchiMate</strong>: Modeling language that complements TOGAF
+&gt; - <strong>BPMN</strong>: For business process modeling in Phase
+B</p>
+<h3 id="scenario-based-questions">Scenario-Based Questions</h3>
+<p><strong>Q16: Your organization wants to move to cloud. How would you
+approach this using TOGAF?</strong> &gt; 1.
+<strong>Preliminary</strong>: Define cloud principles and standards &gt;
+2. <strong>Phase A</strong>: Create Cloud Migration Vision, identify
+stakeholders &gt; 3. <strong>Phase B</strong>: Identify business
+processes impacted &gt; 4. <strong>Phase C</strong>: Assess applications
+for cloud readiness (6 Rs: Rehost, Replatform, Repurchase, Refactor,
+Retain, Retire) &gt; 5. <strong>Phase D</strong>: Design target cloud
+infrastructure &gt; 6. <strong>Phase E</strong>: Identify migration
+waves and dependencies &gt; 7. <strong>Phase F</strong>: Create detailed
+migration plan &gt; 8. <strong>Phase G</strong>: Govern implementation,
+ensure security compliance &gt; 9. <strong>Phase H</strong>: Establish
+cloud operations and optimization</p>
+<p><strong>Q17: How do you handle resistance to enterprise
+architecture?</strong> &gt; - Demonstrate business value with quick wins
+&gt; - Speak in business language, not technical jargon &gt; - Involve
+stakeholders early in the process &gt; - Show how EA enables rather than
+constrains &gt; - Provide training and awareness programs &gt; - Get
+executive sponsorship &gt; - Start small and scale successes &gt; -
+Measure and communicate benefits</p>
+<hr />
+<h2 id="study-tips">Study Tips <a name="study-tips"></a></h2>
+<h3 id="for-togaf-certification">For TOGAF Certification</h3>
+<p><strong>TOGAF 9.2 Certification Paths</strong>: 1. <strong>TOGAF 9
+Foundation (Level 1)</strong>: Basic understanding - 40 multiple choice
+questions 2. <strong>TOGAF 9 Certified (Level 2)</strong>: Applied
+knowledge - 8 scenario-based questions 3. <strong>TOGAF 9 Certified
+(Combined)</strong>: Both exams taken together</p>
+<h3 id="study-recommendations">Study Recommendations</h3>
+<ol type="1">
+<li><strong>Read the Official TOGAF Standard</strong>
+<ul>
+<li>Available free from The Open Group website</li>
+<li>Focus on ADM, Content Framework, and Governance</li>
+</ul></li>
+<li><strong>Practice with Sample Questions</strong>
+<ul>
+<li>Official practice exams from The Open Group</li>
+<li>Multiple choice format for Part 1</li>
+<li>Scenario-based for Part 2</li>
+</ul></li>
+<li><strong>Memorize Key Terms</strong>
+<ul>
+<li>ADM phases and their objectives</li>
+<li>Building blocks (ABB vs SBB)</li>
+<li>Deliverables vs Artifacts</li>
+<li>Governance components</li>
+</ul></li>
+<li><strong>Understand, Don’t Just Memorize</strong>
+<ul>
+<li>Know WHY each phase exists</li>
+<li>Understand relationships between phases</li>
+<li>Be able to apply concepts to scenarios</li>
+</ul></li>
+<li><strong>Create Mind Maps</strong>
+<ul>
+<li>Visual representations help retention</li>
+<li>Map relationships between concepts</li>
+</ul></li>
+</ol>
+<h3 id="key-areas-to-focus">Key Areas to Focus</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Weight in Exam</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADM Phases</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Architecture Content</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Enterprise Continuum</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Architecture Governance</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Architecture Capability</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Reference Models</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<h3 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h3>
+<p>❌ Confusing phases (especially B, C, D) ❌ Mixing up deliverables
+and artifacts ❌ Forgetting Requirements Management is continuous ❌ Not
+understanding iteration in ADM ❌ Ignoring stakeholder concerns ❌
+Over-engineering solutions</p>
+<h3 id="quick-reference---adm-phase-outputs">Quick Reference - ADM Phase
+Outputs</h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Primary Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preliminary</td>
+<td>Organizational Model, Principles</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Architecture Vision, SOW</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Business Architecture</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Data &amp; Application Architecture</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Technology Architecture</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Implementation Strategy</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Migration Plan</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Compliance Assessments</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Change Requests</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://www.opengroup.org/togaf">The Open Group - TOGAF
+Official Site</a></li>
+<li><a href="https://pubs.opengroup.org/architecture/togaf9-doc/">TOGAF
+9.2 Standard (free access)</a></li>
+<li><a
+href="https://pubs.opengroup.org/architecture/archimate3-doc/">ArchiMate
+Specification</a></li>
+<li>[Enterprise Architecture Books]:
+<ul>
+<li>“TOGAF 9 Foundation Study Guide” by Rachel Harrison</li>
+<li>“Enterprise Architecture as Strategy” by Ross, Weill, Robertson</li>
+<li>“A Pocket Guide to TOGAF 9.2” by Andrew Josey</li>
+</ul></li>
+</ul>
+<hr />
+<p><em>Good luck with your TOGAF interview! Remember: Enterprise
+Architecture is about business value, not just technology.</em></p>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_H_Architecture_Change_Management</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_H_Architecture_Change_Management</h1>
+</header>
+<h1 id="togaf-adm---phase-h-architecture-change-management">TOGAF ADM -
+Phase H: Architecture Change Management</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Keep architecture aligned with changing
+requirements</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                 PHASE H: ARCHITECTURE CHANGE MANAGEMENT                 │
+│                                                                         │
+│   &quot;How do we keep the architecture relevant as things change?&quot;         │
+│   &quot;How do we manage changes to the approved architecture?&quot;             │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE H: KEY ACTIVITIES                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. MONITOR TECHNOLOGY CHANGES                                         │
+│     ├── New technologies (AWS new services, new frameworks)            │
+│     ├── End-of-Life (Java 11 EOL, deprecated libraries)                │
+│     ├── Security vulnerabilities (CVEs, patches)                       │
+│     └── Vendor changes (pricing, acquisitions)                         │
+│                                                                         │
+│  2. MONITOR BUSINESS CHANGES                                           │
+│     ├── Strategy changes (new products, new markets)                   │
+│     ├── Regulatory changes (DPDPA, GDPR, gaming compliance)            │
+│     ├── Organizational changes (new teams, M&amp;A)                        │
+│     └── Market changes (competitors, customer needs)                   │
+│                                                                         │
+│  3. MANAGE ARCHITECTURE CHANGE REQUESTS                                │
+│     ├── Receive change requests from teams                             │
+│     ├── Classify (Minor / Incremental / Major / Emergency)             │
+│     ├── Assess impact (systems, cost, risk)                            │
+│     ├── Approve / Reject / Defer                                       │
+│     └── Update architecture documents                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="types-of-changes">Types of Changes</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    TYPES OF ARCHITECTURE CHANGES                        │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   1. SIMPLIFICATION CHANGES                                            │
+│      └── Reduce complexity, improve efficiency                         │
+│          Example: Consolidate 3 databases into 1                       │
+│                                                                         │
+│   2. INCREMENTAL CHANGES                                               │
+│      └── Small improvements within current architecture                │
+│          Example: Add a new field to an API                            │
+│                                                                         │
+│   3. RE-ARCHITECTING CHANGES                                           │
+│      └── Major changes to architecture approach                        │
+│          Example: Move from monolith to microservices                  │
+│                                                                         │
+│   4. EMERGENCY CHANGES                                                 │
+│      └── Urgent fixes for critical issues                              │
+│          Example: Security vulnerability patch                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-change-request-acr">Architecture Change Request
+(ACR)</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE CHANGE REQUEST (ACR)                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   A formal request to modify the approved architecture                 │
+│                                                                         │
+│   ACR TEMPLATE:                                                        │
+│   ┌─────────────────────────────────────────────────────────────────┐  │
+│   │  ACR ID: ACR-2024-042                                           │  │
+│   │  Title: Add Redis caching layer                                 │  │
+│   │  Requestor: Payment Team                                        │  │
+│   │  Date: 2024-01-15                                               │  │
+│   │                                                                  │  │
+│   │  Description:                                                   │  │
+│   │  Add Redis cache to reduce database load for payment lookups    │  │
+│   │                                                                  │  │
+│   │  Reason/Driver:                                                 │  │
+│   │  Current latency is 500ms, target is 100ms                      │  │
+│   │                                                                  │  │
+│   │  Impact:                                                        │  │
+│   │  - New infrastructure component                                 │  │
+│   │  - Code changes in Payment Service                              │  │
+│   │  - Additional monitoring required                               │  │
+│   │                                                                  │  │
+│   │  Effort: 2 weeks, 2 engineers                                   │  │
+│   │  Risk: Low                                                      │  │
+│   │                                                                  │  │
+│   │  Status: Pending Review                                         │  │
+│   └─────────────────────────────────────────────────────────────────┘  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="change-management-process">Change Management Process</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    CHANGE MANAGEMENT PROCESS                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   ┌─────────────┐                                                      │
+│   │  TRIGGER    │ ← Technology change, business change, team request   │
+│   └──────┬──────┘                                                      │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌─────────────┐                                                      │
+│   │  SUBMIT ACR │ ← Team submits Architecture Change Request           │
+│   └──────┬──────┘                                                      │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌─────────────┐                                                      │
+│   │  CLASSIFY   │ ← Minor / Incremental / Major / Emergency            │
+│   └──────┬──────┘                                                      │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌─────────────┐                                                      │
+│   │   ASSESS    │ ← Impact analysis: systems, cost, risk, effort       │
+│   └──────┬──────┘                                                      │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌─────────────┐                                                      │
+│   │   REVIEW    │ ← Architecture Board reviews                         │
+│   └──────┬──────┘                                                      │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌─────────────────────────────────────────┐                          │
+│   │              DECISION                    │                          │
+│   │  ┌─────────┐  ┌─────────┐  ┌─────────┐  │                          │
+│   │  │ APPROVE │  │ REJECT  │  │  DEFER  │  │                          │
+│   │  └────┬────┘  └────┬────┘  └────┬────┘  │                          │
+│   └───────┼────────────┼────────────┼───────┘                          │
+│           │            │            │                                   │
+│           ▼            ▼            ▼                                   │
+│   ┌─────────────┐  ┌───────┐  ┌──────────┐                             │
+│   │ UPDATE ARCH │  │ CLOSE │  │ BACKLOG  │                             │
+│   │ DOCUMENTS   │  │ ACR   │  │ FOR LATER│                             │
+│   └─────────────┘  └───────┘  └──────────┘                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="when-to-start-new-adm-cycle">When to Start New ADM Cycle</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    WHEN TO START NEW ADM CYCLE                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   Phase H may trigger a NEW ADM cycle when:                            │
+│                                                                         │
+│   1. MAJOR BUSINESS CHANGE                                             │
+│      └── New product line, M&amp;A, major strategy shift                   │
+│                                                                         │
+│   2. SIGNIFICANT TECHNOLOGY SHIFT                                      │
+│      └── Cloud migration, platform change, major upgrade               │
+│                                                                         │
+│   3. REGULATORY REQUIREMENTS                                           │
+│      └── New compliance needs (GDPR, DPDPA, industry regulations)      │
+│                                                                         │
+│   4. ARCHITECTURE DRIFT                                                │
+│      └── Current state has drifted too far from target                 │
+│                                                                         │
+│   5. TARGET ACHIEVED                                                   │
+│      └── Current target reached, time to define new target             │
+│                                                                         │
+│   ─────────────────────────────────────────────────────────────────    │
+│                                                                         │
+│   Phase H → (triggers) → Phase A (new cycle)                           │
+│                                                                         │
+│   This is why ADM is ITERATIVE!                                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-refresh">Architecture Refresh</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE REFRESH                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   Periodic review and update of architecture                           │
+│                                                                         │
+│   FREQUENCY:                                                           │
+│   • Annual review (minimum)                                            │
+│   • Quarterly for fast-changing domains                                │
+│                                                                         │
+│   WHAT TO REVIEW:                                                      │
+│   • Are architecture principles still valid?                           │
+│   • Is target state still relevant?                                    │
+│   • What technology changes need attention?                            │
+│   • What business changes need attention?                              │
+│   • Is the roadmap still on track?                                     │
+│                                                                         │
+│   OUTPUT:                                                              │
+│   • Updated Architecture Vision (if needed)                            │
+│   • Updated Roadmap                                                    │
+│   • New ADM cycle (if major changes)                                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture Updates</strong></td>
+<td>Updated documentation reflecting changes</td>
+</tr>
+<tr>
+<td><strong>Change Requests</strong></td>
+<td>ACRs submitted and processed</td>
+</tr>
+<tr>
+<td><strong>Governance Log</strong></td>
+<td>Record of all changes and decisions</td>
+</tr>
+<tr>
+<td><strong>Dispensation Updates</strong></td>
+<td>Review and update of existing dispensations</td>
+</tr>
+<tr>
+<td><strong>New ADM Cycle (if needed)</strong></td>
+<td>Trigger for Phase A if major change</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE H = &quot;KEEP ARCHITECTURE ALIVE&quot;                                  │
+│                                                                         │
+│   • Monitor technology changes (new tech, EOL, vulnerabilities)        │
+│   • Monitor business changes (strategy, regulations, market)           │
+│   • Manage change requests (ACRs)                                      │
+│   • Update architecture documents                                      │
+│   • Trigger new ADM cycle when needed                                  │
+│                                                                         │
+│   OUTPUT: Architecture Updates + Change Requests + Governance Log      │
+│                                                                         │
+│   Without Phase H, architecture becomes outdated and irrelevant!       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

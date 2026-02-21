@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_A_Architecture_Vision</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_A_Architecture_Vision</h1>
+</header>
+<h1 id="togaf-adm---phase-a-architecture-vision">TOGAF ADM - Phase A:
+Architecture Vision</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Develop high-level vision of capabilities
+and business value</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE A: ARCHITECTURE VISION                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Create a shared understanding of WHERE we&#39;re going          │
+│                                                                         │
+│   THIS IS WHERE EVERY PROJECT STARTS!                                  │
+│                                                                         │
+│   OUTCOME: Approval to proceed with architecture work                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">6 Key Activities</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE A - 6 KEY ACTIVITIES                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. IDENTIFY STAKEHOLDERS &amp; CONCERNS                                   │
+│                                                                         │
+│  2. CONFIRM BUSINESS GOALS &amp; DRIVERS                                   │
+│                                                                         │
+│  3. DEFINE SCOPE                                                       │
+│                                                                         │
+│  4. CREATE ARCHITECTURE VISION                                         │
+│                                                                         │
+│  5. ASSESS READINESS FOR TRANSFORMATION                                │
+│                                                                         │
+│  6. OBTAIN APPROVAL (Statement of Architecture Work)                   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="activity-1-identify-stakeholders-concerns">Activity 1: Identify
+Stakeholders &amp; Concerns</h2>
+<h3 id="stakeholder-domains">Stakeholder Domains</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                    STAKEHOLDER DOMAINS                          │
+├─────────────────┬─────────────────┬─────────────────────────────┤
+│    BUSINESS     │       IT        │      EXTERNAL               │
+├─────────────────┼─────────────────┼─────────────────────────────┤
+│ • CEO/COO       │ • CIO/CTO       │ • Customers                 │
+│ • Business Unit │ • IT Operations │ • Vendors/Partners          │
+│   Heads         │ • Developers    │ • Regulators                │
+│ • Process Owners│ • Infrastructure│ • Auditors                  │
+│ • End Users     │ • Security      │ • Industry Bodies           │
+│ • Finance/CFO   │ • Data Teams    │ • Shareholders              │
+│ • HR            │ • PMO           │ • Suppliers                 │
+└─────────────────┴─────────────────┴─────────────────────────────┘</code></pre>
+<h3 id="stakeholder-analysis-process">Stakeholder Analysis Process</h3>
+<pre><code>STEP 1: List all stakeholders
+        └── From Stakeholder Map
+
+STEP 2: Interview/Survey each stakeholder
+        └── &quot;What matters most to you?&quot;
+
+STEP 3: Document concerns
+        └── Be specific, not vague
+
+STEP 4: Prioritize concerns
+        └── High / Medium / Low
+
+STEP 5: Map to architecture views
+        └── Which view addresses which concern?
+
+STEP 6: Validate with stakeholders
+        └── &quot;Did I capture your concerns correctly?&quot;</code></pre>
+<h3 id="concerns-matrix">Concerns Matrix</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                     CONCERNS MATRIX                             │
+├──────────────────┬──────────────────────────────────────────────┤
+│   STAKEHOLDER    │              CONCERNS                        │
+├──────────────────┼──────────────────────────────────────────────┤
+│ CEO              │ ROI, Business value, Risk                    │
+├──────────────────┼──────────────────────────────────────────────┤
+│ CIO              │ Cost, Timeline, Integration                  │
+├──────────────────┼──────────────────────────────────────────────┤
+│ End Users        │ Easy to use, Fast, Reliable                  │
+├──────────────────┼──────────────────────────────────────────────┤
+│ IT Operations    │ Maintainability, Availability, Support       │
+├──────────────────┼──────────────────────────────────────────────┤
+│ Security Officer │ Data protection, Compliance, Access control  │
+└──────────────────┴──────────────────────────────────────────────┘</code></pre>
+<h3 id="raci-matrix">RACI Matrix</h3>
+<pre><code>RACI Matrix (R=Responsible, A=Accountable, C=Consulted, I=Informed)
+┌──────────────────┬─────┬────────┬──────────┬──────────┐
+│ ACTIVITY         │ CIO │ Sr. EA │ Bus.Owner│ Dev Team │
+├──────────────────┼─────┼────────┼──────────┼──────────┤
+│ Define Vision    │  A  │   R    │    C     │    I     │
+│ Gather Reqmts    │  I  │   A    │    R     │    C     │
+│ Approve Vision   │  A  │   R    │    C     │    I     │
+│ Implementation   │  I  │   C    │    I     │    R     │
+└──────────────────┴─────┴────────┴──────────┴──────────┘</code></pre>
+<hr />
+<h2 id="activity-2-confirm-business-goals-drivers">Activity 2: Confirm
+Business Goals &amp; Drivers</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│  ACTIVITY 2: CONFIRM BUSINESS GOALS &amp; DRIVERS                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  WHAT TO DO:                                                           │
+│  • Understand WHY this project exists                                  │
+│  • Identify business problems to solve                                 │
+│  • Confirm strategic goals being supported                             │
+│                                                                         │
+│  EXAMPLE BUSINESS DRIVERS:                                             │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │ • &quot;We need to enter new markets faster&quot;                         │   │
+│  │ • &quot;Our costs are too high&quot;                                      │   │
+│  │ • &quot;Competitors are ahead of us&quot;                                 │   │
+│  │ • &quot;Regulations require us to change&quot;                            │   │
+│  │ • &quot;Customer experience is poor&quot;                                 │   │
+│  │ • &quot;Legacy systems are holding us back&quot;                          │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+│  OUTPUT: Business Goals document, Key Drivers list                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="activity-3-define-scope">Activity 3: Define Scope</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    STEP 3: DEFINE SCOPE                                 │
+│                                                                         │
+│   &quot;WHAT is included and WHAT is NOT included in this architecture?&quot;    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="why-scope-matters">Why Scope Matters</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    WHY SCOPE MATTERS                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ❌ WITHOUT CLEAR SCOPE:                                               │
+│     • Scope creep (project keeps growing)                              │
+│     • Unclear expectations                                             │
+│     • Wasted effort on wrong things                                    │
+│     • Never-ending project                                             │
+│     • Stakeholder conflicts                                            │
+│                                                                         │
+│  ✅ WITH CLEAR SCOPE:                                                  │
+│     • Everyone knows what&#39;s included                                   │
+│     • Clear boundaries = focused effort                                │
+│     • Easier to estimate time &amp; cost                                   │
+│     • Can say &quot;NO&quot; to out-of-scope requests                            │
+│     • Stakeholders aligned                                             │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="scope-dimensions">Scope Dimensions</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    SCOPE DIMENSIONS                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1. BREADTH (Organizational Scope)                                     │
+│     └── WHICH parts of the organization?                               │
+│         • Entire enterprise?                                           │
+│         • One business unit?                                           │
+│         • One department?                                              │
+│         • One system/application?                                      │
+│                                                                         │
+│  2. DEPTH (Level of Detail)                                            │
+│     └── HOW detailed will the architecture be?                         │
+│         • Strategic (high-level overview)                              │
+│         • Segment (business unit level)                                │
+│         • Capability (detailed)                                        │
+│                                                                         │
+│  3. ARCHITECTURE DOMAINS                                               │
+│     └── WHICH domains are included?                                    │
+│         • Business Architecture? (B)                                   │
+│         • Data Architecture? (C)                                       │
+│         • Application Architecture? (C)                                │
+│         • Technology Architecture? (D)                                 │
+│         • All of them?                                                 │
+│                                                                         │
+│  4. TIME HORIZON                                                       │
+│     └── WHEN is the target state?                                      │
+│         • 1 year?                                                      │
+│         • 3 years?                                                     │
+│         • 5 years?                                                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="depth-levels-explained">Depth Levels Explained</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   DEPTH LEVELS = ZOOM LEVELS ON A MAP 🗺️                               │
+│                                                                         │
+│   STRATEGIC   = Country view     (&quot;India wants digital economy&quot;)       │
+│   SEGMENT     = City view        (&quot;Mumbai needs better transit&quot;)       │
+│   CAPABILITY  = Street view      (&quot;Build Metro Line 3, Station X&quot;)     │
+│                                                                         │
+│   Same project, different zoom levels for different audiences!         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="time-horizon">Time Horizon</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    TIME HORIZON                                         │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   TIME HORIZON = The DEADLINE to reach Target State Architecture       │
+│                                                                         │
+│   SHORT-TERM:    6 months - 1 year  (Quick wins, tactical)             │
+│   MEDIUM-TERM:   1-3 years          (Major projects)                   │
+│   LONG-TERM:     3-5 years          (Strategic transformation)         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<h3 id="architecture-vision-document">Architecture Vision Document</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│              ARCHITECTURE VISION DOCUMENT                       │
+├─────────────────────────────────────────────────────────────────┤
+│  1. Problem Description                                         │
+│  2. Objectives &amp; Scope                                          │
+│  3. Stakeholder Map &amp; Concerns                                  │
+│  4. Business Scenario (if used)                                 │
+│  5. High-Level Baseline Architecture                            │
+│  6. High-Level Target Architecture                              │
+│  7. Gap Analysis (High-Level)                                   │
+│  8. Key Architecture Requirements                               │
+│  9. Risks &amp; Constraints                                         │
+│  10. Business Value &amp; Benefits                                  │
+│  11. Architecture Principles (Applicable)                       │
+│  12. Approval &amp; Sign-off                                        │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="statement-of-architecture-work-sow">Statement of Architecture
+Work (SOW)</h3>
+<pre><code>STATEMENT OF ARCHITECTURE WORK
+==============================
+
+┌─────────────────────────────────────┐
+│ 1. TITLE        │ 2. REQUEST        │  PROJECT
+│ 3. DESCRIPTION  │ 4. SCOPE          │  BASICS
+├─────────────────────────────────────┤
+│ 5. VISION       │ 6. ROLES          │  WORK
+│ 7. DELIVERABLES │ 8. ACCEPTANCE     │  DETAILS
+├─────────────────────────────────────┤
+│ 9. SCHEDULE     │ 10. RESOURCES     │  HOW
+│ 11. RISKS       │ 12. CONSTRAINTS   │  WE DO IT
+├─────────────────────────────────────┤
+│ 13. STAKEHOLDERS│ 14. APPROVALS     │  WHO
+└─────────────────────────────────────┘</code></pre>
+<h3 id="sow-vs-architecture-vision-document">SOW vs Architecture Vision
+Document</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│  STATEMENT OF ARCHITECTURE WORK    │  ARCHITECTURE VISION DOCUMENT      │
+│  (SOW)                             │                                    │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  📋 PROJECT CONTRACT               │  🎯 ARCHITECTURE CONTENT           │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  HOW we will do the work           │  WHAT the architecture looks like  │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  • Schedule &amp; Timeline             │  • Baseline Architecture           │
+│  • Resources &amp; Budget              │  • Target Architecture             │
+│  • Roles &amp; Responsibilities        │  • Gap Analysis                    │
+│  • Deliverables list               │  • Business Value                  │
+│  • Acceptance criteria             │  • Stakeholder Concerns            │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  Like a PROJECT CHARTER            │  Like a SOLUTION OVERVIEW          │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  Signed by: Sponsors/Management    │  Used by: Architecture team        │
+├────────────────────────────────────┼────────────────────────────────────┤
+│  &quot;Here&#39;s how we&#39;ll run the         │  &quot;Here&#39;s where we are, where       │
+│   architecture project&quot;            │   we&#39;re going, and why&quot;            │
+└────────────────────────────────────┴────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE A = &quot;GET APPROVAL TO START&quot;                                    │
+│                                                                         │
+│   • Identify WHO cares (stakeholders)                                  │
+│   • Understand WHY (business drivers)                                  │
+│   • Define WHAT&#39;s included (scope)                                     │
+│   • Create VISION (where we&#39;re going)                                  │
+│   • Get APPROVAL (SOW signed)                                          │
+│                                                                         │
+│   OUTPUT: Green light to proceed with detailed architecture work!      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

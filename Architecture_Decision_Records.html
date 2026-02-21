@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Architecture Decision Records Guide</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Architecture Decision Records Guide</h1>
+</header>
+<h1 id="architecture-decision-records-adr-guide">Architecture Decision
+Records (ADR) Guide</h1>
+<h2 id="what-is-an-adr">What is an ADR?</h2>
+<p>An <strong>Architecture Decision Record (ADR)</strong> is a document
+that captures an important architectural decision made along with its
+context and consequences. ADRs are stored in the <strong>Governance
+Log</strong> within the Architecture Repository.</p>
+<hr />
+<h2 id="adr-structure">ADR Structure</h2>
+<p>Every ADR should contain these key sections:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ID</strong></td>
+<td>Unique identifier (e.g., ADR-001)</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>Short descriptive name</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Current state of the decision</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>When the decision was made</td>
+</tr>
+<tr>
+<td><strong>Context</strong></td>
+<td>Why this decision is needed</td>
+</tr>
+<tr>
+<td><strong>Decision</strong></td>
+<td>What was decided</td>
+</tr>
+<tr>
+<td><strong>Rationale</strong></td>
+<td>Why this option was chosen</td>
+</tr>
+<tr>
+<td><strong>Alternatives</strong></td>
+<td>Other options considered</td>
+</tr>
+<tr>
+<td><strong>Consequences</strong></td>
+<td>Impact of this decision</td>
+</tr>
+<tr>
+<td><strong>Stakeholders</strong></td>
+<td>Who was involved</td>
+</tr>
+<tr>
+<td><strong>Related ADRs</strong></td>
+<td>Links to related decisions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="adr-status-lifecycle">ADR Status Lifecycle</h2>
+<pre><code>┌──────────┐    ┌──────────┐    ┌────────────┐
+│ PROPOSED │───▶│ ACCEPTED │───▶│ DEPRECATED │
+└──────────┘    └──────────┘    └────────────┘
+                    │                  │
+                    │                  ▼
+                    │           ┌────────────┐
+                    └──────────▶│ SUPERSEDED │
+                                └────────────┘</code></pre>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Proposed</strong></td>
+<td>Under review, not yet approved</td>
+</tr>
+<tr>
+<td><strong>Accepted</strong></td>
+<td>Approved and in effect</td>
+</tr>
+<tr>
+<td><strong>Deprecated</strong></td>
+<td>No longer recommended</td>
+</tr>
+<tr>
+<td><strong>Superseded</strong></td>
+<td>Replaced by another ADR</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="sample-adr-documents">Sample ADR Documents</h1>
+<hr />
+<h2 id="adr-001-microservices-architecture-pattern">ADR-001:
+Microservices Architecture Pattern</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-001</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>Adoption of Microservices Architecture</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>✅ ACCEPTED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-03-15</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Enterprise Architecture Team</td>
+</tr>
+<tr>
+<td><strong>Review Board</strong></td>
+<td>Architecture Review Board (ARB)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context">Context</h3>
+<p>Our current monolithic e-commerce platform has the following
+challenges: - <strong>Scalability Issues</strong>: Cannot scale
+individual components independently - <strong>Deployment Risk</strong>:
+Single deployment for entire application - <strong>Technology
+Lock-in</strong>: Entire system tied to Java/Spring - <strong>Team
+Bottlenecks</strong>: Multiple teams working on same codebase -
+<strong>Release Velocity</strong>: 4-week release cycles due to
+coordination overhead</p>
+<h3 id="decision">Decision</h3>
+<p><strong>We will adopt a microservices architecture pattern</strong>
+for the next-generation platform with the following characteristics:</p>
+<ol type="1">
+<li><strong>Domain-Driven Design</strong> - Services aligned to business
+domains</li>
+<li><strong>API-First Approach</strong> - REST/gRPC for inter-service
+communication</li>
+<li><strong>Database per Service</strong> - Each service owns its
+data</li>
+<li><strong>Event-Driven</strong> - Async communication via message
+queues</li>
+<li><strong>Container-Based</strong> - Kubernetes for orchestration</li>
+</ol>
+<h3 id="rationale">Rationale</h3>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Monolith</th>
+<th>Microservices</th>
+<th>Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Independent Scaling</td>
+<td>❌</td>
+<td>✅</td>
+<td>Microservices</td>
+</tr>
+<tr>
+<td>Deployment Risk</td>
+<td>High</td>
+<td>Low</td>
+<td>Microservices</td>
+</tr>
+<tr>
+<td>Technology Flexibility</td>
+<td>❌</td>
+<td>✅</td>
+<td>Microservices</td>
+</tr>
+<tr>
+<td>Team Autonomy</td>
+<td>❌</td>
+<td>✅</td>
+<td>Microservices</td>
+</tr>
+<tr>
+<td>Operational Complexity</td>
+<td>Low</td>
+<td>High</td>
+<td>Monolith</td>
+</tr>
+<tr>
+<td>Initial Development Speed</td>
+<td>✅</td>
+<td>❌</td>
+<td>Monolith</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision</strong>: Benefits outweigh complexity for our scale
+(50+ developers, 10M+ users)</p>
+<h3 id="alternatives-considered">Alternatives Considered</h3>
+<h4 id="option-a-modular-monolith">Option A: Modular Monolith</h4>
+<ul>
+<li><strong>Pros</strong>: Simpler operations, easier debugging</li>
+<li><strong>Cons</strong>: Still coupled deployments, limited
+scaling</li>
+<li><strong>Verdict</strong>: Rejected - doesn’t solve scaling
+needs</li>
+</ul>
+<h4 id="option-b-serverless-faas">Option B: Serverless (FaaS)</h4>
+<ul>
+<li><strong>Pros</strong>: No infrastructure management,
+auto-scaling</li>
+<li><strong>Cons</strong>: Cold starts, vendor lock-in, debugging
+challenges</li>
+<li><strong>Verdict</strong>: Rejected - not suitable for stateful
+workflows</li>
+</ul>
+<h4 id="option-c-microservices-selected">Option C: Microservices
+(Selected)</h4>
+<ul>
+<li><strong>Pros</strong>: Independent scaling, team autonomy, tech
+flexibility</li>
+<li><strong>Cons</strong>: Operational complexity, distributed systems
+challenges</li>
+<li><strong>Verdict</strong>: Selected - best fit for organization size
+and needs</li>
+</ul>
+<h3 id="consequences">Consequences</h3>
+<h4 id="positive-consequences">Positive Consequences</h4>
+<ul>
+<li>✅ Independent deployment of services (CI/CD per service)</li>
+<li>✅ Horizontal scaling per business domain</li>
+<li>✅ Technology diversity (Python for ML, Go for high-perf, Node for
+APIs)</li>
+<li>✅ Team autonomy and ownership</li>
+<li>✅ Fault isolation (one service failure doesn’t crash entire
+system)</li>
+</ul>
+<h4 id="negative-consequences">Negative Consequences</h4>
+<ul>
+<li>⚠️ Increased operational complexity</li>
+<li>⚠️ Need for service mesh and API gateway</li>
+<li>⚠️ Distributed tracing and logging infrastructure required</li>
+<li>⚠️ Data consistency challenges (eventual consistency)</li>
+<li>⚠️ Higher initial infrastructure costs</li>
+</ul>
+<h4 id="mitigation-strategies">Mitigation Strategies</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operational Complexity</td>
+<td>Invest in DevOps team, use managed Kubernetes</td>
+</tr>
+<tr>
+<td>Distributed Debugging</td>
+<td>Implement Jaeger/Zipkin tracing</td>
+</tr>
+<tr>
+<td>Data Consistency</td>
+<td>Saga pattern, event sourcing</td>
+</tr>
+<tr>
+<td>Service Discovery</td>
+<td>Use Consul or Kubernetes DNS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stakeholders">Stakeholders</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chief Architect</td>
+<td>John Smith</td>
+<td>✅ Approved</td>
+</tr>
+<tr>
+<td>VP Engineering</td>
+<td>Sarah Johnson</td>
+<td>✅ Approved</td>
+</tr>
+<tr>
+<td>Security Architect</td>
+<td>Mike Chen</td>
+<td>✅ Approved with conditions</td>
+</tr>
+<tr>
+<td>Operations Lead</td>
+<td>Lisa Wong</td>
+<td>⚠️ Approved with concerns</td>
+</tr>
+</tbody>
+</table>
+<h3 id="related-adrs">Related ADRs</h3>
+<ul>
+<li>ADR-002: API Gateway Selection</li>
+<li>ADR-003: Message Queue Technology</li>
+<li>ADR-005: Database Strategy</li>
+</ul>
+<hr />
+<h2 id="adr-002-api-gateway-selection">ADR-002: API Gateway
+Selection</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-002</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>Kong as Enterprise API Gateway</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>✅ ACCEPTED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-03-22</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Platform Team</td>
+</tr>
+<tr>
+<td><strong>Supersedes</strong></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-1">Context</h3>
+<p>With the adoption of microservices (ADR-001), we need a centralized
+API Gateway for: - Request routing and load balancing - Authentication
+and authorization - Rate limiting and throttling - API versioning -
+Monitoring and analytics</p>
+<h3 id="decision-1">Decision</h3>
+<p><strong>We will use Kong Enterprise</strong> as our API Gateway
+platform.</p>
+<h3 id="alternatives-considered-1">Alternatives Considered</h3>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Gateway</th>
+<th>Pros</th>
+<th>Cons</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kong</strong></td>
+<td>Open-source core, plugin ecosystem, Kubernetes-native</td>
+<td>Enterprise features require license</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td><strong>AWS API Gateway</strong></td>
+<td>Managed, serverless integration</td>
+<td>Vendor lock-in, limited customization</td>
+<td>6/10</td>
+</tr>
+<tr>
+<td><strong>Apigee</strong></td>
+<td>Strong analytics, developer portal</td>
+<td>Expensive, complex setup</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td><strong>NGINX Plus</strong></td>
+<td>High performance, familiar</td>
+<td>Limited built-in features</td>
+<td>6/10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="consequences-1">Consequences</h3>
+<h4 id="positive">Positive</h4>
+<ul>
+<li>✅ Rich plugin ecosystem (50+ plugins)</li>
+<li>✅ Kubernetes-native with Ingress Controller</li>
+<li>✅ Open-source core reduces vendor lock-in</li>
+<li>✅ Strong community support</li>
+</ul>
+<h4 id="negative">Negative</h4>
+<ul>
+<li>⚠️ Enterprise license cost for advanced features</li>
+<li>⚠️ Learning curve for team</li>
+</ul>
+<h3 id="related-adrs-1">Related ADRs</h3>
+<ul>
+<li>ADR-001: Microservices Architecture Pattern</li>
+</ul>
+<hr />
+<h2 id="adr-003-event-driven-architecture-with-kafka">ADR-003:
+Event-Driven Architecture with Kafka</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-003</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>Apache Kafka for Event Streaming</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>✅ ACCEPTED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-04-01</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Data Platform Team</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-2">Context</h3>
+<p>Microservices require asynchronous communication for: - Decoupling
+services - Event sourcing - Real-time analytics - Audit logging</p>
+<h3 id="decision-2">Decision</h3>
+<p><strong>We will use Apache Kafka</strong> as our event streaming
+platform with Confluent Cloud for managed operations.</p>
+<h3 id="alternatives-considered-2">Alternatives Considered</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Throughput</th>
+<th>Ordering</th>
+<th>Persistence</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kafka</strong></td>
+<td>Very High</td>
+<td>✅ Partition-level</td>
+<td>✅ Configurable</td>
+<td>Selected</td>
+</tr>
+<tr>
+<td><strong>RabbitMQ</strong></td>
+<td>High</td>
+<td>❌ Limited</td>
+<td>⚠️ Optional</td>
+<td>Rejected</td>
+</tr>
+<tr>
+<td><strong>AWS SQS/SNS</strong></td>
+<td>High</td>
+<td>❌ FIFO limited</td>
+<td>✅ Yes</td>
+<td>Rejected</td>
+</tr>
+<tr>
+<td><strong>Redis Streams</strong></td>
+<td>Very High</td>
+<td>✅ Yes</td>
+<td>⚠️ Memory-based</td>
+<td>Rejected</td>
+</tr>
+</tbody>
+</table>
+<h3 id="consequences-2">Consequences</h3>
+<h4 id="positive-1">Positive</h4>
+<ul>
+<li>✅ High throughput (millions of events/second)</li>
+<li>✅ Event replay capability</li>
+<li>✅ Strong ordering guarantees per partition</li>
+<li>✅ Ecosystem (Kafka Connect, ksqlDB, Schema Registry)</li>
+</ul>
+<h4 id="negative-1">Negative</h4>
+<ul>
+<li>⚠️ Operational complexity (if self-managed)</li>
+<li>⚠️ Learning curve for developers</li>
+<li>⚠️ Cost of Confluent Cloud</li>
+</ul>
+<hr />
+<h2 id="adr-004-authentication-strategy">ADR-004: Authentication
+Strategy</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-004</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>OAuth 2.0 + JWT for Authentication</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>✅ ACCEPTED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-04-10</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Security Team</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-3">Context</h3>
+<p>Need standardized authentication across: - Public APIs (mobile, web)
+- Internal service-to-service - Third-party integrations</p>
+<h3 id="decision-3">Decision</h3>
+<p><strong>We will implement OAuth 2.0 with JWT tokens</strong> using
+Keycloak as the Identity Provider.</p>
+<h3 id="token-structure">Token Structure</h3>
+<pre><code>JWT Token Components:
+┌─────────────────────────────────────────────────┐
+│ HEADER                                          │
+│ {                                               │
+│   &quot;alg&quot;: &quot;RS256&quot;,                               │
+│   &quot;typ&quot;: &quot;JWT&quot;                                  │
+│ }                                               │
+├─────────────────────────────────────────────────┤
+│ PAYLOAD                                         │
+│ {                                               │
+│   &quot;sub&quot;: &quot;user-123&quot;,                            │
+│   &quot;iss&quot;: &quot;https://auth.company.com&quot;,            │
+│   &quot;aud&quot;: [&quot;api-gateway&quot;, &quot;order-service&quot;],      │
+│   &quot;exp&quot;: 1699999999,                            │
+│   &quot;roles&quot;: [&quot;user&quot;, &quot;premium&quot;],                 │
+│   &quot;tenant_id&quot;: &quot;tenant-456&quot;                     │
+│ }                                               │
+├─────────────────────────────────────────────────┤
+│ SIGNATURE                                       │
+│ RS256(header + payload, private_key)            │
+└─────────────────────────────────────────────────┘</code></pre>
+<h3 id="consequences-3">Consequences</h3>
+<h4 id="positive-2">Positive</h4>
+<ul>
+<li>✅ Stateless authentication (no session storage)</li>
+<li>✅ Industry standard (OAuth 2.0)</li>
+<li>✅ Fine-grained access control via scopes</li>
+<li>✅ Support for multiple identity providers</li>
+</ul>
+<h4 id="negative-2">Negative</h4>
+<ul>
+<li>⚠️ Token revocation complexity</li>
+<li>⚠️ Token size can be large with many claims</li>
+</ul>
+<hr />
+<h2 id="adr-005-database-per-service-strategy">ADR-005: Database per
+Service Strategy</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-005</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>Polyglot Persistence - Database per Service</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>✅ ACCEPTED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-04-15</td>
+</tr>
+<tr>
+<td><strong>Author</strong></td>
+<td>Data Architecture Team</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-4">Context</h3>
+<p>Microservices require data autonomy. Each service should: - Own its
+data schema - Choose appropriate database technology - Scale
+independently</p>
+<h3 id="decision-4">Decision</h3>
+<p><strong>Each microservice will own its database</strong>, with
+technology selection based on use case.</p>
+<h3 id="database-selection-matrix">Database Selection Matrix</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 27%" />
+<col style="width: 21%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th>Service</th>
+<th>Data Pattern</th>
+<th>Database</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User Service</strong></td>
+<td>Relational, ACID</td>
+<td>PostgreSQL</td>
+<td>Strong consistency for user data</td>
+</tr>
+<tr>
+<td><strong>Product Catalog</strong></td>
+<td>Document, flexible schema</td>
+<td>MongoDB</td>
+<td>Variable product attributes</td>
+</tr>
+<tr>
+<td><strong>Order Service</strong></td>
+<td>Relational, transactions</td>
+<td>PostgreSQL</td>
+<td>ACID for financial data</td>
+</tr>
+<tr>
+<td><strong>Search Service</strong></td>
+<td>Full-text search</td>
+<td>Elasticsearch</td>
+<td>Fast text search</td>
+</tr>
+<tr>
+<td><strong>Session Store</strong></td>
+<td>Key-value, high speed</td>
+<td>Redis</td>
+<td>Low latency reads</td>
+</tr>
+<tr>
+<td><strong>Analytics</strong></td>
+<td>Time-series, aggregations</td>
+<td>ClickHouse</td>
+<td>Fast analytical queries</td>
+</tr>
+<tr>
+<td><strong>Audit Log</strong></td>
+<td>Append-only, immutable</td>
+<td>Kafka + S3</td>
+<td>Event sourcing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="consequences-4">Consequences</h3>
+<h4 id="positive-3">Positive</h4>
+<ul>
+<li>✅ Right tool for the job</li>
+<li>✅ Independent scaling</li>
+<li>✅ Team autonomy</li>
+<li>✅ No shared database bottleneck</li>
+</ul>
+<h4 id="negative-3">Negative</h4>
+<ul>
+<li>⚠️ No cross-service joins (use API composition)</li>
+<li>⚠️ Eventual consistency between services</li>
+<li>⚠️ Multiple database technologies to manage</li>
+</ul>
+<hr />
+<h2 id="adr-006-frontend-architecture-deprecated">ADR-006: Frontend
+Architecture (Deprecated)</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ADR ID</strong></td>
+<td>ADR-006</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>React SPA Architecture</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>🚫 DEPRECATED</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>2024-02-01</td>
+</tr>
+<tr>
+<td><strong>Deprecated Date</strong></td>
+<td>2024-08-15</td>
+</tr>
+<tr>
+<td><strong>Superseded By</strong></td>
+<td>ADR-010</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-5">Context</h3>
+<p>Initial decision for single-page application architecture.</p>
+<h3 id="decision-5">Decision</h3>
+<p>Use React with Create React App for frontend.</p>
+<h3 id="reason-for-deprecation">Reason for Deprecation</h3>
+<ul>
+<li>SEO requirements emerged</li>
+<li>Performance issues with large bundles</li>
+<li>Better alternatives available (Next.js)</li>
+</ul>
+<p><strong>See ADR-010 for current frontend strategy.</strong></p>
+<hr />
+<h2 id="adr-template">ADR Template</h2>
+<p>Use this template for new ADRs:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># ADR-[NUMBER]: [TITLE]</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Value <span class="pp">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------|-------|</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **ADR ID** <span class="pp">|</span> ADR-XXX <span class="pp">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Title** <span class="pp">|</span> <span class="co">[</span><span class="ot">Short descriptive title</span><span class="co">]</span> <span class="pp">|</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Status** <span class="pp">|</span> PROPOSED / ACCEPTED / DEPRECATED / SUPERSEDED <span class="pp">|</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Date** <span class="pp">|</span> YYYY-MM-DD <span class="pp">|</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Author** <span class="pp">|</span> <span class="co">[</span><span class="ot">Team/Person</span><span class="co">]</span> <span class="pp">|</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Supersedes** <span class="pp">|</span> <span class="co">[</span><span class="ot">ADR-XXX if applicable</span><span class="co">]</span> <span class="pp">|</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Context</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What is the issue? Why do we need to make this decision?</span><span class="co">]</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Decision</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">What is the change that we&#39;re proposing and/or doing?</span><span class="co">]</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rationale</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Why was this option chosen over alternatives?</span><span class="co">]</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternatives Considered</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option A: [Name]</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Pros**: ...</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cons**: ...</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Verdict**: Rejected/Selected</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option B: [Name]</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Consequences</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Positive</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>✅ <span class="co">[</span><span class="ot">Benefit 1</span><span class="co">]</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>✅ <span class="co">[</span><span class="ot">Benefit 2</span><span class="co">]</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Negative</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>⚠️ <span class="co">[</span><span class="ot">Drawback 1</span><span class="co">]</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>⚠️ <span class="co">[</span><span class="ot">Drawback 2</span><span class="co">]</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mitigation</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Risk <span class="pp">|</span> Mitigation <span class="pp">|</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|------------|</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">Risk 1</span><span class="co">]</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Strategy</span><span class="co">]</span> <span class="pp">|</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stakeholders</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Role <span class="pp">|</span> Name <span class="pp">|</span> Decision <span class="pp">|</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|------|----------|</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">Role</span><span class="co">]</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Name</span><span class="co">]</span> <span class="pp">|</span> Approved/Rejected <span class="pp">|</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Related ADRs</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ADR-XXX: <span class="co">[</span><span class="ot">Title</span><span class="co">]</span></span></code></pre></div>
+<hr />
+<h2 id="adr-best-practices">ADR Best Practices</h2>
+<h3 id="dos">Do’s ✅</h3>
+<ol type="1">
+<li><strong>Keep it concise</strong> - Focus on the decision, not
+implementation details</li>
+<li><strong>Document alternatives</strong> - Show you considered other
+options</li>
+<li><strong>Include consequences</strong> - Both positive and
+negative</li>
+<li><strong>Link related ADRs</strong> - Build a decision network</li>
+<li><strong>Update status</strong> - Mark deprecated/superseded
+decisions</li>
+<li><strong>Version control</strong> - Store ADRs in git alongside
+code</li>
+</ol>
+<h3 id="donts">Don’ts ❌</h3>
+<ol type="1">
+<li><strong>Don’t delete ADRs</strong> - Mark as deprecated instead</li>
+<li><strong>Don’t make them too long</strong> - Keep under 2 pages</li>
+<li><strong>Don’t skip context</strong> - Future readers need
+background</li>
+<li><strong>Don’t ignore stakeholders</strong> - Document who
+approved</li>
+</ol>
+<hr />
+<h2 id="adr-in-togaf-context">ADR in TOGAF Context</h2>
+<table>
+<thead>
+<tr>
+<th>TOGAF Phase</th>
+<th>ADR Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase A</strong></td>
+<td>Strategic technology direction decisions</td>
+</tr>
+<tr>
+<td><strong>Phase B</strong></td>
+<td>Business capability decisions</td>
+</tr>
+<tr>
+<td><strong>Phase C</strong></td>
+<td>Application/data architecture decisions</td>
+</tr>
+<tr>
+<td><strong>Phase D</strong></td>
+<td>Technology platform decisions</td>
+</tr>
+<tr>
+<td><strong>Phase E</strong></td>
+<td>Solution approach decisions</td>
+</tr>
+<tr>
+<td><strong>Phase F</strong></td>
+<td>Migration strategy decisions</td>
+</tr>
+<tr>
+<td><strong>Phase G</strong></td>
+<td>Governance and standards decisions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage-location">Storage Location</h3>
+<p>ADRs are stored in the <strong>Governance Log</strong> within the
+<strong>Architecture Repository</strong>.</p>
+<pre><code>Architecture Repository
+├── Architecture Metamodel
+├── Architecture Capability
+├── Architecture Landscape
+├── Standards Information Base
+├── Reference Library
+└── Governance Log  ◀── ADRs stored here
+    ├── ADR-001.md
+    ├── ADR-002.md
+    ├── ADR-003.md
+    └── ...</code></pre>
+<hr />
+<h2 id="interview-tips">Interview Tips 💡</h2>
+<ol type="1">
+<li><p><strong>“What is an ADR?”</strong> &gt; A document capturing
+architectural decisions with context, rationale, and
+consequences</p></li>
+<li><p><strong>“Where are ADRs stored in TOGAF?”</strong> &gt; In the
+Governance Log within the Architecture Repository</p></li>
+<li><p><strong>“What’s the difference between ADR and RFC?”</strong>
+&gt; RFC proposes standards for comment; ADR documents a specific
+decision made</p></li>
+<li><p><strong>“Can ADRs be changed?”</strong> &gt; They should be
+immutable - mark as deprecated and create new ADR if needed</p></li>
+<li><p><strong>“Who creates ADRs?”</strong> &gt; Architects, reviewed by
+Architecture Review Board (ARB)</p></li>
+</ol>
+</body>
+</html>

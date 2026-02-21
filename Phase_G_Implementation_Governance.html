@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_G_Implementation_Governance</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_G_Implementation_Governance</h1>
+</header>
+<h1 id="togaf-adm---phase-g-implementation-governance">TOGAF ADM - Phase
+G: Implementation Governance</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Provide architectural oversight during
+implementation</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                 PHASE G: IMPLEMENTATION GOVERNANCE                      │
+│                                                                         │
+│   &quot;Are the development teams building what we designed?&quot;               │
+│   &quot;Is the implementation following the architecture?&quot;                  │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<ol type="1">
+<li><strong>Ensure conformance with Target Architecture</strong> - Are
+teams following the design?</li>
+<li><strong>Govern implementation projects</strong> - Oversight and
+guidance</li>
+<li><strong>Perform Architecture Compliance reviews</strong> - Formal
+assessments</li>
+</ol>
+<hr />
+<h2 id="architecture-review-board">Architecture Review Board</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE REVIEW BOARD                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   A governance body that reviews and approves architecture decisions   │
+│                                                                         │
+│   MEMBERS:                                                             │
+│   • Chief Architect / Head of EA                                       │
+│   • Enterprise Architects                                              │
+│   • Domain Architects                                                  │
+│   • Senior Technical Leaders                                           │
+│   • Business Representatives (optional)                                │
+│                                                                         │
+│   RESPONSIBILITIES:                                                    │
+│   • Review solution designs                                            │
+│   • Approve/Reject/Request changes                                     │
+│   • Grant dispensations (approved deviations)                          │
+│   • Ensure compliance with standards                                   │
+│   • Resolve architecture conflicts                                     │
+│                                                                         │
+│   MEETS:                                                               │
+│   • Weekly or bi-weekly                                                │
+│   • At key project milestones                                          │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="compliance-review-process">Compliance Review Process</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                 COMPLIANCE REVIEW PROCESS                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  STEP 1: SCHEDULE REVIEW                                               │
+│          └── At key milestones (design complete, before go-live)       │
+│                                                                         │
+│  STEP 2: PREPARE CHECKLIST                                             │
+│          ├── Architecture principles followed?                         │
+│          ├── Technology standards used?                                │
+│          ├── Security requirements met?                                │
+│          ├── Integration patterns correct?                             │
+│          └── Data standards followed?                                  │
+│                                                                         │
+│  STEP 3: CONDUCT REVIEW                                                │
+│          └── Review with development team, document findings           │
+│                                                                         │
+│  STEP 4: DOCUMENT RESULTS                                              │
+│          ├── Conformant items                                          │
+│          ├── Deviations found                                          │
+│          └── Recommendations                                           │
+│                                                                         │
+│  STEP 5: DECISION                                                      │
+│          ├── ✅ Approved                                               │
+│          ├── ✅ Approved with conditions (fix minor issues)            │
+│          └── ❌ Not approved (rework required)                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-compliance-checklist">Architecture Compliance
+Checklist</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│                 ARCHITECTURE COMPLIANCE CHECKLIST                            │
+├───────────────────────────────────┬──────────┬──────────┬────────────────────┤
+│ CHECK ITEM                        │ EXPECTED │ ACTUAL   │ STATUS             │
+├───────────────────────────────────┼──────────┼──────────┼────────────────────┤
+│ API Design follows REST standards │ REST     │ REST     │ ✅ Compliant       │
+│ Database is PostgreSQL            │ PostgreSQL│PostgreSQL│ ✅ Compliant       │
+│ Runs on Kubernetes (EKS)          │ EKS      │ EKS      │ ✅ Compliant       │
+│ Uses approved auth (OAuth 2.0)    │ OAuth 2.0│ JWT only │ ⚠️ Deviation       │
+│ Logging to centralized system     │ DataDog  │ DataDog  │ ✅ Compliant       │
+│ Secrets in Vault                  │ Vault    │ Env vars │ ❌ Non-compliant   │
+│ CI/CD via GitHub Actions          │ GH Actions│GH Actions│ ✅ Compliant       │
+├───────────────────────────────────┴──────────┴──────────┴────────────────────┤
+│ RESULT: Approved with conditions - Fix secrets management before go-live     │
+└──────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-milestones-for-review">Key Milestones for Review</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    KEY MILESTONES FOR REVIEW                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   MILESTONE 1: DESIGN COMPLETE                                         │
+│   └── Review solution design before development starts                 │
+│       • Does it align with target architecture?                        │
+│       • Are standards followed?                                        │
+│                                                                         │
+│   MILESTONE 2: DEVELOPMENT COMPLETE                                    │
+│   └── Review implementation before testing                             │
+│       • Is the code following architecture?                            │
+│       • Are integrations correct?                                      │
+│                                                                         │
+│   MILESTONE 3: PRE-GO-LIVE                                             │
+│   └── Final review before production deployment                        │
+│       • Is everything compliant?                                       │
+│       • Are all conditions met?                                        │
+│                                                                         │
+│   MILESTONE 4: POST-GO-LIVE                                            │
+│   └── Review after deployment                                          │
+│       • Is it working as designed?                                     │
+│       • Any issues to address?                                         │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="dispensations">Dispensations</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    DISPENSATIONS                                        │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT IS:                                                          │
+│   An APPROVED DEVIATION from architecture standards                    │
+│                                                                         │
+│   WHEN NEEDED:                                                         │
+│   • Technical constraint prevents compliance                           │
+│   • Time/budget doesn&#39;t allow full compliance                          │
+│   • Legacy integration requires exception                              │
+│   • Business urgency overrides standard                                │
+│                                                                         │
+│   PROCESS:                                                             │
+│   1. Team requests dispensation                                        │
+│   2. Documents reason and impact                                       │
+│   3. Proposes remediation plan (if temporary)                          │
+│   4. Architecture Board reviews and decides                            │
+│   5. If approved, dispensation is logged                               │
+│                                                                         │
+│   TYPES:                                                               │
+│   • Temporary: Must be fixed by certain date                           │
+│   • Permanent: Accepted as ongoing exception                           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="architecture-contracts-in-phase-g">Architecture Contracts in
+Phase G</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    ARCHITECTURE CONTRACTS                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   CREATED IN: Phase F (Migration Planning)                             │
+│   ENFORCED IN: Phase G (Implementation Governance)                     │
+│                                                                         │
+│   CONTRACT SAYS:                                                       │
+│   • What the team agreed to build                                      │
+│   • What standards to follow                                           │
+│   • What quality criteria to meet                                      │
+│   • When reviews will happen                                           │
+│                                                                         │
+│   PHASE G CHECKS:                                                      │
+│   • Is the team honoring the contract?                                 │
+│   • Are deliverables meeting criteria?                                 │
+│   • Are standards being followed?                                      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compliance Assessments</strong></td>
+<td>Results of architecture reviews</td>
+</tr>
+<tr>
+<td><strong>Architecture Contracts</strong></td>
+<td>Enforced and tracked</td>
+</tr>
+<tr>
+<td><strong>Dispensation Log</strong></td>
+<td>Approved deviations recorded</td>
+</tr>
+<tr>
+<td><strong>Implementation Recommendations</strong></td>
+<td>Guidance for teams</td>
+</tr>
+<tr>
+<td><strong>Governance Log</strong></td>
+<td>Record of all governance activities</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE G = &quot;ENSURE THEY BUILD WHAT WE DESIGNED&quot;                       │
+│                                                                         │
+│   • Architecture Review Board oversees implementation                  │
+│   • Compliance reviews at key milestones                               │
+│   • Check against standards and principles                             │
+│   • Grant dispensations when needed                                    │
+│   • Document everything in governance log                              │
+│                                                                         │
+│   OUTPUT: Compliance Assessments + Governance Log                      │
+│                                                                         │
+│   Without Phase G, architecture becomes shelfware!                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

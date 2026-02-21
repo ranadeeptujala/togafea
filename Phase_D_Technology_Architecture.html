@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_D_Technology_Architecture</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_D_Technology_Architecture</h1>
+</header>
+<h1 id="togaf-adm---phase-d-technology-architecture">TOGAF ADM - Phase
+D: Technology Architecture</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Define the technology infrastructure needed
+to support applications and data</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE D: TECHNOLOGY ARCHITECTURE                     │
+│                                                                         │
+│   &quot;What hardware, software, and infrastructure do we need?&quot;             │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<ol type="1">
+<li><strong>Define technology platforms</strong> - What infrastructure
+will support our applications</li>
+<li><strong>Map applications to technology</strong> - Which app runs on
+which platform</li>
+<li><strong>Perform Gap Analysis</strong> - What technology changes are
+needed</li>
+</ol>
+<hr />
+<h2 id="technology-platform-layers">Technology Platform Layers</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                     TECHNOLOGY PLATFORM LAYERS                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  EDGE / DELIVERY LAYER (Entry Point for Users)                   │   │
+│  │  • CDN (CloudFront, Akamai) - Cache &amp; deliver static content     │   │
+│  │  • Load Balancers (ALB, HAProxy) - Distribute traffic            │   │
+│  │  • Web servers (Nginx, Apache) - Serve requests                  │   │
+│  │  • API Gateway - Route API calls                                 │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  APPLICATION LAYER                                               │   │
+│  │  • Frontend: React, Angular, Vue, Mobile (Flutter, Swift, Kotlin)│   │
+│  │  • Backend: Java, .NET, Node.js, Python, Go                      │   │
+│  │  • Containers (Docker, Kubernetes)                               │   │
+│  │  • Serverless (AWS Lambda, Azure Functions)                      │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  DATA LAYER                                                      │   │
+│  │  • Databases (PostgreSQL, MongoDB, Redis)                        │   │
+│  │  • Data Warehouse (Snowflake, BigQuery)                          │   │
+│  │  • Message Queues (Kafka, RabbitMQ)                              │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  INFRASTRUCTURE LAYER                                            │   │
+│  │  • Cloud (AWS, Azure, GCP)                                       │   │
+│  │  • Compute (EC2, VMs, Bare Metal)                                │   │
+│  │  • Storage (S3, EBS, NAS)                                        │   │
+│  │  • Network (VPC, DNS, Firewalls)                                 │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                              ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │  SECURITY &amp; OPERATIONS                                           │   │
+│  │  • Identity (IAM, SSO, OAuth)                                    │   │
+│  │  • Monitoring (Prometheus, Grafana, DataDog)                     │   │
+│  │  • CI/CD (Jenkins, GitHub Actions, ArgoCD)                       │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="application-to-technology-mapping">Application to Technology
+Mapping</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              APPLICATION ↔ TECHNOLOGY MAPPING MATRIX                    │
+├─────────────────┬──────────┬──────────┬───────────┬─────────┬──────────┤
+│   APPLICATION   │ COMPUTE  │ DATABASE │  RUNTIME  │  CLOUD  │ CONTAINER│
+├─────────────────┼──────────┼──────────┼───────────┼─────────┼──────────┤
+│ Player Portal   │ EKS      │ PostgreSQL│ Node.js  │ AWS     │ ✓        │
+│ Payment Service │ EKS      │ PostgreSQL│ Java     │ AWS     │ ✓        │
+│ Game Engine     │ EC2      │ Redis    │ C++      │ AWS     │ ✗        │
+│ Analytics       │ EMR      │ Redshift │ Python   │ AWS     │ ✗        │
+│ Admin Portal    │ Lambda   │ DynamoDB │ Node.js  │ AWS     │ ✗        │
+│ Legacy ERP      │ On-Prem  │ Oracle   │ Java     │ N/A     │ ✗        │
+└─────────────────┴──────────┴──────────┴───────────┴─────────┴──────────┘</code></pre>
+<hr />
+<h2 id="layer-breakdown">Layer Breakdown</h2>
+<h3 id="edge-delivery-layer">Edge / Delivery Layer</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    EDGE / DELIVERY LAYER                                │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Entry point for all user requests                           │
+│                                                                         │
+│   COMPONENTS:                                                          │
+│   ┌─────────────┬───────────────────────────────────────────────────┐  │
+│   │ CDN         │ Cache static content close to users               │  │
+│   │             │ Examples: CloudFront, Akamai, Cloudflare          │  │
+│   ├─────────────┼───────────────────────────────────────────────────┤  │
+│   │ Load        │ Distribute traffic across multiple servers        │  │
+│   │ Balancer    │ Examples: ALB, NLB, HAProxy, Nginx                │  │
+│   ├─────────────┼───────────────────────────────────────────────────┤  │
+│   │ Web Server  │ Serve HTTP requests, SSL termination              │  │
+│   │             │ Examples: Nginx, Apache                           │  │
+│   ├─────────────┼───────────────────────────────────────────────────┤  │
+│   │ API Gateway │ Route, authenticate, rate-limit API calls         │  │
+│   │             │ Examples: Kong, AWS API Gateway, Apigee           │  │
+│   └─────────────┴───────────────────────────────────────────────────┘  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="application-layer">Application Layer</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    APPLICATION LAYER                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Where your applications run                                 │
+│                                                                         │
+│   FRONTEND:                                                            │
+│   • Web: React, Angular, Vue.js                                        │
+│   • Mobile: Flutter, Swift, Kotlin, React Native                       │
+│                                                                         │
+│   BACKEND:                                                             │
+│   • Languages: Java, .NET, Node.js, Python, Go                         │
+│   • Frameworks: Spring Boot, Express, Django, FastAPI                  │
+│                                                                         │
+│   DEPLOYMENT:                                                          │
+│   • Containers: Docker + Kubernetes (EKS, AKS, GKE)                    │
+│   • Serverless: AWS Lambda, Azure Functions, Cloud Functions           │
+│   • VMs: EC2, Azure VMs, Compute Engine                                │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="data-layer">Data Layer</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    DATA LAYER                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   DATABASES:                                                           │
+│   • Relational: PostgreSQL, MySQL, Oracle, SQL Server                  │
+│   • NoSQL: MongoDB, DynamoDB, Cassandra                                │
+│   • In-Memory: Redis, Memcached                                        │
+│   • Time-Series: InfluxDB, TimescaleDB                                 │
+│                                                                         │
+│   DATA WAREHOUSE:                                                      │
+│   • Snowflake, BigQuery, Redshift, Synapse                             │
+│                                                                         │
+│   MESSAGING:                                                           │
+│   • Event Streaming: Kafka, Kinesis, Pulsar                            │
+│   • Message Queue: RabbitMQ, SQS, Azure Service Bus                    │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="infrastructure-layer">Infrastructure Layer</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    INFRASTRUCTURE LAYER                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   CLOUD PROVIDERS:                                                     │
+│   • AWS, Azure, GCP, Oracle Cloud                                      │
+│                                                                         │
+│   COMPUTE:                                                             │
+│   • Virtual Machines (EC2, Azure VMs)                                  │
+│   • Container Orchestration (EKS, AKS, GKE)                            │
+│   • Bare Metal (for high-performance needs)                            │
+│                                                                         │
+│   STORAGE:                                                             │
+│   • Object: S3, Azure Blob, GCS                                        │
+│   • Block: EBS, Azure Disk                                             │
+│   • File: EFS, Azure Files                                             │
+│                                                                         │
+│   NETWORKING:                                                          │
+│   • VPC, Subnets, Security Groups                                      │
+│   • DNS (Route53, Azure DNS)                                           │
+│   • Firewalls, WAF                                                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="security-operations">Security &amp; Operations</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    SECURITY &amp; OPERATIONS                                │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   IDENTITY &amp; ACCESS:                                                   │
+│   • IAM, SSO, OAuth 2.0, SAML                                          │
+│   • Secrets Management: HashiCorp Vault, AWS Secrets Manager           │
+│                                                                         │
+│   MONITORING &amp; OBSERVABILITY:                                          │
+│   • Metrics: Prometheus, CloudWatch, DataDog                           │
+│   • Logging: ELK Stack, Splunk, CloudWatch Logs                        │
+│   • Tracing: Jaeger, X-Ray, Zipkin                                     │
+│   • Dashboards: Grafana, Kibana                                        │
+│                                                                         │
+│   CI/CD:                                                               │
+│   • Build: Jenkins, GitHub Actions, GitLab CI                          │
+│   • Deploy: ArgoCD, Spinnaker, Flux                                    │
+│   • Artifact: Nexus, Artifactory, ECR                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technology Architecture Document</strong></td>
+<td>Complete technology architecture</td>
+</tr>
+<tr>
+<td><strong>Platform Decomposition Diagram</strong></td>
+<td>Layers of technology stack</td>
+</tr>
+<tr>
+<td><strong>Application/Technology Matrix</strong></td>
+<td>Which app runs on what</td>
+</tr>
+<tr>
+<td><strong>Technology Standards Catalog</strong></td>
+<td>Approved technologies</td>
+</tr>
+<tr>
+<td><strong>Gap Analysis</strong></td>
+<td>What technology changes needed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE D = &quot;WHAT INFRASTRUCTURE DO WE NEED?&quot;                          │
+│                                                                         │
+│   Define technology across layers:                                     │
+│   • Edge / Delivery (CDN, Load Balancer, API Gateway)                  │
+│   • Application (Frontend, Backend, Containers)                        │
+│   • Data (Databases, Warehouses, Messaging)                            │
+│   • Infrastructure (Cloud, Compute, Storage, Network)                  │
+│   • Security &amp; Ops (IAM, Monitoring, CI/CD)                            │
+│                                                                         │
+│   OUTPUT: Technology Architecture Document + Gap Analysis              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

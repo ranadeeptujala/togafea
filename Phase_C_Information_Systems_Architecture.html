@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Phase_C_Information_Systems_Architecture</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Phase_C_Information_Systems_Architecture</h1>
+</header>
+<h1 id="togaf-adm---phase-c-information-systems-architecture">TOGAF ADM
+- Phase C: Information Systems Architecture</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Develop Data Architecture and Application
+Architecture</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    PHASE C: INFORMATION SYSTEMS ARCHITECTURE            │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PURPOSE: Define DATA and APPLICATIONS needed to support business     │
+│                                                                         │
+│   TWO SUB-PHASES:                                                      │
+│   • Data Architecture (what data do we need?)                          │
+│   • Application Architecture (what applications do we need?)           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="key-activities">Key Activities</h2>
+<h3 id="develop-data-architecture">1. Develop Data Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    DATA ARCHITECTURE                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT DEFINES:                                                     │
+│   • What data entities exist                                           │
+│   • How data is structured (logical models)                            │
+│   • Where data is stored (physical models)                             │
+│   • How data flows between systems                                     │
+│   • Data ownership and governance                                      │
+│                                                                         │
+│   KEY ARTIFACTS:                                                       │
+│   • Conceptual Data Model                                              │
+│   • Logical Data Model                                                 │
+│   • Physical Data Model                                                │
+│   • Data Flow Diagrams                                                 │
+│   • Data Catalog                                                       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="develop-application-architecture">2. Develop Application
+Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                    APPLICATION ARCHITECTURE                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   WHAT IT DEFINES:                                                     │
+│   • What applications are needed                                       │
+│   • How applications interact                                          │
+│   • Application boundaries                                             │
+│   • Integration patterns                                               │
+│   • Application lifecycle                                              │
+│                                                                         │
+│   KEY ARTIFACTS:                                                       │
+│   • Application Portfolio Catalog                                      │
+│   • Application Communication Diagram                                  │
+│   • Application/Function Matrix                                        │
+│   • Interface Catalog                                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="perform-gap-analysis">3. Perform Gap Analysis</h3>
+<ul>
+<li>Compare Baseline vs Target for both Data and Application</li>
+<li>Identify what needs to be built, changed, or retired</li>
+</ul>
+<hr />
+<h2 id="example-gaming-platform">Example: Gaming Platform</h2>
+<h3 id="data-architecture">Data Architecture</h3>
+<pre><code>DATA ARCHITECTURE:
+├── Player Data (profiles, preferences, history)
+├── Game Data (scores, achievements, leaderboards)  
+├── Transaction Data (purchases, wallets, payouts)
+└── Analytics Data (behavior, engagement metrics)</code></pre>
+<h3 id="application-architecture">Application Architecture</h3>
+<pre><code>APPLICATION ARCHITECTURE:
+├── Player Management System
+├── Game Engine Integration
+├── Payment Gateway
+├── Bonus &amp; Promotion Engine
+├── Responsible Gaming Module
+├── Reporting &amp; Analytics Platform
+└── Back Office Admin Portal</code></pre>
+<h3 id="gap-analysis">Gap Analysis</h3>
+<pre><code>GAP ANALYSIS:
+• Current: Separate DBs per game → Target: Unified Player 360 view
+• Current: Batch reporting → Target: Real-time analytics
+• Current: Point-to-point integrations → Target: Event-driven (Kafka)</code></pre>
+<hr />
+<h2 id="data-vs-application-architecture">Data vs Application
+Architecture</h2>
+<table>
+<thead>
+<tr>
+<th>Data Architecture</th>
+<th>Application Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WHAT data exists</td>
+<td>WHAT applications exist</td>
+</tr>
+<tr>
+<td>HOW data is structured</td>
+<td>HOW applications interact</td>
+</tr>
+<tr>
+<td>WHERE data is stored</td>
+<td>WHERE applications run</td>
+</tr>
+<tr>
+<td>Data models, schemas</td>
+<td>Application portfolio</td>
+</tr>
+<tr>
+<td>Data flows</td>
+<td>Integration patterns</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-deliverables">Key Deliverables</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Architecture Document</strong></td>
+<td>Complete data architecture</td>
+</tr>
+<tr>
+<td><strong>Application Architecture Document</strong></td>
+<td>Complete application architecture</td>
+</tr>
+<tr>
+<td><strong>Gap Analysis Results</strong></td>
+<td>What needs to change</td>
+</tr>
+<tr>
+<td><strong>Data Models</strong></td>
+<td>Conceptual, Logical, Physical</td>
+</tr>
+<tr>
+<td><strong>Application Portfolio</strong></td>
+<td>List of all applications</td>
+</tr>
+<tr>
+<td><strong>Interface Catalog</strong></td>
+<td>All integrations documented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary">Summary</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│                                                                         │
+│   PHASE C = &quot;WHAT DATA AND APPS DO WE NEED?&quot;                           │
+│                                                                         │
+│   DATA ARCHITECTURE:                                                   │
+│   • What data entities?                                                │
+│   • How is data structured?                                            │
+│   • Where is data stored?                                              │
+│                                                                         │
+│   APPLICATION ARCHITECTURE:                                            │
+│   • What applications?                                                 │
+│   • How do they interact?                                              │
+│   • What integrations?                                                 │
+│                                                                         │
+│   OUTPUT: Data Architecture + Application Architecture + Gap Analysis  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

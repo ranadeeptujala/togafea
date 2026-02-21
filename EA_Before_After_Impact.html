@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>EA_Before_After_Impact</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">EA_Before_After_Impact</h1>
+</header>
+<h1 id="enterprise-architecture-before-vs-after-impact">Enterprise
+Architecture: Before vs After Impact</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Document the consequences and impact of
+implementing Enterprise Architecture in an organization</p>
+</blockquote>
+<hr />
+<h2 id="overview">Overview</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    BEFORE EA vs AFTER EA                                         │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   BEFORE EA (Chaos)                     AFTER EA (Order)                        │
+│   ═════════════════                     ════════════════                         │
+│                                                                                  │
+│   &quot;Everyone does                        &quot;We have standards                       │
+│    their own thing&quot;                      and guidelines&quot;                         │
+│                                                                                  │
+│   EA transforms CHAOS into ORDER!                                               │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="technology-decisions">1. Technology Decisions</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  TECHNOLOGY DECISIONS                                                            │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Team A uses MySQL                    • Standard: PostgreSQL for all          │
+│  • Team B uses PostgreSQL               • Approved technology catalog           │
+│  • Team C uses MongoDB                  • Clear guidelines for selection        │
+│  • Team D uses Oracle                   • Exceptions need approval              │
+│                                                                                  │
+│  RESULT: 4 different databases          RESULT: Consistent stack               │
+│  to maintain, integrate, secure         Easier maintenance, lower cost          │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before EA</th>
+<th>After EA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Message Brokers</td>
+<td>7 different (Kafka, RabbitMQ, SQS, Redis Pub/Sub, ActiveMQ, ZeroMQ,
+custom)</td>
+<td>2 (Kafka + SQS only)</td>
+<td>70% reduction</td>
+</tr>
+<tr>
+<td>Maintenance Effort</td>
+<td>High</td>
+<td>Low</td>
+<td>40% reduction</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="integration-communication">2. Integration &amp;
+Communication</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  INTEGRATION &amp; COMMUNICATION                                                     │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Point-to-point integrations          • Standard API patterns (REST/gRPC)     │
+│  • No API standards                     • API Gateway for all services          │
+│  • Each team different format           • Consistent contracts                  │
+│  • Spaghetti architecture               • Clean, documented integrations        │
+│                                                                                  │
+│  ┌──────────────────┐                   ┌──────────────────┐                    │
+│  │   A ──► B        │                   │        API       │                    │
+│  │   ↓    ↓         │                   │      Gateway     │                    │
+│  │   C ◄─► D ──► E  │                   │    ┌───┴───┐     │                    │
+│  │   ↑    ↓    ↓    │                   │    ▼   ▼   ▼     │                    │
+│  │   F ◄─► G ◄─► H  │                   │    A   B   C     │                    │
+│  │   (Spaghetti)    │                   │    (Organized)   │                    │
+│  └──────────────────┘                   └──────────────────┘                    │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-1">Real Example</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before EA</th>
+<th>After EA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integration time for new service</td>
+<td>3-4 weeks</td>
+<td>2-3 days</td>
+<td>80% faster</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="decision-making">3. Decision Making</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  DECISION MAKING                                                                 │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Decisions made in silos              • Architecture Review Board             │
+│  • No visibility across teams           • Decisions documented (ADRs)           │
+│  • Repeated mistakes                    • Learn from past decisions             │
+│  • &quot;Why did we choose this?&quot; - Unknown  • Clear rationale recorded              │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-2">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 35%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Before EA</th>
+<th>After EA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New developer asks “Why PostgreSQL?”</td>
+<td>Nobody knows</td>
+<td>Check ADR-001 → Full context, options considered, reasons</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="project-delivery">4. Project Delivery</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  PROJECT DELIVERY                                                                │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Start from scratch every project     • Reuse building blocks (SBBs)          │
+│  • Long discovery phase                 • Reference architectures available     │
+│  • Inconsistent quality                 • Standards ensure quality              │
+│  • Unpredictable timelines              • Faster, predictable delivery          │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-3">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before EA</th>
+<th>After EA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New microservice development</td>
+<td>6-8 weeks (research, design, build from scratch)</td>
+<td>2-3 weeks (use templates, patterns, reusable components)</td>
+<td>60% faster</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cost-efficiency">5. Cost &amp; Efficiency</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  COST &amp; EFFICIENCY                                                               │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Duplicate systems doing same thing   • Consolidation &amp; rationalization       │
+│  • High licensing costs                 • Reduced vendor sprawl                 │
+│  • Wasted infrastructure                • Right-sized resources                 │
+│  • Technical debt growing               • Managed technical debt                │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-4">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before EA</th>
+<th>After EA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application portfolio</td>
+<td>150+ applications (many doing similar things)</td>
+<td>85 applications (consolidated, rationalized)</td>
+<td>40% reduction</td>
+</tr>
+<tr>
+<td>Annual savings</td>
+<td>-</td>
+<td>$2M/year in licensing + maintenance</td>
+<td>Significant</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="risk-security">6. Risk &amp; Security</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  RISK &amp; SECURITY                                                                 │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • Inconsistent security practices      • Security principles for all           │
+│  • Unknown vulnerabilities              • Standard security patterns            │
+│  • No visibility of risks               • Risk assessment in architecture       │
+│  • Compliance gaps                      • Compliance by design                  │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-5">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before EA</th>
+<th>After EA</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security audit findings</td>
+<td>45 critical issues</td>
+<td>5 issues (all in legacy systems)</td>
+<td>90% reduction</td>
+</tr>
+<tr>
+<td>New systems</td>
+<td>Inconsistent security</td>
+<td>Secure by default (follows security architecture)</td>
+<td>Consistent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="business-it-alignment">7. Business-IT Alignment</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  BUSINESS-IT ALIGNMENT                                                           │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  BEFORE EA:                             AFTER EA:                               │
+│  ──────────                             ─────────                               │
+│                                                                                  │
+│  • IT builds what they think            • IT builds what business needs         │
+│  • Business frustrated with IT          • Shared understanding                  │
+│  • No clear roadmap                     • Architecture roadmap aligned          │
+│  • &quot;IT doesn&#39;t understand us&quot;           • Stakeholder engagement                │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="real-example-6">Real Example</h3>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 35%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Before EA</th>
+<th>After EA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business request delivery</td>
+<td>IT delivers something different - “This is not what we asked
+for!”</td>
+<td>Architecture Vision document signed by stakeholders - Clear
+requirements, agreed scope, satisfied business</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary-comparison-table">Summary Comparison Table</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 40%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr>
+<th>Area</th>
+<th>BEFORE EA</th>
+<th>AFTER EA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technology</strong></td>
+<td>Everyone chooses their own</td>
+<td>Standard catalog, approved choices</td>
+</tr>
+<tr>
+<td><strong>Integration</strong></td>
+<td>Spaghetti, point-to-point</td>
+<td>Clean, documented, standard patterns</td>
+</tr>
+<tr>
+<td><strong>Decisions</strong></td>
+<td>Undocumented, repeated mistakes</td>
+<td>ADRs, traceable, learn from history</td>
+</tr>
+<tr>
+<td><strong>Delivery Speed</strong></td>
+<td>Slow (from scratch) 6-8 weeks</td>
+<td>Fast (reuse) 2-3 weeks</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>High (duplication), wasted resources</td>
+<td>Lower (consolidation), right-sized</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Inconsistent, many vulnerabilities</td>
+<td>Secure by design, standard controls</td>
+</tr>
+<tr>
+<td><strong>Business Alignment</strong></td>
+<td>“IT doesn’t get us”, misalignment</td>
+<td>Shared vision, roadmap aligned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-metrics-improvement">Key Metrics Improvement</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    KEY IMPROVEMENTS (Example Numbers)                            │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   📉 Time to Market:           6-8 weeks → 2-3 weeks     (60% faster)           │
+│   📉 Integration Time:         3-4 weeks → 2-3 days      (80% faster)           │
+│   📉 Technology Variants:      7 databases → 2           (70% reduction)        │
+│   📉 Applications:             150 → 85                  (40% consolidated)     │
+│   📉 Security Issues:          45 critical → 5           (90% reduction)        │
+│   📈 Reuse Rate:               10% → 60%                 (6x improvement)       │
+│   📈 Stakeholder Satisfaction: 40% → 85%                 (2x improvement)       │
+│                                                                                  │
+│   💰 Cost Savings:             ~$2-3M per year                                  │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="interview-tips">Interview Tips</h2>
+<p>When asked about EA impact in interviews, structure your answer:</p>
+<ol type="1">
+<li><strong>Pick 2-3 areas</strong> (e.g., Technology, Delivery Speed,
+Security)</li>
+<li><strong>Describe BEFORE state</strong> (the problems)</li>
+<li><strong>Describe AFTER state</strong> (the improvements)</li>
+<li><strong>Give specific metrics</strong> if possible</li>
+<li><strong>Share a real example</strong> from your experience</li>
+</ol>
+<h3 id="sample-answer">Sample Answer</h3>
+<blockquote>
+<p>“Before we implemented EA, each team chose their own technology
+stack. We had 7 different message brokers across the organization. After
+EA, we standardized on Kafka and SQS, reducing maintenance effort by 40%
+and saving significant licensing costs. Integration time for new
+services dropped from 3-4 weeks to 2-3 days because everyone now follows
+standard API patterns.”</p>
+</blockquote>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                  │
+│   Enterprise Architecture transforms organizations from CHAOS to ORDER          │
+│                                                                                  │
+│   Key Benefits:                                                                 │
+│   • FASTER delivery (60%+ improvement)                                          │
+│   • LOWER costs (consolidation, reuse)                                          │
+│   • BETTER quality (standards, patterns)                                        │
+│   • REDUCED risk (security, compliance)                                         │
+│   • ALIGNED business and IT                                                     │
+│                                                                                  │
+│   EA is not overhead - it&#39;s an ENABLER for business success!                    │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+</body>
+</html>

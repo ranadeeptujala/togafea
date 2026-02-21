@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ADM_Phases_Overview</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ADM_Phases_Overview</h1>
+</header>
+<h1 id="togaf-adm-phases---outcomes-overview">TOGAF ADM Phases -
+Outcomes Overview</h1>
+<blockquote>
+<p>Quick reference for all ADM phases with key activities, deliverables,
+and outcomes</p>
+</blockquote>
+<hr />
+<h2 id="summary-table">Summary Table</h2>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 10%" />
+<col style="width: 16%" />
+<col style="width: 28%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Name</th>
+<th>Purpose</th>
+<th>Key Activities</th>
+<th>Key Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preliminary</strong></td>
+<td>EA Setup</td>
+<td>Setup EA capability (ONCE)</td>
+<td>Define team, tools, principles, governance, standards</td>
+<td>Organizational Model, Architecture Principles</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Architecture Vision</td>
+<td>Get approval to start</td>
+<td>Identify stakeholders, confirm drivers, define scope, create
+vision</td>
+<td>SOW, Architecture Vision Document</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Business Architecture</td>
+<td>Define business</td>
+<td>Business flows, BPMN, org structure, capabilities</td>
+<td>Business Architecture Document, Gap Analysis</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Information Systems</td>
+<td>Define data &amp; apps</td>
+<td>Data models, application portfolio, integrations</td>
+<td>Data Architecture, Application Architecture</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Technology Architecture</td>
+<td>Define technology</td>
+<td>Infrastructure, platforms, databases, tech stack</td>
+<td>Technology Architecture Document</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Opportunities &amp; Solutions</td>
+<td>Identify how to build</td>
+<td>Work packages, dependencies, Build/Buy/Reuse</td>
+<td>Implementation Strategy, Work Packages</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Migration Planning</td>
+<td>Plan the journey</td>
+<td>Roadmap, budget, resources, contracts</td>
+<td>Migration Plan, Architecture Contracts</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Implementation Governance</td>
+<td>Ensure compliance</td>
+<td>Reviews, checklists, dispensations</td>
+<td>Compliance Assessments, Governance Log</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Change Management</td>
+<td>Keep architecture alive</td>
+<td>Monitor changes, manage ACRs, update docs</td>
+<td>Architecture Updates, Change Requests</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="detailed-phase-overview">Detailed Phase Overview</h2>
+<pre><code>┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                    ADM PHASES OVERVIEW                                             │
+├──────────────┬─────────────────────┬────────────────────────────┬──────────────────────────────────┤
+│    PHASE     │      PURPOSE        │     KEY ACTIVITIES         │       KEY DELIVERABLES           │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PRELIMINARY  │ Setup EA            │ • Create EA team           │ • Organizational Model for EA    │
+│ (One-time)   │ Capability          │ • Setup tools              │ • Architecture Principles        │
+│              │                     │ • Define principles        │ • Tailored Framework             │
+│              │                     │ • Establish governance     │ • Architecture Repository        │
+│              │                     │ • Define standards         │                                  │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE A      │ Get approval        │ • Identify stakeholders    │ • Statement of Architecture      │
+│ Architecture │ to start            │ • Confirm business drivers │   Work (SOW)                     │
+│ Vision       │                     │ • Define scope             │ • Architecture Vision Document   │
+│              │                     │ • Create vision            │ • Stakeholder Map                │
+│              │                     │ • Assess readiness         │ • RACI Matrix                    │
+│              │                     │ • Get sign-off             │ • Communication Plan             │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE B      │ Define how          │ • Baseline business arch   │ • Business Architecture Document │
+│ Business     │ business works      │ • Target business arch     │ • Business Process Models (BPMN) │
+│ Architecture │                     │ • Gap analysis             │ • Organization Chart             │
+│              │                     │ • Business flows           │ • Capability Map                 │
+│              │                     │ • BPMN diagrams            │ • Gap Analysis Results           │
+│              │                     │ • Org structure            │ • Value Stream Maps              │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE C      │ Define data         │ DATA:                      │ DATA:                            │
+│ Information  │ and applications    │ • Logical data models      │ • Data Architecture Document     │
+│ Systems      │                     │ • Physical data models     │ • Data Models (Logical/Physical) │
+│ Architecture │                     │ • Data flow diagrams       │ • Data Catalog                   │
+│              │                     │                            │                                  │
+│              │                     │ APPLICATION:               │ APPLICATION:                     │
+│              │                     │ • App portfolio            │ • Application Architecture Doc   │
+│              │                     │ • App ↔ Business mapping   │ • Application Portfolio          │
+│              │                     │ • Integration patterns     │ • Interface Catalog              │
+│              │                     │ • Gap analysis             │ • Gap Analysis Results           │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE D      │ Define              │ • Define platforms         │ • Technology Architecture Doc    │
+│ Technology   │ infrastructure      │ • Technology layers        │ • Platform Decomposition         │
+│ Architecture │                     │ • App ↔ Tech mapping       │ • App/Technology Matrix          │
+│              │                     │ • Gap analysis             │ • Technology Standards           │
+│              │                     │                            │ • Gap Analysis Results           │
+│              │                     │ COVERS:                    │                                  │
+│              │                     │ • Edge/Delivery layer      │                                  │
+│              │                     │ • Application layer        │                                  │
+│              │                     │ • Data layer               │                                  │
+│              │                     │ • Infrastructure layer     │                                  │
+│              │                     │ • Security &amp; Ops           │                                  │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE E      │ Identify how        │ • Identify work packages   │ • Implementation Strategy        │
+│ Opportunities│ to implement        │ • Group into projects      │ • Work Package List              │
+│ &amp; Solutions  │                     │ • Assess dependencies      │ • Project Groupings              │
+│              │                     │ • Build vs Buy vs Reuse    │ • Dependency Matrix              │
+│              │                     │ • Initial roadmap          │ • Build/Buy/Reuse Decisions      │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE F      │ Plan the            │ • Finalize roadmap         │ • Implementation &amp; Migration     │
+│ Migration    │ transformation      │ • Finalize impl. plan      │   Plan                           │
+│ Planning     │                     │ • Define transitions       │ • Architecture Roadmap           │
+│              │                     │ • Budget &amp; resources       │ • Transition Architectures       │
+│              │                     │ • Business value tracking  │ • Architecture Contracts         │
+│              │                     │ • Create contracts         │ • Business Value Assessment      │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE G      │ Ensure teams        │ • Ensure conformance       │ • Compliance Assessments         │
+│ Implementation│ follow architecture│ • Govern projects          │ • Architecture Contracts         │
+│ Governance   │                     │ • Compliance reviews       │   (enforced)                     │
+│              │                     │ • Create checklists        │ • Dispensation Log               │
+│              │                     │ • Grant dispensations      │ • Governance Log                 │
+│              │                     │ • Report to leadership     │ • Recommendations                │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ PHASE H      │ Keep architecture   │ • Monitor tech changes     │ • Architecture Updates           │
+│ Architecture │ current             │ • Monitor business changes │ • Change Requests (ACRs)         │
+│ Change Mgmt  │                     │ • Manage change requests   │ • Governance Log                 │
+│              │                     │ • Update architecture      │ • New ADM Cycle (if needed)      │
+│              │                     │ • Assess impact            │                                  │
+│              │                     │ • Trigger new cycle        │                                  │
+│              │                     │                            │                                  │
+├──────────────┼─────────────────────┼────────────────────────────┼──────────────────────────────────┤
+│              │                     │                            │                                  │
+│ REQUIREMENTS │ Manage requirements │ • Identify requirements    │ • Requirements Repository        │
+│ MANAGEMENT   │ throughout ADM      │ • Store requirements       │ • Traceability Matrix            │
+│ (Central)    │                     │ • Manage changes           │ • Impact Assessments             │
+│              │                     │ • Ensure addressed         │                                  │
+│              │                     │ • Maintain traceability    │                                  │
+│              │                     │                            │                                  │
+└──────────────┴─────────────────────┴────────────────────────────┴──────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="phase-categories">Phase Categories</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              PHASE CATEGORIES                                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   SETUP (One-time):                                                    │
+│   ─────────────────                                                    │
+│   • Preliminary - EA Capability Setup                                  │
+│                                                                         │
+│   INITIATION:                                                          │
+│   ────────────                                                         │
+│   • Phase A - Vision &amp; Approval                                        │
+│                                                                         │
+│   DESIGN (Architecture Domains):                                       │
+│   ─────────────────────────────                                        │
+│   • Phase B - Business Architecture                                    │
+│   • Phase C - Data + Application Architecture                          │
+│   • Phase D - Technology Architecture                                  │
+│                                                                         │
+│   PLANNING:                                                            │
+│   ─────────                                                            │
+│   • Phase E - Opportunities &amp; Solutions                                │
+│   • Phase F - Migration Planning                                       │
+│                                                                         │
+│   EXECUTION &amp; GOVERNANCE:                                              │
+│   ───────────────────────                                              │
+│   • Phase G - Implementation Governance                                │
+│   • Phase H - Change Management                                        │
+│                                                                         │
+│   CONTINUOUS:                                                          │
+│   ────────────                                                         │
+│   • Requirements Management (center of all phases)                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="quick-reference---one-line-per-phase">Quick Reference - One Line
+Per Phase</h2>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>One-Line Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preliminary</strong></td>
+<td>Setup EA team, tools, principles, governance, standards (ONCE)</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Get approval: SOW + Architecture Vision</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>Business flows, BPMN, org structure, capabilities</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Data models + Application portfolio</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Technology stack (infra, languages, databases)</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>Work packages + Build/Buy + Dependencies</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>Budget + Resources + Roadmap + Contracts</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Checklist + Reviews + Compliance</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>Change requests + Architecture updates</td>
+</tr>
+<tr>
+<td><strong>Req Mgmt</strong></td>
+<td>Requirements throughout all phases</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="deliverables-by-category">Deliverables by Category</h2>
+<h3 id="documents">Documents</h3>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Documents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Statement of Architecture Work (SOW), Architecture Vision
+Document</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Business Architecture Document</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Data Architecture Document, Application Architecture Document</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Technology Architecture Document</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Implementation &amp; Migration Plan</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagramsmodels">Diagrams/Models</h3>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Diagrams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>BPMN Process Flows, Org Chart, Capability Map, Value Streams</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Data Models (Logical/Physical), Application Portfolio, Integration
+Diagrams</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Platform Decomposition, Technology Layers</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Architecture Roadmap, Transition Architectures</td>
+</tr>
+</tbody>
+</table>
+<h3 id="catalogsmatrices">Catalogs/Matrices</h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Catalogs/Matrices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Stakeholder Map, RACI Matrix, Concerns Matrix</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Data Catalog, Interface Catalog, App/Function Matrix</td>
+</tr>
+<tr>
+<td>D</td>
+<td>App/Technology Matrix, Technology Standards Catalog</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Dependency Matrix, Work Package List</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Compliance Checklist, Dispensation Log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="governance-artifacts">Governance Artifacts</h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Governance Artifacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F</td>
+<td>Architecture Contracts</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Compliance Assessments, Governance Log</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Architecture Change Requests (ACRs)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-inputoutput-flow">Phase Input/Output Flow</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              INPUT → PHASE → OUTPUT                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   Business Request  ──►  PHASE A  ──►  SOW + Vision                    │
+│                              │                                          │
+│   SOW + Vision      ──►  PHASE B  ──►  Business Architecture           │
+│                              │                                          │
+│   Business Arch     ──►  PHASE C  ──►  Data + App Architecture         │
+│                              │                                          │
+│   Data + App Arch   ──►  PHASE D  ──►  Technology Architecture         │
+│                              │                                          │
+│   All Architectures ──►  PHASE E  ──►  Work Packages + Strategy        │
+│                              │                                          │
+│   Work Packages     ──►  PHASE F  ──►  Migration Plan + Contracts      │
+│                              │                                          │
+│   Plan + Contracts  ──►  PHASE G  ──►  Compliance Assessments          │
+│                              │                                          │
+│   Implementation    ──►  PHASE H  ──►  Architecture Updates            │
+│                              │                                          │
+│                              └──►  (Back to Phase A if major change)   │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="memory-aid---keywords">Memory Aid - Keywords</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────┐
+│              MEMORY AID                                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   PRELIMINARY = SETUP (Team, Tools, Principles, Governance, Standards) │
+│                                                                         │
+│   A = APPROVE      (Vision, SOW, Stakeholders, Scope)                  │
+│   B = BUSINESS     (Flows, BPMN, Org, Capabilities)                    │
+│   C = CONTENT      (Data models, App portfolio)                        │
+│   D = DEVICES      (Technology, Infra, Platforms)                      │
+│   E = EXPLORE      (Work packages, Build/Buy, Dependencies)            │
+│   F = FINALIZE     (Budget, Resources, Roadmap, Contracts)             │
+│   G = GOVERN       (Reviews, Checklists, Compliance)                   │
+│   H = HANDLE       (Changes, ACRs, Updates)                            │
+│                                                                         │
+│   REQ MGMT = REQUIREMENTS (Throughout all phases)                      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="interview-quick-answer">Interview Quick Answer</h2>
+<blockquote>
+<p>“TOGAF ADM starts with <strong>Phase A</strong> where we create the
+Architecture Vision and get approval through SOW. Then we design in
+<strong>Phases B, C, D</strong> - Business, Data/Application, and
+Technology architectures. In <strong>Phase E</strong> we identify work
+packages and Build/Buy decisions. <strong>Phase F</strong> creates the
+detailed migration plan with budget and contracts. <strong>Phase
+G</strong> governs implementation through compliance reviews.
+<strong>Phase H</strong> manages ongoing changes. Requirements
+Management runs throughout all phases as the central hub.”</p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Stakeholder_Conflict_Resolution</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Stakeholder_Conflict_Resolution</h1>
+</header>
+<h1 id="stakeholder-conflict-resolution---ea-scenarios">Stakeholder
+Conflict Resolution - EA Scenarios</h1>
+<blockquote>
+<p><strong>Purpose</strong>: Document real-world conflict resolution
+scenarios for Enterprise Architects</p>
+</blockquote>
+<hr />
+<h2 id="scenario-technology-choice-conflict">Scenario: Technology Choice
+Conflict</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    CONFLICT SCENARIO: Technology Choice                          │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   PROJECT: New Customer Onboarding System for Gaming Platform                   │
+│   STAKEHOLDER: Head of Operations (Business)                                    │
+│   MY ROLE: Enterprise Architect                                                 │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="the-conflict">The Conflict</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    THE PROBLEM                                                   │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│   BUSINESS STAKEHOLDER WANTED:                                                  │
+│   ════════════════════════════                                                  │
+│   &quot;Buy a ready-made vendor solution (Salesforce) for customer onboarding&quot;       │
+│                                                                                  │
+│   Their reasoning:                                                              │
+│   • Faster time to market (2 months)                                            │
+│   • Proven solution, less risk                                                  │
+│   • Vendor support available                                                    │
+│   • &quot;I&#39;ve used it before at my previous company&quot;                                │
+│                                                                                  │
+│   ─────────────────────────────────────────────────────────────────────────     │
+│                                                                                  │
+│   ARCHITECTURE RECOMMENDATION:                                                  │
+│   ════════════════════════════                                                  │
+│   &quot;Build a custom microservice integrated with existing platform&quot;               │
+│                                                                                  │
+│   Our reasoning:                                                                │
+│   • Better integration with existing gaming platform                            │
+│   • No vendor lock-in                                                           │
+│   • Lower long-term cost                                                        │
+│   • Aligned with architecture principles                                        │
+│                                                                                  │
+│   ─────────────────────────────────────────────────────────────────────────     │
+│                                                                                  │
+│   THE CONFLICT:                                                                 │
+│   &quot;Business wants to BUY, Architecture wants to BUILD&quot;                          │
+│                                                                                  │
+│   Stakeholder was frustrated:                                                   │
+│   &quot;You architects always want to build everything! You&#39;re blocking my project!&quot; │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="resolution-approach">Resolution Approach</h2>
+<h3 id="step-1-listen-first">Step 1: LISTEN First</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  STEP 1: LISTEN &amp; UNDERSTAND                                                     │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  Instead of defending architecture position, I asked:                           │
+│                                                                                  │
+│  • &quot;Help me understand - what&#39;s driving the urgency?&quot;                           │
+│  • &quot;What specific features are most important to you?&quot;                          │
+│  • &quot;What concerns do you have with building custom?&quot;                            │
+│  • &quot;Tell me about your experience with Salesforce before&quot;                       │
+│                                                                                  │
+│  WHAT I LEARNED:                                                                │
+│  • Marketing campaign launching in 3 months (hard deadline)                     │
+│  • KYC verification was the critical feature                                    │
+│  • Previous company had good Salesforce experience                              │
+│  • Fear that custom build would be delayed (past experience)                    │
+│                                                                                  │
+│  KEY INSIGHT:                                                                   │
+│  The REAL concern was TIME and RISK, not Salesforce specifically                │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="step-2-acknowledge-concerns">Step 2: ACKNOWLEDGE Concerns</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  STEP 2: ACKNOWLEDGE (Don&#39;t Dismiss)                                             │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  What I said:                                                                   │
+│                                                                                  │
+│  &quot;You&#39;re absolutely right that:                                                 │
+│   • Time to market is critical for business success                             │
+│   • Vendor solutions reduce implementation risk                                 │
+│   • Past custom builds have had delays                                          │
+│   • Your experience with Salesforce is valuable&quot;                                │
+│                                                                                  │
+│  &quot;These are valid concerns and I want to address them, not dismiss them&quot;        │
+│                                                                                  │
+│  WHY THIS MATTERS:                                                              │
+│  • Stakeholder felt HEARD, not blocked                                          │
+│  • Reduced defensive posture                                                    │
+│  • Opened dialog for collaboration                                              │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="step-3-present-data">Step 3: PRESENT Data</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  STEP 3: PRESENT DATA &amp; ANALYSIS                                                 │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  I prepared a comparison (shared in next meeting):                              │
+│                                                                                  │
+│  ┌─────────────────────┬─────────────────────┬─────────────────────┐            │
+│  │ Criteria            │ Salesforce (Buy)    │ Custom Build        │            │
+│  ├─────────────────────┼─────────────────────┼─────────────────────┤            │
+│  │ Time to MVP         │ 2 months            │ 3 months            │            │
+│  │ Integration effort  │ 4 months additional │ Included            │            │
+│  │ Year 1 Cost         │ $500K (license+impl)│ $300K               │            │
+│  │ Year 2-5 Cost       │ $200K/year license  │ $50K/year maint     │            │
+│  │ 5-Year Total Cost   │ $1.3M               │ $500K               │            │
+│  │ Integration risk    │ HIGH (different tech)│ LOW (same stack)   │            │
+│  │ Vendor lock-in      │ YES                 │ NO                  │            │
+│  │ Gaming-specific KYC │ Customization needed│ Built for us        │            │
+│  └─────────────────────┴─────────────────────┴─────────────────────┘            │
+│                                                                                  │
+│  KEY FINDING:                                                                   │
+│  Salesforce MVP = 2 months, BUT integration with gaming platform = 4 more months│
+│  TOTAL time with Salesforce = 6 months (LONGER than custom!)                    │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="step-4-find-common-ground">Step 4: FIND Common Ground</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  STEP 4: PROPOSE COMPROMISE                                                      │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  My proposal addressed THEIR concerns:                                          │
+│                                                                                  │
+│  &quot;What if we do this:                                                           │
+│                                                                                  │
+│   1. BUILD custom onboarding service (3 months)                                 │
+│      BUT use a 3RD PARTY KYC vendor (Jumio) for verification                    │
+│      → Addresses time concern (proven KYC component)                            │
+│                                                                                  │
+│   2. PHASE 1: Core onboarding + Jumio KYC (3 months) ✓ Meets deadline           │
+│      PHASE 2: Advanced features (2 months later)                                │
+│      → Addresses risk concern (smaller scope first)                             │
+│                                                                                  │
+│   3. Weekly demos to business stakeholders                                      │
+│      → Addresses visibility concern (no surprises)                              │
+│                                                                                  │
+│   4. Architecture team commits to 3-month deadline with penalty clause          │
+│      → Addresses trust concern (skin in the game)&quot;                              │
+│                                                                                  │
+│  COMPROMISE:                                                                    │
+│  • Business gets: Speed, proven KYC, visibility, commitment                     │
+│  • Architecture gets: Custom build, no vendor lock-in, platform alignment       │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<h3 id="step-5-document-agreement">Step 5: DOCUMENT Agreement</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│  STEP 5: DOCUMENT &amp; COMMIT                                                       │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  Created ADR (Architecture Decision Record):                                    │
+│                                                                                  │
+│  ADR-015: Customer Onboarding Approach                                          │
+│  ─────────────────────────────────────                                          │
+│  Decision: Build custom service with Jumio KYC integration                      │
+│                                                                                  │
+│  Options Considered:                                                            │
+│  - Salesforce (rejected - integration time, cost)                               │
+│  - Full custom (rejected - KYC complexity)                                      │
+│  - Hybrid: Custom + Jumio (SELECTED)                                            │
+│                                                                                  │
+│  Stakeholders: Head of Operations (agreed), CTO (approved)                      │
+│                                                                                  │
+│  Commitments:                                                                   │
+│  - Phase 1 delivery: 3 months                                                   │
+│  - Weekly demos every Friday                                                    │
+│  - Go/No-Go checkpoint at week 6                                                │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="the-outcome">The Outcome</h2>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────────┐
+│                    OUTCOME                                                       │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  RESULT:                                                                        │
+│  ✅ Delivered Phase 1 in 2.5 months (ahead of schedule!)                        │
+│  ✅ Marketing campaign launched on time                                         │
+│  ✅ 5-year cost savings: $800K vs Salesforce                                    │
+│  ✅ Seamless integration with gaming platform                                   │
+│  ✅ Stakeholder became architecture advocate                                    │
+│                                                                                  │
+│  RELATIONSHIP:                                                                  │
+│  • Head of Operations became ally, not adversary                                │
+│  • Now consults architecture early on new initiatives                           │
+│  • Trusts architecture recommendations                                          │
+│                                                                                  │
+│  LESSON LEARNED:                                                                │
+│  &quot;The conflict was never about Salesforce vs Custom.                            │
+│   It was about TRUST, TIME, and RISK.                                           │
+│   Address the REAL concerns, not the surface argument.&quot;                         │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="conflict-resolution-framework">Conflict Resolution
+Framework</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    5-STEP CONFLICT RESOLUTION FRAMEWORK                          │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  1. LISTEN FIRST      - Understand their perspective, ask questions             │
+│                                                                                  │
+│  2. ACKNOWLEDGE       - Validate their concerns (don&#39;t dismiss)                 │
+│                                                                                  │
+│  3. PRESENT DATA      - Facts, not opinions; show analysis                      │
+│                                                                                  │
+│  4. FIND COMMON GROUND- Compromise that addresses both sides                    │
+│                                                                                  │
+│  5. DOCUMENT          - ADR, commitments, checkpoints                           │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="communication-tips">Communication Tips</h2>
+<table>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr>
+<th>NEVER SAY</th>
+<th>INSTEAD SAY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“You’re wrong”</td>
+<td>“Help me understand…”</td>
+</tr>
+<tr>
+<td>“Architecture says no”</td>
+<td>“Let’s look at the options together”</td>
+</tr>
+<tr>
+<td>“That won’t work”</td>
+<td>“What if we tried…”</td>
+</tr>
+<tr>
+<td>“We always build custom”</td>
+<td>“What’s most important to you?”</td>
+</tr>
+<tr>
+<td>“That’s not how we do things”</td>
+<td>“Let me share our approach and get your input”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    KEY TAKEAWAYS                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                  │
+│  • Stakeholders aren&#39;t enemies - they have valid business concerns              │
+│                                                                                  │
+│  • Architecture serves business, not the other way around                       │
+│                                                                                  │
+│  • Win-win solutions build long-term trust                                      │
+│                                                                                  │
+│  • Address the REAL concerns (often hidden), not surface arguments              │
+│                                                                                  │
+│  • Data beats opinions in resolving conflicts                                   │
+│                                                                                  │
+│  • Document agreements to prevent future misunderstandings                      │
+│                                                                                  │
+│  • Follow through on commitments to build credibility                           │
+│                                                                                  │
+└─────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+<hr />
+<h2 id="interview-answer-template">Interview Answer Template</h2>
+<p>When asked about stakeholder conflicts in interviews, structure your
+answer using <strong>STAR</strong>:</p>
+<p><strong>Situation</strong>: “In my previous role, we had a conflict
+about technology choice for a new onboarding system…”</p>
+<p><strong>Task</strong>: “As the Enterprise Architect, I needed to
+resolve this while maintaining platform alignment…”</p>
+<p><strong>Action</strong>: “I followed a 5-step approach: Listen,
+Acknowledge, Present Data, Find Common Ground, Document…”</p>
+<p><strong>Result</strong>: “We delivered ahead of schedule, saved $800K
+over 5 years, and the stakeholder became an architecture advocate…”</p>
+</body>
+</html>
